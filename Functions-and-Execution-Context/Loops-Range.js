@@ -1,5 +1,6 @@
 /*Challenge: Loops - Range
 Using a loop, write a function getTheRange which finds the range (difference between high and low) of arr. The value returned should be an array with the low, high, and range. */
+// forEach
 function getTheRange(arr) {
     let max = -Infinity, min = Infinity;
     arr.forEach(val => {
@@ -23,3 +24,17 @@ function getTheRange1(arr) {
 }
 // Uncomment these to check your work!
 console.log(getTheRange1([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]
+
+// For loop
+function getTheRange3(arr) {
+    // ADD CODE HERE
+    let max = -Infinity, min = Infinity;
+    for (let i = 0; i < arr.length; i++) {
+        if (max <= arr[i]) { max = arr[i] };
+        if (min >= arr[i]) { min = arr[i] };
+    }
+    return [min, max, max - min]
+}
+
+// Uncomment these to check your work!
+console.log(getTheRange3([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]

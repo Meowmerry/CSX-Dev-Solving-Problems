@@ -15,29 +15,28 @@
 // Part 2
 // Now let's rebuild map from the previous challenge. This time instead of using a for loop, you're going to use the forEach we just created.
 
-//create function forEach -- Input: 2 parameters array, callback -- Output: no return
-//for loop to iterate through array
-//for each element call the callback function
 
-const forEach = (arr, callback) => {
-    for (let i = 0; i < arr.length; i++) {
-        callback(arr[i])
+// create a function forEach that take array and callback function.
+const forEach = (array, callback) => {
+    // use a for loop iterate through array 
+    for (let i = 0; i < array.length; i++) {
+        // invoke a callback passing in the current array element 
+        callback(array[i])
     }
 }
 
-//function map -- Input: array of num -- output: modified array
-//call forEach function with arr and map
-//return 
-const map = (arr, callback) => {
-    // declare a variable result = [];
-    let result = []
-    // forEach(arr, (ele) => {
-    //     result.push(callback(ele))
-    // })
-    forEach(arr, function (ele) {
-        result.push(callback(ele))
+// create a function map that takes array and callback as arguemnts
+const map = (array, callback) => {
+    // declear a newArray to store a value set to empty []
+    const newArr = []
+    // call forEach with passed in array and a new function with take an array element
+    forEach(array, (element) => {
+        // invoke the passed in  callback function with the current array element
+        // add the return value by using push
+        newArr.push(callback(element))
     })
-    return result;
+    // return newArr containing the result;
+    return newArr;
 }
 
 // Uncomment these to check your work!
