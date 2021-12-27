@@ -26,7 +26,7 @@ console.log(sampleFunc()); // should log: 'sample'
 const helloFunc = createFunctionWithInput('hello');
 console.log(helloFunc()); // should log: 'hello'
 
-/* ========================== SOLUTION 1  ======================================
+/* ========================== SOLUTION 2  ======================================
 ================================================================================ */
 // create a function createFunctionWithInput 
 // input : string 
