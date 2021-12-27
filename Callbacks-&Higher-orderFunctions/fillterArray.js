@@ -1,6 +1,10 @@
+/* ============================== INSTRUCTIONS ==============================
+ ================================================================================ */
+
 /* Challenge: filterArray
 Add code to the functions func1 and func2 in the places marked "ADD CODE HERE" in order to achieve the desired console logs.*/
-
+/* ========================== SOLUTION 1  ======================================
+================================================================================ */
 function filterArray(array, callback) {
     const newArray = [];
     for (let i = 0; i < array.length; i += 1) {

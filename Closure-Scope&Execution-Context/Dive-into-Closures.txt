@@ -1,0 +1,26 @@
+What We'll Cover
+Execution Context
+Scope
+What is a closure?
+What are closures used for?
+Execution Context
+The execution context is the environment in which a JavaScript function is being executed. Each execution context has its own variable scope.
+
+Whenever a function is invoked, a new execution context is pushed onto the call stack, and a new variable environment is created along with it. The function’s code runs in the new execution context and has access to the variable environment in the execution context directly below that new execution context (the one in which the function was invoked).
+
+Upon exit of the function, the execution context is popped off of the call stack. Code in one execution context is stopped until the code in the execution context above it finishes running.
+
+Scope
+Variable environments are commonly referred to as “scope.” While each execution context is stacked on top of the execution context preceding it, each scope is created inside of the previous scope. Code being executed inside a scope not only has access to the variables in that scope, but also the variables in all the scopes that encase it. Therefore, code that runs in a given execution context has access to all the variables created in the execution contexts below it.
+
+What is a closure?
+A closure is a variable environment that has outlived its execution context and remains attached to a function that also has outlived the same execution context.
+
+If multiple functions are created in the same execution context and all of them outlive that execution context, those functions each have their own closure, and each of these closures will access the same variables in memory. Therefore, mutation of those variables by one of those functions will affect the other functions in the manner that they will be accessing the same (mutated) variables.
+
+What are closures used for?
+Closures give us the ability to gain some benefits normally associated with object-oriented programming, namely data privacy and data encapsulation (thus name “closure”). When the structure of the encapsulated data and the methods used to access/manipulate the data is too simple to justify using actual object-oriented programming, closures provide a convenient solution.
+
+Closures can aid in maintaining secure and private access to variables, by creating functions that serve as the only objects with access to these variables. The functionality of the functions themselves serves as a method of whitelisting the ways that those variables can be mutated. Because only the created functions have access to the variables, the procedural steps outlined in the created functions are the only procedures that can operate on the variables in the closure.
+
+Closures are used especially often when functionality is being imported into a file from another file. The code in the imported file is executed, creating a closure for any function(s) exported from the file. This is a common method for JavaScript libraries to be made available for use to a developer’s application and helps developers maintain modularity of their code.

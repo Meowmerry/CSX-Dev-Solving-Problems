@@ -1,3 +1,11 @@
+/* ============================== INSTRUCTIONS ==============================
+ ================================================================================ 
+
+Challenge: intersection
+Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs. BONUS - Use reduce!
+ */
+/* ========================== SOLUTION 1  ======================================
+================================================================================ */
 // input : array of array
 // output : array of the same number from array input;
 // create a function that takes three arrays in array as argument;
@@ -28,7 +36,8 @@ const arr2 = [15, 88, 1, 5, 7];
 const arr3 = [1, 10, 15, 5, 20];
 console.log(intersection([arr1, arr2, arr3])); // should log: [5, 15]
 
-
+/* ========================== SOLUTION 2 ======================================
+================================================================================ */
 const intersection1 = (arrays) => {
     // using a reduce to iterates 
     return arrays.reduce((accumulator, currentValue) => {

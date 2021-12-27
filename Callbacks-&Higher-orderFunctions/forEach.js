@@ -1,19 +1,22 @@
-// Challenge: forEach
-// Part 1
-// Create a function forEach which takes an array and a callback, and runs the callback on each element of the array. 
-// forEach does not return anything. 
-// Please do not use the native forEach or map method.
+
+/* ============================== INSTRUCTIONS ==============================
+ ================================================================================ */
+/* Challenge: forEach
+ Part 1
+ Create a function forEach which takes an array and a callback, and runs the callback on each element of the array. 
+ forEach does not return anything. 
+ Please do not use the native forEach or map method.
 
 
-// let alphabet = '';
-// const letters = ['a', 'b', 'c', 'd'];
-// forEach(letters, function(char) {
-//   alphabet += char;
-// });
-// console.log(alphabet); //prints 'abcd'
+ let alphabet = '';
+ const letters = ['a', 'b', 'c', 'd'];
+ forEach(letters, function(char) {
+   alphabet += char;
+ });
+ console.log(alphabet); prints 'abcd'
 
-// Part 2
-// Now let's rebuild map from the previous challenge. This time instead of using a for loop, you're going to use the forEach we just created.
+ Part 2
+ Now let's rebuild map from the previous challenge. This time instead of using a for loop, you're going to use the forEach we just created. */
 
 
 // create a function forEach that take array and callback function.
@@ -24,7 +27,8 @@ const forEach = (array, callback) => {
         callback(array[i])
     }
 }
-
+/* ============================== SOLUTION 1  ==============================
+ ================================================================================ */
 // create a function map that takes array and callback as arguemnts
 const map = (array, callback) => {
     // declear a newArray to store a value set to empty []

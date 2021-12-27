@@ -5,8 +5,6 @@ Note: Due to the output being based off of a random factor, the tests provided b
 function closestToTheMark(player1, player2) {
     const theMark = Math.floor(Math.random() * 100)
     console.log(`If theMark is ${theMark}...`);
-    // delcear a result variable set to empty string;
-    let result = "";
     // check to compare both, using a Math.abs if player1 is greater then theMark 
     //and subtract with plyer2 is greater then theMark; if so, return `Player is closest;`
     // otherwise, return `Player2 is closest`
