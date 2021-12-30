@@ -211,3 +211,32 @@ const changeScene9 = censor9();
 changeScene9('dogs', 'cats');
 changeScene9('quick', 'slow');
 console.log(changeScene9('The quick, brown fox jumps over the lazy dogs.'));
+
+/* ========================== SOLUTION  10  ======================================
+================================================================================ */
+function censor10() {
+    // create a variable cache to store key, value pair assign to empty {};
+    const cache = {};
+    // return a function that takes up to two arguments
+    return (strOne, strTwo) => {
+        // check to see how many strings are passed in to the return function;
+        if (strTwo) {
+            // if two strings are passed in, add to cache object as a key value pair
+            cache[strOne] = strTwo;
+            // return nothing;
+            return;
+        }
+        // if one string passed in, modify the string to replace any instance of the keys in the cache with corresponding values in the cache
+        for (let key in cache) {
+            strOne = strOne.replace(key, cache[key])
+        }
+        // return the modified string;
+        return strOne;
+    };
+};
+const changeScene10 = censor10();
+changeScene10('dogs', 'cats');
+changeScene10('quick', 'slow');
+console.log(changeScene10('The quick, brown fox jumps over the lazy dogs.'));
+
+

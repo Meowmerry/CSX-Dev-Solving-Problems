@@ -28,13 +28,29 @@ console.log(getTheRange1([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]
 // For loop
 function getTheRange3(arr) {
     // ADD CODE HERE
+    const result = [];
     let max = -Infinity, min = Infinity;
     for (let i = 0; i < arr.length; i++) {
         if (max <= arr[i]) { max = arr[i] };
         if (min >= arr[i]) { min = arr[i] };
     }
-    return [min, max, max - min]
+    result.push(min, max, max - min)
+    return result
 }
 
 // Uncomment these to check your work!
 console.log(getTheRange3([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]
+
+
+function getTheRange(arr) {
+    // declare a result = [];
+    const result = [];
+    // iterate thru arr using for loop
+    for (let i = 0; i < arr.length; i++) {
+
+
+    }
+
+}
+console.log(getTheRange([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]
+

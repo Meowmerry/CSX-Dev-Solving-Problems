@@ -1,0 +1,27 @@
+additionally, there are a some further points worth making.
+Let’s look at the conditions you included in your earlier message:
+if (number < 0 || number % 1 !== 0) return;
+First, number must be positive, not non-negative, meaning that 0 is not a valid number for this challenge, so let’s tweak the first condition to correct that:
+if (number < 1 || number % 1 !== 0) return;
+Now, let’s look at the 2nd condition: number % 1 !== 0
+I realize you’re attempting to determine whether or not number is an integer (knowing that number % 1 is 0 when number is an integer), but this won’t work unless you already know that number is a number (and not some other data type), which you don’t (because you haven’t explicitly checked yet, although in this particular case, the first condition indirectly addresses this, by the nature of the language, but we don’t want to rely on this, as it will end up biting you at some point).
+For example, if number is an empty string (''), then we have '' % 1 !== 0, which evaluates to false, which indicates that '' is an integer (because '' % 1 does equal 0), which we know is wrong.
+So let’s correct that by using !Number.isSafeInteger(number) (I used Number.isInteger in my previous snippet, but Number.isSafeInteger is what we should use — see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger):
+if (number < 1 || !Number.isSafeInteger(number)) return;
+Now the problem is that we compare number to 0 before we make sure number is a safe integer.
+In this particular example, I don’t think that will cause any problems, but generally speaking, you want to check “preconditions” first. Here, we want to first check that number is an integer, and then, if it is, see if it is positive:
+if (!Number.isSafeInteger(number) || number < 1) return;
+Now this reads as: “if number is not a safe integer OR [it is, but] it is not positive THEN return”
+Because of short-circuit evaluation of boolean operators, if number is not a safe integer, we won’t even bother comparing it to 1 (and we don’t need to because there’s no sense in comparing something that isn’t even an integer to an integer, which is why we order the conditions this way). However, if number is a safe integer, then we compare it to 1 to see if it is positive.
+Again, in this case, because of the way JS automatically coerces values, I believe this should work with the conditions in either order, but in general, you shouldn’t rely on such nuances of JS because more often than not, things will not behave as you expect.
+As a counter example, let’s say we get an object obj as input, and if it does not have a the property foo set to a non-empty string, then we want to return immediately. Let’s structure the conditions similarly to the above:
+if (obj.foo.length === 0 || typeof obj.foo !== 'string') return;
+In this case, if obj is, for example, { bar: 'none' }, then we end up with the following error:
+Uncaught TypeError: Cannot read properties of undefined (reading 'length')
+That’s because there is no foo property on obj, and thus, obj.foo is undefined, and we cannot read properties of undefined.
+Therefore, we must first make sure that the foo property is a string, and then check its length:
+if (typeof obj.foo !== 'string' || obj.foo.length === 0) return;
+This avoids the TypeError above, but we still need to add further conditions because will fail if obj is null or undefined:
+if (obj == null || typeof obj.foo !== 'string' || obj.foo.length === 0) return;
+Note that I purposely use loose equality (obj == null) in the first condition because it will catch null as well as undefined.
+The point is that the order of the conditions (usually) matters when they are related.
