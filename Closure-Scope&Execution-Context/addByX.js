@@ -54,3 +54,4 @@ console.log(addByThree1(2));
 const addByFour1 = addByXX(4);
 console.log(addByFour1(1));
 console.log(addByFour1(2));
+

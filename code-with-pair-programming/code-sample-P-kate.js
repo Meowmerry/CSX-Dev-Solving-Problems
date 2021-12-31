@@ -90,7 +90,6 @@ function whatIsInAName2(collcetion, source) {
 function spinalCase(str) {
     const wordArray = [];
     let tempString = '';
-
     // itrate over str
     // every time that we want to start a new tempString
     // if tempstring is not empty -> push tempStr to wordArray

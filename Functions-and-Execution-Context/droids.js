@@ -36,3 +36,17 @@ const starWars1 = ["Luke", "Finn", "Rey", "Kylo", "Droids"]
 const thrones1 = ["Jon", "Danny", "Tyrion", "The Mountain", "Cersei"]
 console.log(droids1(starWars1)) // should log: "Found Droids!"
 console.log(droids1(thrones1)) // should log: "These are not the droids you're looking for.
+
+/* ========================== SOLUTION 3  ======================================
+================================================================================ */
+function droids2(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === "Droids") return 'Found Droids'
+    }
+    return `These are not the droids you're looking for`
+}
+
+const starWars2 = ["Luke", "Finn", "Rey", "Kylo", "Droids"]
+const thrones2 = ["Jon", "Danny", "Tyrion", "The Mountain", "Cersei"]
+console.log(droids2(starWars2)) // should log: "Found Droids!"
+console.log(droids2(thrones2)) // should log: "These are not the droids you're looking for.
