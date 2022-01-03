@@ -31,19 +31,18 @@ Output: {Array} - the top and bottom halves of the deck interleaved together, wi
 /* ========================== SOLUTION 1  ======================================
 ================================================================================ */
 function shuffleCards(topHalf, bottomHalf, newArr = []) {
-    // base case
-     if(!topHalf.length || !bottomHalf.length) {
-       newArr.push(...topHalf, ...bottomHalf);
-       return newArr;
-     }
-     newArr.push(topHalf[0], bottomHalf[0]);
-     return shuffleCards(topHalf.slice(1), bottomHalf.slice(1), newArr)
-  };
-  
-  // UNCOMMENT TO TEST YOUR WORK
-  const topHalf = ['Queen of Diamonds', 'Five of Hearts', 'Ace of Spades', 'Eight of Clubs'];
-  const bottomHalf = ['Jack of Hearts', 'Ten of Spades'];
-  console.log(shuffleCards(topHalf, bottomHalf));
+  // base case
+  if (!topHalf.length || !bottomHalf.length) {
+    newArr.push(...topHalf, ...bottomHalf);
+    return newArr;
+  }
+  newArr.push(topHalf[0], bottomHalf[0]);
+  return shuffleCards(topHalf.slice(1), bottomHalf.slice(1), newArr)
+};
+// UNCOMMENT TO TEST YOUR WORK
+const topHalf = ['Queen of Diamonds', 'Five of Hearts', 'Ace of Spades', 'Eight of Clubs'];
+const bottomHalf = ['Jack of Hearts', 'Ten of Spades'];
+console.log(shuffleCards(topHalf, bottomHalf));
 //   /*-> ['Queen of Diamonds',
 //         'Jack of Hearts',
 //         'Five of Hearts',
@@ -52,10 +51,66 @@ function shuffleCards(topHalf, bottomHalf, newArr = []) {
 //         'Eight of Clubs',
 //       ]
 //   */
-  
+
 // const topHalf = ['Ace of Spades', 'Eight of Clubs'];
 // const bottomHalf = [];
 // console.log(shuffleCards(topHalf, bottomHalf));
 
 /* ========================== SOLUTION 2  ======================================
 ================================================================================ */
+
+// Input1: {Array} topHalf - cards in the top half of the deck
+// Input2: {Array} bottomHalf - cards in the bottom half of the deck
+// Output: {Array} - the top and bottom halves of the deck interleaved together, with any remaining cards appended to the end.
+// create a function shuffleCards that accepts two array and declare default of empty array as parameter
+function shuffleCards(topHalf, bottomHalf, result = []) {
+  // base case : check if topHalf and bottomHalf has any length, if one of both has no length, added to result; and return result
+  if (!topHalf.length || !bottomHalf.length) {
+    result.push(...topHalf, ...bottomHalf);
+    return result;
+  }
+  // recursive case : 
+  // (1) build result by adding topHalf and bottomHalf at first index to result;
+  result.push(topHalf[0], bottomHalf[0])
+  // (2) recursivly call shuffleCards and passed topHalf and bottomHalf with out first element, passed newArr
+  return shuffleCards(topHalf.slice(1), bottomHalf.slice(1), result)
+}
+
+// const topHalf = ['Queen of Diamonds', 'Five of Hearts', 'Ace of Spades', 'Eight of Clubs'];
+// const bottomHalf = ['Jack of Hearts', 'Ten of Spades'];
+/*-> ['Queen of Diamonds',
+      'Jack of Hearts',
+      'Five of Hearts',
+      'Ten of Spades',
+      'Ace of Spades',
+      'Eight of Clubs',
+    ]
+*/
+
+const topHalf1 = ['Queen of Diamonds', 'Five of Hearts', 'Ace of Spades', 'Eight of Clubs'];
+const bottomHalf1 = [];
+console.log(shuffleCards(topHalf1, bottomHalf1));
+
+/* ========================== SOLUTION 3  ======================================
+================================================================================ */
+function shuffleCards(topHalf, bottomHalf, result = []) {
+  if (!topHalf.length || !bottomHalf.length) {
+    result.push(...topHalf, ...bottomHalf);
+    return result;
+  };
+  result.push(topHalf[0], bottomHalf[0])
+  return shuffleCards(topHalf.slice(1), bottomHalf.slice(1), result)
+}
+
+// UNCOMMENT TO TEST YOUR WORK
+const topHalf3 = ['Queen of Diamonds', 'Five of Hearts', 'Ace of Spades', 'Eight of Clubs'];
+const bottomHalf3 = ['Jack of Hearts', 'Ten of Spades'];
+console.log(shuffleCards(topHalf3, bottomHalf3));
+/*-> ['Queen of Diamonds',
+      'Jack of Hearts',
+      'Five of Hearts',
+      'Ten of Spades',
+      'Ace of Spades',
+      'Eight of Clubs',
+    ]
+*/

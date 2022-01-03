@@ -89,7 +89,6 @@ console.log(multBy2AndLog1('boo')); // should log: { 2: 4, 9: 18 }
 const saveOutput3 = (callback, password) => {
     // declare a variable empty object;
     let object = {};
-
     // saveOutput will then return a function that behaves exactly like the passed-in function
     // exept for when the password string is passed in as argument, will return an object 
     return (input) => {
@@ -108,3 +107,28 @@ const multBy3AndLog = saveOutput3(multiplyBy3, 'boo');
 console.log(multBy3AndLog(2)); // should log: 4
 console.log(multBy3AndLog(9)); // should log: 18
 console.log(multBy3AndLog('boo')); // should log: { 2: 4, 9: 18 }
+
+
+/* ========================== SOLUTION 4  ======================================
+================================================================================ */
+//Input : function that will take one argument, String will act as a password;
+//Ouput : function that return and behaves like a passed-in function, and return Number and Object
+function saveOutput4(func, magicWord) {
+    // declare an object to store key value 
+    const object = {}
+    // return function that behaves like func, accept one parameter
+    return (input) => {
+        // check if input is equal to magicWord, return object
+        if (input === magicWord) {
+            return object;
+        } // otherwise, reassign object : key will be input and value will be invoking func passed in input
+        // return object with key;
+        return object[input] = func(input);
+    }
+}
+// /*** Uncomment these to check your work! ***/
+const multiplyBy4 = function (num) { return num * 2; };
+const multBy4AndLog = saveOutput4(multiplyBy4, 'boo');
+console.log(multBy4AndLog(2)); // => should log 4
+console.log(multBy4AndLog(9)); // => should log 18
+console.log(multBy4AndLog('boo')); // => should log { 2: 4, 9: 18 }

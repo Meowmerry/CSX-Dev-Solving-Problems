@@ -95,3 +95,65 @@ console.log(arrayNomalizedHelper(test))
 const arr = [1, 2, 30, 4, 'ccc', 5, null]
 console.log(arr.hasOwnProperty(5)) // check by passed index postion, if have in array will be true
 console.log(arr.hasOwnProperty(7)) // false becasue index position 7 not exists
+
+
+/* ========================== SOLUTION 6  ======================================
+================================================================================ */
+const getLengthArr = (arr, idx = 0) => arr[idx] === undefined ? idx : getLengthArr(arr, idx + 1)
+console.log(getLengthArr([1])); // -> 1
+console.log(getLength([1, 2])); // -> 2
+console.log(getLength([1, 2, 3, 4, 5])); // -> 5
+console.log(getLengthArr([])); // -> 0
+
+
+
+/* ========================== SOLUTION 7  ======================================
+================================================================================ */
+const getLengthArray = (arr, idx = 0) => !arr.hasOwnProperty(idx) ? idx : getLengthArray(arr, idx + 1)
+console.log(getLengthArray([1])); // -> 1
+console.log(getLengthArray([1, 2])); // -> 2
+console.log(getLengthArray([1, 2, 3, 4, 5])); // -> 5
+console.log(getLengthArray([])); // -> 0
+
+
+/* ========================== SOLUTION 8  ======================================
+================================================================================ */
+// function getLength(array, index = 0) {
+//   // base case : if array doesn't have element or element is undefined will return the number or length
+//   if(!array.hasOwnProperty(index)) return index;
+//   // recursive case : invoke a getLenght with passed in new Update of input
+//   return getLength(array,index + 1);
+// }
+// const getLength = (array, index =0) => !(index in array) ? index : getLength(array, index +1);
+const getLength = (array, index = 0) => !array.hasOwnProperty(index) ? index : getLength(array, index + 1);
+
+// To check if you've completed the challenge, uncomment these console.logs!
+console.log(getLength([1])); // -> 1
+console.log(getLength([1, 2])); // -> 2
+console.log(getLength([1, 2, 3, 4, 5])); // -> 5
+console.log(getLength([])); // -> 0
+
+
+/* ========================== SOLUTION 9  ======================================
+================================================================================ */
+function getLength(array, length = 0) {
+    // base case : exit function return lenght if lenght of array is 0;
+    if (array[0] === undefined) return length;
+    // increase length if lenght of array is not 0
+    length++;
+    // call getLenght again and pass in length
+    return getLength(array.slice(1), length)
+}
+console.log(getLength([1])); // -> 1
+console.log(getLength([1, 2])); // -> 2
+console.log(getLength([1, 2, 3, 4, 5])); // -> 5
+console.log(getLength([])); // -> 0
+
+
+/* ========================== SOLUTION 10  ======================================
+================================================================================ */
+const getLength = (array, length = 0) => array[0] === undefined ? length : getLength(array.slice(1), length + 1)
+console.log(getLength([1])); // -> 1
+console.log(getLength([1, 2])); // -> 2
+console.log(getLength([1, 2, 3, 4, 5])); // -> 5
+console.log(getLength([])); // -> 0

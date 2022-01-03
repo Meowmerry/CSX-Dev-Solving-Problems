@@ -84,7 +84,7 @@ console.log(getDay4()); // should log: 'Fri'
 
 /* ========================== SOLUTION 5  ======================================
 ================================================================================ */
-const cycleIterator5 = (array) => {
+const cycleIterator5 = (arr) => {
     let pedal = [...arr];
     return () => {
         if (pedal.length === 0 || pedal[0] === undefined) {

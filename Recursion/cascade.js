@@ -21,13 +21,17 @@ cascade(12345) should print
 ================================================================================ */
 
 function cascade(number) { //111
-    // base case 
+    // print out of input number
+    console.log(number)
+    // base case : 
+    // (1) check if input doesn't positive interger , return nothing
     if (!Number.isInteger(number)) return;
-    console.log(number) // 111, 11, 1
+    // (2) check if input less than 10 return nothing
     if (number < 10) return;
-    // recursion case
-    cascade(Math.floor(number / 10)); //
-    console.log(number) // 11, 111
+    // recursive case : call cascade recursivly and passed in number and slice by 0 and -1
+    // check to be Number and Sting
+    cascade(Number(String(number).slice(0, -1)))
+    console.log(number);
 }
 
 /* !Number.isInteger(number) */
@@ -47,3 +51,6 @@ function cascade(number) { //111
     console.log(number) // 11, 111
 }
 cascade(123456);
+
+/* ========================== SOLUTION 3  ======================================
+================================================================================ */
