@@ -8,17 +8,31 @@ There's no such thing as private properties on a JavaScript object! But, maybe t
 /* ========================== SOLUTION 1  ======================================
 ================================================================================ */
 function createSecretHolder(secret) {
-    const secretHolder = {};
-    secretHolder.getSecret = () => {
-        return secret;
-    };
-    secretHolder.setSecret = (value) => {
-        secret = value;
+    const secretHolder = {
+        getSecret: () => { console.log(secret) }, // set method getSecreet as property and value is secret from secret input;
+        setSecret: (value) => { secret = value }// set method setSecret as property and value is passed input and set value equal to secret;
     };
     return secretHolder;
 }
 // /*** Uncomment these to check your work! ***/
 const obj = createSecretHolder(5)
-console.log(obj.getSecret()) // => returns 5
-console.log(obj.setSecret(2))
-console.log(obj.getSecret()) // => returns 2
+obj.getSecret(); // => returns 5
+obj.setSecret(2);
+obj.getSecret(); // => returns 2
+
+
+/* ========================== SOLUTION 2  ======================================
+================================================================================ */
+function createGreeting(name) {
+    return {
+        hello: () => console.log(`Hello ${name}`),
+        changeName: (newName) => name = newName
+    }
+}
+const greeting = createGreeting('Avi');
+console.log(greeting);
+greeting.hello();
+greeting.changeName('Chris');
+greeting.hello();
+
+

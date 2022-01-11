@@ -11,16 +11,16 @@ Write a function after that takes the number of times the callback needs to be c
 // output : undefine before call and string
 // create a function that takes a numberOfCall and callbackas argument
 const after = (numOfcall, callback) => {
-    // declare a variable to store count and assign to 0;
+    // establish our count variable assign to 0;
     let count = 0;
     // closure requires us to return  a function, the function accept args.. string
-    return (string) => {
+    return (...string) => {
         // each time  our  returned function is  called we need to increment out count
         count++
         // check if count is greater or equal to the numOfCalls that was passed in
         if (count >= numOfcall) {
             // return callback function with passed args.. string.
-            return callback(string);
+            return callback(...string);
         };
     };
 };
@@ -32,7 +32,8 @@ const afterCalled = after(3, called);
 console.log(afterCalled('world')); // -> undefined is printed
 console.log(afterCalled('world')); // -> undefined is printed
 console.log(afterCalled('world')); // -> 'hello world' is printed
-
+console.log(afterCalled('world')); // -> 'hello world' is printed
+console.log(afterCalled('world')); // -> 'hello world' is printed
 
 /* ========================== SOLUTION 2  ======================================
 ================================================================================ */

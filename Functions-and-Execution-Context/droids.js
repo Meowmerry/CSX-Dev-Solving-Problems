@@ -50,3 +50,14 @@ const starWars2 = ["Luke", "Finn", "Rey", "Kylo", "Droids"]
 const thrones2 = ["Jon", "Danny", "Tyrion", "The Mountain", "Cersei"]
 console.log(droids2(starWars2)) // should log: "Found Droids!"
 console.log(droids2(thrones2)) // should log: "These are not the droids you're looking for.
+
+/* ========================== SOLUTION 3  ======================================
+================================================================================ */
+const droids = (arr) => arr.reduce((accumulated, current) => current === 'Droids' ? accumulated = "Found Droids!" : accumulated = `These are not the droids you're looking for.`, '')
+
+
+const starWars3 = ["Luke", "Finn", "Rey", "Kylo", "Droids"]
+const thrones3 = ["Jon", "Danny", "Tyrion", "The Mountain", "Cersei"]
+console.log(droids2(starWars3)) // should log: "Found Droids!"
+console.log(droids2(thrones3)) // should log: "These are not the droids you're looking for.
+

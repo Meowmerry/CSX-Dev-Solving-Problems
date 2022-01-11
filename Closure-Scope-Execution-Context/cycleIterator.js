@@ -118,3 +118,5 @@ console.log(getDay6()); // should log: 'Fri'
 console.log(getDay6()); // should log: 'Sat'
 console.log(getDay6()); // should log: 'Sun'
 console.log(getDay6()); // should log: 'Fri'
+
+

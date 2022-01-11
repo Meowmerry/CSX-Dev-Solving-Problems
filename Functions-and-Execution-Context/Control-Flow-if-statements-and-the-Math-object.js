@@ -6,7 +6,7 @@ function closestToTheMark(player1, player2) {
     const theMark = Math.floor(Math.random() * 100)
     console.log(`If theMark is ${theMark}...`);
     // check to compare both, using a Math.abs if player1 is greater then theMark 
-    //and subtract with plyer2 is greater then theMark; if so, return `Player is closest;`
+    // and subtract with plyer2 is greater then theMark; if so, return `Player is closest;`
     // otherwise, return `Player2 is closest`
     if (Math.abs(player1 - theMark) > Math.abs(player2 - theMark)) {
         return `Player 2 is closest`;

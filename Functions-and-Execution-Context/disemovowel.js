@@ -54,3 +54,14 @@ function disemvowel(string) {
 console.log(disemvowel('CodeSmith')); // => 'CdSmth'
 console.log(disemvowel('BANANA')); // => 'BNN'
 console.log(disemvowel('hello world')); // => 'hll wrld'
+console.log(0 % 2 === 0)
+console.log(1 % 2 === 0)
+
+
+function disemvowel(string) {
+    return string.replace(/[aeiou]/gi, '')
+}
+
+console.log(disemvowel('CodeSmith')); // => 'CdSmth'
+console.log(disemvowel('BANANA')); // => 'BNN'
+console.log(disemvowel('hello world')); // => 'hll wrld'

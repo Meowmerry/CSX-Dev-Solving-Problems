@@ -1,7 +1,11 @@
+
+
 /* Challenge: Loops - Multiple Conditions
 Write a function addingAllTheWeirdStuff which adds the sum of all the odd numbers in array2 to each element under 10 in array1. Similarly, addingAllTheWeirdStuff should also add the sum of all the even numbers in array2 to those elements over 10 in array1.
 
 BONUS: If any element in array2 is greater than 20, add 1 to every element in array1. */
+/* ========================== SOLUTION 1  ======================================
+================================================================================ */
 
 // input : two arrays of numbers;
 // output : new arrays by following the condition
@@ -42,6 +46,8 @@ function addingAllTheWeirdStuff1(array1, array2) {
 console.log(addingAllTheWeirdStuff1([1, 3, 5, 17, 15], [1, 2, 3, 4, 5])); // expected log [10, 12, 14, 23, 21]
 console.log(addingAllTheWeirdStuff1([1, 3, 5, 17, 15, 1], [1, 2, 3, 4, 5, 22])); // expected log [11, 13, 15, 46, 44, 11]
 
+/* ========================== SOLUTION 2  ======================================
+================================================================================ */
 // input : array
 // output : array
 // create a function addingAllTheWeirdStuff that takes two arrays;
@@ -57,7 +63,7 @@ function addingAllTheWeirdStuff(array1, array2) {
         return prev;
     }, [0, 0])
     // declare a isMoreThan20 and set to  array2 is greater than 20 use a some();
-    const isMoreThan20 = +array2.some(num => sum > 20);
+    const isMoreThan20 = +array2.some(num => num > 20);
     // return array1, use a map to check if in array1 is odd, or even than reture array1;
     return array1.map(num => num + isMoreThan20 + (num < 10 ? sumOdd : sumEven))
 }
@@ -65,3 +71,46 @@ function addingAllTheWeirdStuff(array1, array2) {
 // Uncomment these to check your work!
 console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15], [1, 2, 3, 4, 5])); // expected log [10, 12, 14, 23, 21]
 console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15, 1], [1, 2, 3, 4, 5, 22])); // expected log [11, 13, 15, 46, 44, 11]
+
+/* ========================== SOLUTION 3  ======================================
+================================================================================ */
+// Input : Two Array
+// Output : One array
+function addingAllTheWeirdStuff(array1, array2) {
+    // declear a varible sumEven and sumOdd assign to 0;
+    let sumEven = 0;
+    let sumOdd = 0;
+    let isOverThen20 = false;
+    // iterate thru array2 using a forEach loop to sum 
+    array2.forEach(ele => {
+        // check if each element is odd, reassign to sumOdd
+        if (ele % 2 !== 0) {
+            sumOdd += ele;
+        } else {// otherwise, reassign to sumEven
+            sumEven += ele;
+        }
+        // if array2, is greater than 20, set to true and add 1 to each elemen in array1
+        if (ele > 20) {
+            isOverThen20 = true;
+        }
+    })
+    // iterate thre array1 using a forEach
+    array1.forEach((ele, i) => {
+        // check if current ele is under 10 add to sumOdd,
+        if (ele < 10) {
+            array1[i] = sumOdd + ele;
+        } else if (ele > 10) { // if over then 10 add to sumEven 
+            array1[i] = sumEven + ele;
+        }
+        if (isOverThen20) {
+            array1[i] = array1[i] + 1;
+        }
+    });
+    // return array1
+    return array1;
+}
+
+// Uncomment these to check your work!
+console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15], [1, 2, 3, 4, 5])); // expected log [10, 12, 14, 23, 21]
+console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15, 1], [1, 2, 3, 4, 5, 22])); // expected log [11, 13, 15, 46, 44, 11]
+

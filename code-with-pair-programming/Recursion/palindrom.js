@@ -60,3 +60,16 @@ const palindrome = (string) => {
 console.log(palindrome("Anne, I vote more cars race Rome-to-Vienna")); //-> true
 console.log(palindrome("llama mall")); //-> true
 console.log(palindrome("jmoney")); //-> false
+
+/* ========================== SOLUTION 4  ======================================
+================================================================================ */
+function palindrome(string) {
+    // 	reassign string with replace  use RegEx remove punctuation, symbols /\W/g, "  use lowercase
+    string = string.replace(/\W/g, '').toLowerCase();
+    // base case : check if string.length is equal to 0 return true;
+    if (string.length === 0) return true;
+    // to check if the first letter not equal to the last letter 
+    if (string[0] !== string[string.length - 1]) return false;
+    // recursive case : 
+    return palindrome(string.slice(1, -1));
+}

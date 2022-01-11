@@ -43,14 +43,22 @@ console.log(getTheRange3([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]
 
 
 function getTheRange(arr) {
-    // declare a result = [];
-    const result = [];
-    // iterate thru arr using for loop
-    for (let i = 0; i < arr.length; i++) {
-
-
-    }
-
+    // declare a variable to store low and high 
+    let low = Infinity, high = -Infinity;
+    // iterate thru arr use a forEach
+    arr.forEach(val => {
+        // check if high is less than current element, reassign high set to current element
+        if (high <= val) {
+            high = val;
+        }
+        // chec if low is greater than current element , reassign low set to current element
+        if (low >= val) {
+            low = val
+        }
+    })
+    // return low, high and range(high - low) set to array []
+    return [low, high, high - low]
 }
 console.log(getTheRange([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]
+
 

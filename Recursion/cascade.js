@@ -54,3 +54,36 @@ cascade(123456);
 
 /* ========================== SOLUTION 3  ======================================
 ================================================================================ */
+const cascade = num => {
+    if (!Number.isInteger(num) || num < 1) return;
+    console.log(num);
+    if (num < 10) return;
+    const newNum = Math.floor(num / 10);
+    cascade(newNum);
+    console.log(num);
+};
+
+cascade(12345);
+
+// ========================== SOLUTION 3 ======================================
+// ================================================================================
+
+function cascade(number) {
+    if (!number) return;
+    const stringified = number.toString();
+    const cascadeDecreasing = (i) => {
+        if (i === 0) return;
+        console.log(Number(stringified.slice(0, i)));
+        cascadeDecreasing(i - 1);
+    };
+    const cascadeIncreasing = (i) => {
+        if (i > stringified.length) return;
+        console.log(Number(stringified.slice(0, i)));
+        cascadeIncreasing(i + 1);
+    };
+    cascadeDecreasing(stringified.length);
+    cascadeIncreasing(2);
+}
+
+// Uncomment to test your work!
+cascade(12345);

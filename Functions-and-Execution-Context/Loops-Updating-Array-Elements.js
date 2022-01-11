@@ -7,7 +7,8 @@ function addN(arr, n) {
     // ADD CODE HERE
     // use a for loop to iterates thru arr and add n to each element
     for (let i = 0; i < arr.length; i++) {
-        arr.push(arr[i] + n);
+        //arr.push(arr[i] + n);
+        arr[i] += n;
     }
     return arr;
 }

@@ -79,15 +79,73 @@ console.log(updateHobbies1('baking', 1)); // --> { yoga: 0, baking: 1, piano: 0}
 
 /* ========================== SOLUTION 3  ======================================
 ================================================================================ */
-// const hobbyTracker2 = (hobbies) => {
+function hobbyTracker3(hobbies) {
+    // declare an cache object assign to empty object {} and set value to cach by using reduce
+    const cache = hobbies.reduce((acc, hobby) => {
+        acc[hobby] = 0;
+        return acc;
+    }, {});
+    return (string, interger) => {
+        // update cache object aadding the value of the passed in interger to the cache at the key corresponding with the passed ing hobby, and return the cache object;
+        if (string && interger) {
+            cache[string] = interger + cache[string]
+            return cache;
+        }
+        // if the function return has no agrement, will reset all values in the cache object to zero and return 'tracker has been reset'
+        else {
+            for (let key in cache) {
+                cache[key] = 0
+            }
+            return 'tracker has been reset!';
+        }
+    }
+}
+const updateHobbies3 = hobbyTracker3(['yoga', 'baking', 'piano']);
+updateHobbies3('yoga', 2);
+updateHobbies3('baking', 4);
+updateHobbies3('yoga', 1);
+console.log(updateHobbies3('piano', 2)); // --> { yoga: 3, baking: 4, piano: 2 }
+console.log(updateHobbies3()); // --> 'tracker has been reset!'
+console.log(updateHobbies3('baking', 1)); // --> { yoga: 0, baking: 1, piano: 0}
 
-// }
 
-// // Uncomment the code below to check your code:
-// const updateHobbies2 = hobbyTracker2(['yoga', 'baking', 'piano']);
-// updateHobbies2('yoga', 2);
-// updateHobbies2('baking', 4);
-// updateHobbies2('yoga', 1);
-// console.log(updateHobbies2('piano', 2)); // --> { yoga: 3, baking: 4, piano: 2 }
-// console.log(updateHobbies2()); // --> 'tracker has been reset!'
-// console.log(updateHobbies2('baking', 1)); // --> { yoga: 0, baking: 1, piano: 0}
+/* ========================== SOLUTION 4  ======================================
+================================================================================ */
+function hobbyTracker4(hobbies) {
+    const cache = hobbies.reduce((acc, hobby) => ((acc[hobby] = 0), acc), {})
+    return (hobby, integer) => {
+        if (hobby && integer) {
+            cache[hobby] = integer + cache[hobby];
+            return cache;
+        } else {
+            for (let key in cache) {
+                cache[key] = 0
+            }
+            return 'tracker has been reset!';
+        }
+    }
+}
+
+// Uncomment the code below to check your code:
+const updateHobbies4 = hobbyTracker4(['yoga', 'baking', 'piano']);
+updateHobbies4('yoga', 2);
+updateHobbies4('baking', 4);
+updateHobbies4('yoga', 1);
+console.log(updateHobbies4('piano', 2)); // --> { yoga: 3, baking: 4, piano: 2 }
+console.log(updateHobbies4()); // --> 'tracker has been reset!'
+console.log(updateHobbies4('baking', 1)); // --> { yoga: 0, baking: 1, piano: 0}
+console.log(updateHobbies4()); // --> 'tracker has been reset!'
+console.log(updateHobbies4('yoga', 1)); // --> { yoga: 1, baking: 0, piano: 0}
+
+
+function find_max(nums) {
+    let max_num = Number.NEGATIVE_INFINITY; // smaller than all other numbers
+    for (let num of nums) {
+        if (num > max_num) {
+            // num = max_num
+            // max_num +=1
+        }
+    }
+    return max_num;
+}
+console.log(find_max([3, 4, 5]))

@@ -1,6 +1,14 @@
-* Callbacks: http://csbin.io/callbacks/roomnumber 
-* Closures: http://csbin.io/closures/roomnumber 
-* Async: http://csbin.io/async/roomnumber 
-* Classes & Prototypes: http://csbin.io/oop/roomnumber
-* Recursion: http://csbin.io/recursion/roomnumber 
-* Intro to JavaScript: http://csbin.io/jsep/roomnumber
+Callbacks: http://csbin.io/callbacks/roomnumber 
+Closures: http://csbin.io/closures/roomnumber 
+Async: http://csbin.io/async/roomnumber 
+Classes & Prototypes: http://csbin.io/oop/roomnumber
+Recursion: http://csbin.io/recursion/roomnumber 
+Intro to JavaScript: http://csbin.io/jsep/roomnumber
+
+CS-Prep; 
+http://csbin.io/cs-prep-unit-1
+http://csbin.io/cs-prep-unit-2
+
+
+CS-Interview:
+http://csbin.io/interview/jmeow

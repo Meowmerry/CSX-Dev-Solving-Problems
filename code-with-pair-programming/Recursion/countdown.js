@@ -8,7 +8,7 @@ Write a recursive function countdown that accepts a positive integer n as an inp
 /* ========================== SOLUTION 1  ====== recursive solution ===========================
 ============================================================================================= */
 function countdown(n) {
-    // base case : check if n >= 0 return n;
+    // base case : check if n === 0 return n;
     if (n === 0) {
         console.log(n)
         return n;
@@ -21,6 +21,17 @@ function countdown(n) {
 console.log(countdown(5));
 console.log(countdown(10));
 console.log(countdown(4));
+/* ========================== SOLUTION 2 ====== recursive solution  ===========================
+============================================================================================= */
+// Challenge 1
+function countdown(n) {
+    // base case : when n === 0 return;
+    if (n === 0) return;
+    console.log(n);
+    // recursive case : console.log(n) and will invoke countdown function passed in n - 1
+    countdown(n - 1)
+}
+
 
 /* ========================== SOLUTION 2 ===== for loop solution =============================
 ============================================================================================= */
@@ -47,3 +58,5 @@ function countdown(n) {
 console.log(countdown(5));
 console.log(countdown(10));
 console.log(countdown(4));
+
+

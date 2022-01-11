@@ -72,7 +72,7 @@ function shuffleCards(topHalf, bottomHalf, result = []) {
   // recursive case : 
   // (1) build result by adding topHalf and bottomHalf at first index to result;
   result.push(topHalf[0], bottomHalf[0])
-  // (2) recursivly call shuffleCards and passed topHalf and bottomHalf with out first element, passed newArr
+  // (2) recursivly call shuffleCards and passed topHalf and bottomHalf with out first element, passed result
   return shuffleCards(topHalf.slice(1), bottomHalf.slice(1), result)
 }
 
@@ -93,24 +93,27 @@ console.log(shuffleCards(topHalf1, bottomHalf1));
 
 /* ========================== SOLUTION 3  ======================================
 ================================================================================ */
-function shuffleCards(topHalf, bottomHalf, result = []) {
+function shuffleCards(topHalf, bottomHalf, newArr = []) {
+  // base case : check if one of both array input has no length, then push to newArr and return newArr
   if (!topHalf.length || !bottomHalf.length) {
-    result.push(...topHalf, ...bottomHalf);
-    return result;
-  };
-  result.push(topHalf[0], bottomHalf[0])
-  return shuffleCards(topHalf.slice(1), bottomHalf.slice(1), result)
+    newArr.push(...topHalf, ...bottomHalf);
+    return newArr;
+  }
+  // build newInput by reassign the newArr, using push method to push the first element of both array input to the newArr
+  newArr.push(topHalf[0], bottomHalf[0]);
+  // recursive case : invoke the shuffleCards and passed both Array with out the first element using slice, and passed in newArr
+  return shuffleCards(topHalf.slice(1), bottomHalf.slice(1), newArr);
 }
 
 // UNCOMMENT TO TEST YOUR WORK
 const topHalf3 = ['Queen of Diamonds', 'Five of Hearts', 'Ace of Spades', 'Eight of Clubs'];
 const bottomHalf3 = ['Jack of Hearts', 'Ten of Spades'];
 console.log(shuffleCards(topHalf3, bottomHalf3));
-/*-> ['Queen of Diamonds',
+  /*-> ['Queen of Diamonds',
       'Jack of Hearts',
       'Five of Hearts',
       'Ten of Spades',
       'Ace of Spades',
       'Eight of Clubs',
     ]
-*/
+    */

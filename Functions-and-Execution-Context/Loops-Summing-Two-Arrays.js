@@ -1,5 +1,10 @@
+
+
 /*Challenge: Loops - Summing Two Arrays
 Write a function mergingElements which adds each element in array1 to the corresponding element of array2 and returns the new array */
+
+/* ========================== SOLUTION 1  ======================================
+================================================================================ */
 
 // create a function mergingElements that acceptes two arrays of numbers
 function mergingElements(array1, array2) {
@@ -13,6 +18,9 @@ function mergingElements(array1, array2) {
 console.log(mergingElements([1, 2, 3, 4], [5, 6, 7, 8])); // expected log [6, 8, 10, 12]
 console.log(mergingElements([7, 3, 6, 0], [3, 9, 17, 81])); // expected log [10, 12, 23, 81]
 
+
+/* ========================== SOLUTION 2  ======================================
+================================================================================ */
 // input : two arrays as arguments
 // output : new arrays
 // create a function mergingElements 
@@ -29,6 +37,33 @@ function mergingElements(array1, array2) {
     // return newArr;
     return newArr;
 }
+
+// Uncomment these to check your work!
+console.log(mergingElements([1, 2, 3, 4], [5, 6, 7, 8])); // expected log [6, 8, 10, 12]
+console.log(mergingElements([7, 3, 6, 0], [3, 9, 17, 81])); // expected log [10, 12, 23, 81]
+
+
+/* ========================== SOLUTION 3  ======================================
+================================================================================ */
+const mergingElements = (array1, array2) => {
+    return array1.reduce((acc, curr, i) => {
+        acc.push(curr + array2[i])
+        return acc;
+    }, [])
+}
+
+// Uncomment these to check your work!
+console.log(mergingElements([1, 2, 3, 4], [5, 6, 7, 8])); // expected log [6, 8, 10, 12]
+console.log(mergingElements([7, 3, 6, 0], [3, 9, 17, 81])); // expected log [10, 12, 23, 81]
+
+
+/* ========================== SOLUTION 4  ======================================
+================================================================================ */
+const mergingElements = (array1, array2) =>
+    array1.reduce((acc, curr, i) => {
+        acc[i] = curr + array2[i]
+        return acc;
+    }, [])
 
 // Uncomment these to check your work!
 console.log(mergingElements([1, 2, 3, 4], [5, 6, 7, 8])); // expected log [6, 8, 10, 12]
