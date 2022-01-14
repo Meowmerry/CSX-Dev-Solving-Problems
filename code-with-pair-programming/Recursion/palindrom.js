@@ -73,3 +73,22 @@ function palindrome(string) {
     // recursive case : 
     return palindrome(string.slice(1, -1));
 }
+console.log(palindrome("Anne, I vote more cars race Rome-to-Vienna")); //-> true
+console.log(palindrome("llama mall")); //-> true
+console.log(palindrome("jmoney")); //-> false
+
+
+function caesarCypher(str, num) {
+    str.replace(/\W/g, '').toLowerCase();
+    const alphabet = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'; // list the alphabet
+    if (typeof str === "number") return "String must contain only letters";// edge case if str is num
+    if (typeof num === "string") return "Shifting must be a number"; // edge case if num is str
+    let result = ""; // create result string
+    for (let i = 0; i < str.length; i++) { // sweep through the str
+        const letter = str[i];
+        const cypher = alphabet.indexOf(letter) + num;
+        result += alphabet[cypher];
+    }
+    return result;
+}
+console.log(caesarCypher('hello world', 13))

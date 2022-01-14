@@ -76,6 +76,23 @@ If time is anything else: "That's not a real time, <name>. Maybe you need some s
 //    }
 // }
 
+function buildGreeting(time, name) {
+  switch (true){
+    case time === 0 || time <= 11 :
+    console.log(`Good Morning, ${name}`);
+    break;
+    case time === 12 && time <= 16 :
+    console.log(`Good Afternoon, ${name}`);
+    break;
+    case time === 17 || time <= 23 :
+    console.log(`Good Evening, ${name}`);
+    break;
+    default:
+    console.log(`Maybe you need some sleep!`);
+    break;
+	}
+}
+
 
 // buildGreeting(8, "Maggie") //=> "Good Morning, Maggie!"
 // buildGreeting(12, "John") //=> "Good Afternoon, John!"
@@ -99,6 +116,12 @@ Create a function leastCommonMultiple that takes two numbers (integers) as input
 // console.log("zebra".indexOf("z") === 0 )
 // console.log("banana".indexOf("B") === -1 )
 
+// console.log( "odeSmith".indexOf("o"))
+// console.log( "hello".indexOf("ll"))
+// console.log( "zebra".indexOf("z"))
+// console.log( "banana".indexOf("B"))
+
+
 
 /* ========================================================================================== *
 * Challenge 6 *
@@ -114,6 +137,10 @@ Create a function letterExists that takes a word (string) and a character (strin
 //   }
 //   console.log(check);
 // }
+
+function letterExists(word, letter, check = false) {
+  console.log(word.includes(letter))
+}
 
 // letterExists("superman", "e") //=> true
 // letterExists("starship", "S") //=> false
@@ -134,14 +161,27 @@ Create a function isPrime that console.logs a boolean indicating if `number` is 
 //     return console.log(true);
 // }
 
-function isPrime(num) {
-  for(var i = 2; i < num; i++)
-    if(num % i === 0) return false;
-  return num > 1;
+// function isPrime(num) {
+//   for(let i = 2; i < num; i++)
+//     if(num % i === 0) return false;
+//   return num > 1;
+// }
+
+function isPrime(number) {
+  // iterate thru number using a for loop
+  		// declare the first i = 2 , i < num , i++
+  			// if number % i equal to 0 return false
+  		// return num > 1;
+  for(let i = 2 ; i < number ; i++){
+    if(number % i === 0) 
+      return false;
+	}
+  return number > 1;
 }
 
 
 isPrime(-7); // => false
+isPrime(1); // => false
 isPrime(2); // => true
 isPrime(11); // => true
 isPrime(15); // => false
@@ -153,20 +193,24 @@ Create a function range that console.logs all numbers between 'start' and 'end' 
 * =========== */
 
 
-// function range(start, end) {
-//   if(start < end){
-//     for(let i = start; i <= end ; i++){
-//       console.log(i)
-// 		}
-// 	}else if(start > end){
-//     for(let i = start ; i >= end ; i-- )
-//       console.log(i)
-//      }
-// }
+function range(start, end) {
+  if(start < end){
+    for(let i = start; i <= end ; i++){
+      console.log(i)
+		}
+	}else if(start > end){
+    for(let i = start ; i >= end ; i-- )
+      console.log(i)
+     }
 
-// //Uncomment the lines below to test your code
-// range(1,4) //=> 1, 2, 3, 4
-// range(4,2) //=> 4, 3, 2
+function range(start, end) {
+for (let i = start; i <= end; i++){
+  console.log(i)
+}
+}
+//Uncomment the lines below to test your code
+range(1,4) //=> 1, 2, 3, 4
+range(4,2) //=> 4, 3, 2
 
 
 /* ===================================================================================================== *
@@ -185,6 +229,8 @@ DO NOT USE THE BUILT-IN `indexOf` METHOD IN YOUR SOLUTION!
 //   }
 //   return -1;
 // }
+  
+
 
 // console.log(myIndexOf([1, 2, 3, 4, 5], 5)) //=> 4
 // console.log(myIndexOf(["a", "b", "c"], "a")) //=> 0
@@ -193,7 +239,8 @@ DO NOT USE THE BUILT-IN `indexOf` METHOD IN YOUR SOLUTION!
 
 /* ===================================================================================================== *
 * Challenge 10 *
-Create a function unique that console.logs an array where all the duplicates of the input array have been removed; in other words, every element remaining is unique.
+Create a function unique that console.logs an array where all the duplicates of the input array have been removed; 
+in other words, every element remaining is unique.
 * ============ */
 
 // function unique(arr) {
@@ -204,7 +251,13 @@ Create a function unique that console.logs an array where all the duplicates of 
 // unique([1, 1, 2, 3, 3]) // => [1, 2, 3]
 // unique(["a", "a", "c", "aa", "b", "b"])// => ["a", "c", "aa", "b"]
 
+  function unique(array) {
+  console.log([...new Set(array)])
+  // console.log(array.filter((ele, index, arr)=> arr.indexOf(ele) === index))
+}
 
+unique([1, 1, 2, 3, 3]) //=> [1, 2, 3]
+unique(["a", "a", "c", "aa", "b", "b"])// => ["a", "c", "aa", "b"]
 /* ===================================================================================================== *
 * Challenge 11 *
 Create a function longestWord that that retuns the longest word of a sentence.

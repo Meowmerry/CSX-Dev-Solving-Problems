@@ -19,13 +19,13 @@ const isPrimeRecursive = (num, divisor, max) => {
     return isPrimeRecursive(num, divisor + 2, max);
 }
 
-// console.log(isPrime(1)); //-> false
-// console.log(isPrime(2)); //-> true
-// console.log(isPrime(3)); //-> true
-// console.log(isPrime(4)); //-> false
+console.log(isPrime(1)); //-> false
+console.log(isPrime(2)); //-> true
+console.log(isPrime(3)); //-> true
+console.log(isPrime(4)); //-> false
 
 
-/* ========================== SOLUTION 1  ======================================
+/* ========================== SOLUTION 3  ======================================
 ================================================================================ */
 function isPrime1(num, div = 2) {
     if (num < 2) return false;
@@ -38,3 +38,4 @@ console.log(isPrime1(1)); //-> false
 console.log(isPrime1(2)); //-> true
 console.log(isPrime1(3)); //-> true
 console.log(isPrime1(4)); //-> false
+console.log(isPrime1(40)); //-> false
