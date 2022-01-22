@@ -33,3 +33,29 @@ const map = (array, callback) => {
 console.log(typeof subtractTwo); // should log: 'function'
 console.log(typeof map); // should log: 'function'
 console.log(map([3, 4, 5], subtractTwo)); // should log: [ 1, 2, 3 ]
+
+/* ========================== SOLUTION 2  ======================================
+================================================================================ */
+
+/* create a function subtractTwo that accecpt number and return number -2; */
+const subtractTwo2 = (num) => {
+    return num - 2;
+}
+/*
+create function map
+Input : Array of number, callback function 
+Output : Array of number
+    iterate thru arr input use a reduce, 
+          set output with empty array [] , curr element each current from array
+              invoke callback passed current element and reassign the output by pushing element to it;
+          return init
+*/
+const map2 = (arr, callback) => {
+    return arr.reduce((output, curr) => {
+        output.push(callback(curr))
+        return output;
+    }, [])
+}
+console.log(typeof subtractTwo2); // should log: 'function'
+console.log(typeof map2); // should log: 'function'
+console.log(map2([3, 4, 5], subtractTwo2)); // should log: [ 1, 2, 3 ]

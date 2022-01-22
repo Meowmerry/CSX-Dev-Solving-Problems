@@ -77,10 +77,33 @@ console.log(factorial(0)); // -> 1
 console.log(factorial(2)); // -> 2
 /* ========================== SOLUTION 5 ======================================
 ================================================================================ */
-const factorial = (num, product = 1) => num === 0 || num === 1 ? product : factorial(num - 1, product * num);
-console.log(factorial(4)); // -> 24
-console.log(factorial(6)); // -> 720
-console.log(factorial(0)); // -> 1
-console.log(factorial(2)); // -> 2
+/*
+Input: Number
+Output : Number
+declare a default value with product assign to 1
+edgs case : if input not a number, thre error, please input number only
+base case : if num is equal to 0 or 1 return product
+recursive case: return factorial with passed in newInput
+newInput => num - 1, product * num  
+4-1, 1*4 = 3, 4 = 12
+3-1, 1*3 = 2, 3 = 6
+2-1, 1*2 = 1, 2 = 2
+1-0, 1*1 = 0, 1
+
+*/
+function factorial5(num, product = 1) {
+    if (typeof num !== 'number') throw Error('Please input nummber only!');
+    console.log('product', product)
+    if (num === 0 || num === 1) return product;
+    console.log('num', num)
+    return factorial5(num - 1, product * num);
+}
+
+// To check if you've completed the challenge, uncomment these console.logs!
+console.log(factorial5(4)); // -> 24
+console.log(factorial5(6)); // -> 720
+console.log(factorial5(0)); // -> 1
+console.log(factorial5(2)); // -> 2
+
 
 

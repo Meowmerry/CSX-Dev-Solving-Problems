@@ -21,7 +21,6 @@ Construct your own reduce function that accepts an array, a callback, and an ini
 
 /* ========================== SOLUTION 1  ======================================
 ================================================================================ */
-
 // input : array , callback function, initial value 
 // output : number
 // create a function reduce that takes an array, a callback, and an initial value 
@@ -51,3 +50,35 @@ const reduce = (array, callback, initialValue) => {
 const nums = [4, 1, 3];
 const add = function (a, b) { return a + b; }
 console.log(reduce(nums, add, 0)); // should log 8
+
+/* ========================== SOLUTION 2  ======================================
+================================================================================ */
+/* 
+Input : array of number, function, initValues
+Output : Number
+Crete a function reduce passed all input
+    create a accumulated to keep track of the accumulated output of each loop
+    check if initValues is undefined, so we will set the accumulted assign to the first element of array
+        then reassign the array by moving to the next element, using slice
+  otherwise, reasign accumulated to initValues;
+    iterated thru array use a for loop
+            reassign accumulated assign to invoke a callback, with passed accumulated with current element 
+  return accumulated;
+*/
+const reduce1 = (array, cb, initValues) => {
+    let accumulated;
+    if (initValues === undefined) {
+        accumulated = array[0];
+        array = array.slice(1)
+    } else {
+        accumulated = initValues;
+    }
+    for (let i = 0; i < array.length; i++) {
+        accumulated = cb(accumulated, array[i])
+        console.log(accumulated)
+    }
+    return accumulated;
+}
+const nums1 = [4, 1, 3];
+const add1 = function (a, b) { return a + b; }
+console.log(reduce1(nums1, add1, 0)); // should log 8

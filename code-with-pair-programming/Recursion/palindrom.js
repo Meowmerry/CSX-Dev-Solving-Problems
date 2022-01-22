@@ -12,7 +12,7 @@ function palindrome(string) {
     const lowerString = string.toLowerCase()
     // declare a noSymbolsString to store RegEx to remove all symbols
     // const noSymbolsSting = lowerString.replace(/[^a-zA-z0-9]/g, '');
-    // const noSymbolsSting = lowerString.replace(/[\W]/g, '');
+    // const noSymbolsSting = lowerString.replace(/\W/g, '');
     const noSymbolsSting = lowerString.replace(/[^a-z0-9]/gi, '');
     // base case : check if string length <= 1 --> return ture;
     if (noSymbolsSting.length <= 1) return true;
@@ -76,19 +76,50 @@ function palindrome(string) {
 console.log(palindrome("Anne, I vote more cars race Rome-to-Vienna")); //-> true
 console.log(palindrome("llama mall")); //-> true
 console.log(palindrome("jmoney")); //-> false
+///[\W]/g
 
+/* ========================== SOLUTION 4  ======================================
+================================================================================ */
+function palindrome(str) {
+    // check if string has space remove all space out and remove all symbols and all will be lowercase
+    // base case : if string has only one length return true;
+    // base case : if the first string is not equal to the last one return false;
+    // recursive case : invoke the palindrome function passed in upndate new input
+    str = str.replace(/\W/g, '').toLowerCase();
+    if (str.length === 0) return true;
+    if (str[0] !== str[str.length - 1]) return false;
+    return palindrome(str.slice(1, -1));
 
-function caesarCypher(str, num) {
-    str.replace(/\W/g, '').toLowerCase();
-    const alphabet = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'; // list the alphabet
-    if (typeof str === "number") return "String must contain only letters";// edge case if str is num
-    if (typeof num === "string") return "Shifting must be a number"; // edge case if num is str
-    let result = ""; // create result string
-    for (let i = 0; i < str.length; i++) { // sweep through the str
-        const letter = str[i];
-        const cypher = alphabet.indexOf(letter) + num;
-        result += alphabet[cypher];
-    }
-    return result;
 }
-console.log(caesarCypher('hello world', 13))
+console.log(palindrome("a")); //-> true
+console.log(palindrome("Anne, I vote more cars race Rome-to-Vienna")); //-> true
+console.log(palindrome("llama mall")); //-> true
+console.log(palindrome("jmoney")); //-> false
+
+
+/* ========================== SOLUTION 5  ======================================
+================================================================================ */
+/*
+Input : string
+Ouput : boolean
+
+make string to lowercase and make all space out;
+base case : 
+- if string has only one, return true
+- if string index 1 and last index are not equal return false 
+
+recuresive case : 
+return with invoke palindrome function passed in newInput 
+- the newInpuw will be check from the first index and compare with the lastIndex and so on
+*/
+function palindrome(str) {
+    let str = str.replace(/\W/g, '').toLowerCase()
+    if (str.length === 0) return true;
+    if (str[0] !== str[str.length - 1]) return false;
+    return palindrome(str.slice(1, -1))
+
+}
+console.log(palindrome("a")); //-> true
+console.log(palindrome("Anne, I vote more cars race Rome-to-Vienna")); //-> true
+console.log(palindrome("llama mall")); //-> true
+console.log(palindrome("jmoney")); //-> false

@@ -58,5 +58,16 @@ function countdown(n) {
 console.log(countdown(5));
 console.log(countdown(10));
 console.log(countdown(4));
+/* ========================== SOLUTION 4 ====== while loop solution ===========================
+============================================================================================= */
+function countdown(n) {
+    if (n < 0) throw new Error('Please enter the positive interger');
+    if (n === 0) return;
+    return countdown(n - 1)
+};
+
+console.log(countdown(5));
+console.log(countdown(10));
+console.log(countdown(4));
 
 

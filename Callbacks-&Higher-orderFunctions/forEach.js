@@ -17,7 +17,8 @@
 
  Part 2
  Now let's rebuild map from the previous challenge. This time instead of using a for loop, you're going to use the forEach we just created. */
-
+/* ============================== SOLUTION 1  ==============================
+ ================================================================================ */
 
 // create a function forEach that take array and callback function.
 const forEach = (array, callback) => {
@@ -27,8 +28,7 @@ const forEach = (array, callback) => {
         callback(array[i])
     }
 }
-/* ============================== SOLUTION 1  ==============================
- ================================================================================ */
+
 // create a function map that takes array and callback as arguemnts
 const map = (array, callback) => {
     // declear a newArray to store a value set to empty []
@@ -48,3 +48,41 @@ console.log(typeof forEach); // should log: 'function'
 forEach(['a', 'b', 'c'], i => console.log(i)); // should log: 'a', 'b', 'c'
 console.log(typeof map); // should log: 'function'
 console.log(map([3, 4, 5], n => n - 2)); // should log: [1, 2, 3]
+
+
+/* ============================== SOLUTION 2  ==============================
+ ================================================================================ */
+/* 
+create function forEeach
+Input : Array and callback function
+Output : nothing
+*/
+const forEach1 = (arr, callback) => {
+    for (let i = 0; i < arr.length; i++) {
+        callback(arr[i]);
+    }
+}
+
+/* 
+create function map
+Input : Array , callback 
+Oupput : Array
+
+declare a result with empty array to store the result
+iterate thru array, by using a forEach function, 
+      invoking a callback and passed in current element
+      reassign result by pushing each element to it
+return result
+*/
+
+const map1 = (arr, callback) => {
+    const result = [];
+    forEach1(arr, (val) => {
+        result.push(callback(val))
+    })
+    return result;
+}
+console.log(typeof forEach1); // should log: 'function'
+forEach(['a', 'b', 'c'], i => console.log(i)); // should log: 'a', 'b', 'c'
+console.log(typeof map1); // should log: 'function'
+console.log(map1([3, 4, 5], n => n - 2)); // should log: [1, 2, 3]

@@ -3,6 +3,7 @@
 
 Challenge: intersection
 Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs. BONUS - Use reduce!
+
  */
 /* ========================== SOLUTION 1  ======================================
 ================================================================================ */
@@ -60,3 +61,28 @@ const arr11 = [5, 10, 15, 20];
 const arr21 = [15, 88, 1, 5, 7];
 const arr31 = [1, 10, 15, 5, 20];
 console.log(intersection1([arr11, arr21, arr31])); // should log: [5, 15]
+
+/* ========================== SOLUTION 3 ======================================
+================================================================================ */
+const intersection3 = (arr) => {
+    return arr.reduce((output, curr) => {
+        return output.filter(ele => curr.includes(ele))
+    })
+}
+const arr13 = [5, 10, 15, 20];
+const arr23 = [15, 88, 1, 5, 7];
+const arr33 = [1, 10, 15, 5, 20];
+console.log(intersection3([arr13, arr23, arr33])); // should log: [5, 15]
+
+/* ========================== SOLUTION 4 ======================================
+Challenge: intersection
+Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs. 
+BONUS - Use reduce!
+================================================================================ */
+const intersection4 = (arr) => {
+
+}
+const arr14 = [5, 10, 15, 20];
+const arr24 = [15, 88, 1, 5, 7];
+const arr34 = [1, 10, 15, 5, 20];
+console.log(intersection3([arr14, arr24, arr34])); // should log: [5, 15]

@@ -29,6 +29,31 @@ function sum(array) {
 console.log(sum([1, 1, 1])); // -> returns 3
 console.log(sum([1, 2, 3, 4, 5, 6])); // -> returns 21
 
+/* ========================== SOLUTION 2 ======================================
+================================================================================ */
+function sum(array) {
+    // base case 
+    //: if array.length === 1 return the first element;
+    //: if array.length < 1 return 0;
+    if (array.length === 1) return array[0];
+    if (!array.length) return 0;
+    // recursive case : array.pop() + sum(array)
+    return array.shift() + sum(array);
+
+    /* 4 + sum([1,2,3])
+            | 
+                3+ sum([1,2])
+                    |
+                        2+ sum([1])
+                        | 
+                            1
+    */
+};
+
+console.log(sum([1, 1, 1])); // -> returns 3
+console.log(sum([1, 2, 3, 4, 5, 6])); // -> returns 21
+
+
 /* ========================== SOLUTION 2  ======================================
 ================================================================================ */
 function sum(array, total = 0) {
@@ -40,5 +65,10 @@ function sum(array, total = 0) {
 console.log(sum([1, 1, 1])); // -> returns 3
 console.log(sum([1, 2, 3, 4, 5, 6])); // -> returns 21
 
-/* ========================== SOLUTION 2  ======================================
+/* ========================== SOLUTION 3  ======================================
 ================================================================================ */
+function sum(array, total = 0) {
+
+}
+console.log(sum([1, 1, 1])); // -> returns 3
+console.log(sum([1, 2, 3, 4, 5, 6])); // -> returns 21
