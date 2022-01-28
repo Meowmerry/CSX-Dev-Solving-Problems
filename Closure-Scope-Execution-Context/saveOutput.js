@@ -137,12 +137,12 @@ console.log(multBy4AndLog('boo')); // => should log { 2: 4, 9: 18 }
 ================================================================================ */
 //Input : function that will take one argument, String will act as a password;
 //Ouput : function that return and behaves like a passed-in function, and return Number and Object
-function saveOutput4(func, magicWord) {
+function saveOutput5(func, magicWord) {
 
 }
 
-const multiplyBy = function (num) { return num * 2; };
-const multByAndLog = saveOutput(multiplyBy, 'boo');
-console.log(multByAndLog(2)); // => should log 4
-console.log(multByAndLog(9)); // => should log 18
-console.log(multByAndLog('boo')); // => should log { 2: 4, 9: 18 }
+const multiplyBy5 = function (num) { return num * 2; };
+const multBy5AndLog = saveOutput5(multiplyBy5, 'boo');
+console.log(multBy5AndLog(2)); // => should log 4
+console.log(multBy5AndLog(9)); // => should log 18
+console.log(multBy5AndLog('boo')); // => should log { 2: 4, 9: 18 }

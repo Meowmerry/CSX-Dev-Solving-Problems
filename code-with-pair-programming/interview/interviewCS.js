@@ -6,7 +6,6 @@ Create a function 'addNumbers' that takes a number as an argument. 'addNumbers' 
 For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
 */
 
-
 /*
 Create a function "between50And500" that takes a number as an argument.
 "between50And500" should return a true if the number passed to it is between 50 and 500 exclusive.

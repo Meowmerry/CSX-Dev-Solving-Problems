@@ -105,3 +105,65 @@ function pow(base, exponent, product = 1) {
 // console.log(pow(3, 5)); // -> 243
 console.log(pow(2, 0)) // 1
 console.log(pow(2, 1)) // 2
+
+/* ========================== SOLUTION 7  ======================================
+================================================================================ */
+
+function pow(base, exponent) {
+    function powInternal(acc) {
+        if (exponent === 0) return acc;
+        exponent--;
+        return powInternal(base * acc);
+    }
+    return powInternal(1);
+}
+console.log(pow(2, 4)); // -> 16
+console.log(pow(3, 5)); // -> 243
+console.log(pow(2, 0)) // 1
+console.log(pow(2, 1)) // 2
+/* ========================== SOLUTION 8  ======================================
+================================================================================ */
+function pow(base, exponent) {
+    function powInternal(count, acc) {
+        if (count === exponent) return acc;
+        return powInternal(count + 1, base * acc);
+    }
+    return powInternal(0, 1);
+}
+console.log(pow(2, 4)); // -> 16
+console.log(pow(3, 5)); // -> 243
+console.log(pow(2, 0)) // 1
+console.log(pow(2, 1)) // 2
+/* ========================== SOLUTION 9  ======================================
+================================================================================ */
+function pow(base, exponent) {
+    function powInternal(count, acc) {
+        return count === exponent ? acc : powInternal(count + 1, base * acc);
+    }
+    return powInternal(0, 1);
+}
+
+console.log(pow(2, 4)); // -> 16
+console.log(pow(3, 5)); // -> 243
+console.log(pow(2, 0)) // 1
+console.log(pow(2, 1)) // 2
+/* ========================== SOLUTION 10  ======================================
+================================================================================ */
+function pow(base, exponent) {
+    return exponent === 0 ? 1 : base * pow(base, exponent - 1);
+}
+
+console.log(pow(2, 4)); // -> 16
+console.log(pow(3, 5)); // -> 243
+console.log(pow(2, 0)) // 1
+console.log(pow(2, 1)) // 2
+/* ========================== SOLUTION 11  ======================================
+================================================================================ */
+function pow(base, exponent) {
+    if (exponent < 0) return 1 / pow(base, -exponent);
+    return exponent === 0 ? 1 : base * pow(base, exponent - 1);
+}
+console.log(pow(2, 4)); // -> 16
+console.log(pow(3, 5)); // -> 243
+console.log(pow(2, 0)) // 1
+console.log(pow(2, 1)) // 2

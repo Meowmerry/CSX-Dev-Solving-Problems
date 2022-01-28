@@ -47,10 +47,7 @@ function getLength(array, index = 0) {
     return getLength(array, index + 1);
 }
 
-console.log(getLength([1])); // -> 1
-console.log(getLength([1, 2])); // -> 2
-console.log(getLength([1, undefined, 3, 4, 5])); // -> 5
-console.log(getLength([])); // -> 0
+
 
 /* ========================== SOLUTION 3  ======================================
 ================================================================================ */
@@ -77,7 +74,7 @@ function getLength(array, index = 0) {
     // recursive case : invoking a function passed array and index with new update then return
     return getLength(array, index + 1);
 }
-console.log(getLength([1])); // -> 1
+console.log(getLength([1])); // -> 1s
 console.log(getLength([1, 2])); // -> 2
 console.log(getLength([1, undefined, 3, 4, 5])); // -> 5
 console.log(getLength([])); // -> 0
@@ -99,6 +96,9 @@ function arrayNomalizedHelper(array) {
     const newArray = new Array(lastIndex + 1 || 0).fill(1);
     return getLength(newArray)
 }
+
+
+
 // To check if you've completed the challenge, uncomment these console.logs!
 console.log(arrayNomalizedHelper([1])); // -> 1
 console.log(arrayNomalizedHelper([1, 2])); // -> 2
@@ -174,15 +174,76 @@ console.log(getLength([1, 2])); // -> 2
 console.log(getLength([1, 2, 3, 4, 5])); // -> 5
 console.log(getLength([])); // -> 0
 
-
-/* Challenge: getLength
-Get the length of an array using recursion without accessing its length property.
-Input: {Array} array - array whose length is sought
-Output: {Number} 
-*/
-
+/* ========================== SOLUTION 10  ======================================
+================================================================================ */
+function getLength(array) {
+    function getLengthInternal(counter) {
+        if (!array[counter]) return counter;
+        return getLengthInternal(counter + 1);
+    }
+    return getLengthInternal(0);
+}
 
 console.log(getLength([1])); // -> 1
 console.log(getLength([1, 2])); // -> 2
 console.log(getLength([1, 2, 3, 4, 5])); // -> 5
 console.log(getLength([])); // -> 0 
+
+
+/* ========================== SOLUTION 11  ======================================
+================================================================================ */
+
+function getLength(array) {
+    function getLengthInternal(counter) {
+        if (!array.hasOwnProperty(counter)) return counter;
+        return getLengthInternal(counter + 1);
+    }
+    return getLengthInternal(0);
+}
+
+console.log(getLength([1])); // -> 1
+console.log(getLength([1, 2])); // -> 2
+console.log(getLength([1, 2, 3, 4, 5])); // -> 5
+console.log(getLength([])); // -> 0 
+
+/* ========================== SOLUTION 12  ======================================
+================================================================================ */
+function getLength(array) {
+    return getLengthInternal(array, 0);
+}
+
+function getLengthInternal(array, counter) {
+    if (!array[counter]) return counter;
+    return getLengthInternal(array, counter + 1);
+}
+console.log(getLength([1])); // -> 1
+console.log(getLength([1, 2])); // -> 2
+console.log(getLength([1, 2, 3, 4, 5])); // -> 5
+console.log(getLength([])); // -> 0 
+
+/* ========================== SOLUTION 13  ======================================
+================================================================================ */
+/* Challenge: getLength
+Get the length of an array using recursion without accessing its length property.
+Input: {Array} array - array whose length is sought
+Output: {Number} 
+*/
+function getLength(array) {
+    if (0 in array) return 1 + getLength(array.slice(1));
+    return 0;
+}
+function getLength(array) {
+    return (0 in array) ? 1 + getLength(array.slice(1)) : 0;
+}
+console.log(getLength([1])); // -> 1
+console.log(getLength([1, 2])); // -> 2
+console.log(getLength([1, undefined, 3, 4, 5])); // -> 5
+console.log(getLength([])); // -> 0
+
+/* ========================== SOLUTION 13  ======================================
+================================================================================ */
+/* Challenge: getLength
+Get the length of an array using recursion without accessing its length property.
+Input: {Array} array - array whose length is sought
+Output: {Number} 
+*/

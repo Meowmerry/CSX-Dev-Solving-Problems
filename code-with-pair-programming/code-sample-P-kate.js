@@ -36,7 +36,7 @@ function whatIsInAName(collcetion, source) {
     // get array of all keys from the source
     const sourceKeys = Object.keys(source);
     // iterate thru each obj in the collection 
-    for (const obj of collection) {
+    for (const obj of collcetion) {
         // keeptrack of each loop if keys-value is match or not
         // assume the current obj's keys-value ismatch is true for now
         let hasAllKeyValueMatch = true;
@@ -60,7 +60,7 @@ function whatIsInAName(collcetion, source) {
 // REFACTOR ------ uisng filter
 function whatIsInAName2(collcetion, source) {
     const sourceKeys = Object.keys(source);
-    return collection.filter(obj => {
+    return collcetion.filter(obj => {
         let hasAllKeyValueMatch = true;
         for (const key of sourceKeys) {
             if (obj[key] !== source[key]) {

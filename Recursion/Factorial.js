@@ -93,9 +93,7 @@ newInput => num - 1, product * num
 */
 function factorial5(num, product = 1) {
     if (typeof num !== 'number') throw Error('Please input nummber only!');
-    console.log('product', product)
     if (num === 0 || num === 1) return product;
-    console.log('num', num)
     return factorial5(num - 1, product * num);
 }
 

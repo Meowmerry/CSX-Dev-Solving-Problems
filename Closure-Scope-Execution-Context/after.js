@@ -45,7 +45,6 @@ const after1 = (numOfcall, callback) => {
     const count = [];
     // closure need to return function , which accept string as arguments.
     return (...string) => {
-        count.push('countNum')
         // each time call, need to check if length of count is great or equal to numOfcall
         if (count.length >= numOfcall) {
             //then return a callback with passed arguments of string.

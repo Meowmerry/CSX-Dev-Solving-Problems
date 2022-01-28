@@ -44,11 +44,22 @@ console.log(union2([arr12, arr22, arr32])); // should log: [5, 10, 15, 88, 1, 7,
 /* ========================== SOLUTION 3  ======================================
 ================================================================================ */
 
-const union1 = (arrays) => {
-
-};
-
-const arr11 = [5, 10, 15];
-const arr21 = [15, 88, 1, 5, 7];
-const arr31 = [100, 15, 10, 1, 5];
-console.log(union1([arr11, arr21, arr31])); // should log: [5, 10, 15, 88, 1, 7, 100]
+/* 
+Input : Array of array
+Output : newArr
+declare a newArr to hold the output assign to empty array
+    iterate thru array
+    iterate subArray use a for loop
+        check if each element in each array are same, should take only one 
+    return newArray
+*/
+const union3 = (arr) => {
+    return arr.reduce((acc, curr) => {
+        curr.forEach(ele => !acc.includes(ele) ? acc.push(ele) : acc)
+        return acc;
+    })
+}
+const arrSo31 = [5, 10, 15];
+const arrSo32 = [15, 88, 1, 5, 7];
+const arrSo33 = [100, 15, 10, 1, 5];
+console.log(union3([arrSo31, arrSo32, arrSo33])); // should log: [5, 10, 15, 88, 1, 7, 100]

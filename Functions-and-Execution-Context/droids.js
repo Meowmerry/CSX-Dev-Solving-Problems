@@ -61,3 +61,24 @@ const thrones3 = ["Jon", "Danny", "Tyrion", "The Mountain", "Cersei"]
 console.log(droids2(starWars3)) // should log: "Found Droids!"
 console.log(droids2(thrones3)) // should log: "These are not the droids you're looking for.
 
+
+/* ========================== SOLUTION 4  ======================================
+================================================================================ */
+const droids4 = (arr) => {
+    let result = '';
+    arr.forEach(name => {
+        if (name === 'Droids') {
+            result = "Found Droids!";
+        } else {
+            result = "These are not the droids you're looking for";
+        }
+    })
+    return result;
+}
+
+const starWars4 = ["Luke", "Finn", "Rey", "Kylo", "Droids"]
+const thrones4 = ["Jon", "Danny", "Tyrion", "The Mountain", "Cersei"]
+console.log(droids4(starWars4)) // should log: "Found Droids!"
+console.log(droids4(thrones4)) // should log: "These are not the droids you're looking for.
+
+

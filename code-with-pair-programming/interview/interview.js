@@ -67,6 +67,43 @@ elephant -> ElEpHaNt */
 
 
 
+/*Create a function that takes in an array of numbers and returns the sum of its cubes.
+Examples
+sumOfCubes([1, 5, 9]) //➞ 855
+sumOfCubes([3, 4, 5]) //➞ 216
+3*3*3
+4*4*4
+5*5*5
+sumOfCubes([2]) //➞ 8
+sumOfCubes([]) //➞ 0*/
+// In : Array
+// Out : Number
+// create sum a varible set to 0
+// iterate thru arr use a for loop
+// 		each element * 3 reassign to su
+// return sum
+
+const sumOfCubes = (array) => {
+    let sum = 0;
+
+    for (let i = 0; i < array.length; i++) {
+
+        // sum += array[i] * array[i] *array[i];
+        // sum += Math.pow(array[i], 4)
+        sum += array[i] ** 3;
+    }
+
+    return sum;
+
+}
+console.log(sumOfCubes([2])) //➞ 8
+console.log(sumOfCubes([])) //➞ 0*/
+console.log(sumOfCubes([1, 5, 9])) //➞ 855
+  // console.log(sumOfCubes([3, 4, 5])) //➞ 216
+
+
+
+
 
 
 

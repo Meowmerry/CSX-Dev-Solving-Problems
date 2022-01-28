@@ -79,10 +79,24 @@ Challenge: intersection
 Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs. 
 BONUS - Use reduce!
 ================================================================================ */
-const intersection4 = (arr) => {
+/* 
+In : Array
+Out : New array
 
+    iterate thru array use a reduce. (acc, curr)
+            iterate and use a filter, check if each element is in the next array?
+                if includes we will filter out, push to rest to acc
+*/
+// const intersection = arr => arr.reduce((acc,curr)	=> acc.filter(ele	=> curr.includes(ele)))
+const intersection4 = (arr) => {
+    return arr.reduce((acc, curr) => {
+        const result = [];
+        curr.forEach(ele => acc.includes(ele) ? result.push(ele) : acc)
+        acc = result;
+        return acc;
+    })
 }
-const arr14 = [5, 10, 15, 20];
-const arr24 = [15, 88, 1, 5, 7];
-const arr34 = [1, 10, 15, 5, 20];
-console.log(intersection3([arr14, arr24, arr34])); // should log: [5, 15]
+const arr41 = [5, 10, 15, 20];
+const arr42 = [15, 88, 1, 5, 7];
+const arr43 = [1, 10, 15, 5, 20];
+console.log(intersection4([arr41, arr42, arr43])); // should log: [5, 15]
