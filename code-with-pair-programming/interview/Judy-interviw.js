@@ -125,7 +125,6 @@ Output : boolean
 */
 
 const passAllTests = (array, val) => {
-    let pass = true;
     array.forEach(fuc => {
         if (!fuc(val)) {
             pass = false;

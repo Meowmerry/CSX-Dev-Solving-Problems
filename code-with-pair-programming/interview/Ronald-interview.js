@@ -64,10 +64,6 @@ const isPalindrome = str => {
 // console.log(isPalindrome('cheeSe')); //=> false
 // console.log(isPalindrome('RACECAR')); //=> true
 
-
-
-
-
 /*
 Create a function "add" that takes an argument (a number) and returns a function.
 The returned function should also take one argument (a number) and return the sum of its argument and the argument that was originally past to "add"

@@ -22,6 +22,16 @@ Create a function 'minAndMax' that takes an array of numbers
     return newArr with smallest and largest;
  
 */
+const minArr = array =>{
+    let min = Infinity;
+    let max = -Infinity;
+    for(let i = 0 ;i < array.length  ;i ++){
+        if(array[i] < min) min = array[i];
+        if(array[i] > max) max = array[i];
+    }
+    return [min, max];
+}
+console.log(minArr([7, 68, 2, 19]))
 
 const minAndMax = (array) => {
 

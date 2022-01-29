@@ -1,6 +1,15 @@
 
 /* Declare a variable 'number' and set it to the value 10. */
 
+
+/* Declare a variable 'randomNums' and set it equal to an array that contain the numbers 1, 14, 7, 21, and -6. */
+
+/*
+Create a function 'minAndMax' that takes an array of numbers and returns both the smallest and largest number in an array, in that order.
+NOTE: do not use the native Math.min or Math.max methods. For example minAndMax([7, 68, 2, 19]) should return the array  [2, 68]
+*/
+
+
 /*
 Create a function 'addNumbers' that takes a number as an argument. 'addNumbers' should add up all the numbers from 1 to the number you passed to the function.
 For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
@@ -41,8 +50,6 @@ Use your "passAllTests" function to test if the number 300 is greater than the n
 */
 
 
-
-
 /*
 Define a function "isPalindrome" that takes a string, and returns a boolean value indicating whether the string is a palindrome
 (a palindrome is any string that has the same value when reversed - for example, "LEVEL" or "RACECAR")
@@ -55,6 +62,46 @@ countAbc("abc") → 1
 countAbc("abcxxabc") → 2
 countAbc("abaxxaba") → 2
 */
+
+
+/*
+Create a function "add" that takes an argument (a number) and returns a function.
+The returned function should also take one argument (a number) and return the sum of its argument and the argument that was originally past to "add"
+
+Example:
+const addBy10 = add(10)
+addBy10(20) -> 30
+*/
+
+
+
+/*
+Write a function called 'transpose' that accepts a two dimensional array and returns a transposed version of that array.
+Example:
+const twoDimArray = [ ['fred', 'barney'], [30, 40], [true, false] ]
+console.log(transpose(twoDimArray)); // -> [['fred', 30, true], ['barney', 40, false]]
+*/
+
+
+
+/*
+Declare function "itemRetriever" that returns function that when called,  will return one of my favorite authors.
+The function "itemRetriever" will take two argument (an array of objects and a string that will represent a key).
+When the returned function is called it should return the next object in the array at the key that was passed to "itemRetriever".
+example.
+
+const favoriteAuthors = [
+  { name: 'Earnest Hemingway' },
+  { name: 'Agatha Christie' },
+  { name: 'J.K. Rowling' },
+  { name: 'Steven King' },
+];
+
+const nextAuthor = itemRetriever(favoriteAuthors, 'name');
+nextAuthor() -> 'Earnest Hemingway'
+nextAuthor() -> 'Agatha Christie'
+*/
+
 
 
 /*
