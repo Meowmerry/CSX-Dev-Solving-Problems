@@ -1,4 +1,4 @@
-// // Write a function that returns the length of a string. Make your function recursive.
+'// // Write a function that returns the length of a string. Make your function recursive.
 
 // function length(str) {
 //   // if(str === '') return 0; // base case

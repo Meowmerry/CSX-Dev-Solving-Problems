@@ -16,7 +16,7 @@ const once = (cb) => {
     let cachedResult; // store result of cb invocation
     // create a function, oncifiledCb
     function oncifiledCb(...args) { //accepts array of argruments
-
+console.log('args', ...args)
         if (!hasBeenCalled) { // if onefiedCb hasn't been called;
 
             cachedResult = cb(...args)  // invoke cb with args and store result in cachedResult

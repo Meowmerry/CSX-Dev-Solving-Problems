@@ -210,8 +210,6 @@ function countAbc(string, counter = 0) {
     if (string.startsWith('abc') || string.startsWith('aba')) counter++;
 
     return countAbc(string.slice(1), counter)
-
-
 }
 
 
@@ -240,7 +238,32 @@ cubeStored(2) --> '2: 8'
 */
 
 
-
+function countAbc(str, count =0) {
+    //o: count of abc AND aba
+      
+    //base case
+      // when does not include abc or aba return count
+     if (!str.includes("abc") && !str.includes("aba") ) return count; 
+      //recursive case:
+    //test is str includes val1 or val 2, inc count
+      if (str.includes("abc"))  {
+          count++
+          str = str.replace("abc", "");
+        return countAbc(str, count)
+      } 
+          
+    if (str.includes("aba"))  {
+          count++
+          str = str.replace("aba", "");
+        return countAbc(str, count)
+      } 
+        
+      return countAbc(str, count)
+    }
+    
+    console.log(countAbc("abc"))// → 1
+    console.log(countAbc("abcxxabc"))// → 2
+    console.log(countAbc("abaxxaba"))// → 2
 
 
 

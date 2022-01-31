@@ -264,8 +264,8 @@ function range(start, end) {
   // unique(["a", "a", "c", "aa", "b", "b"])// => ["a", "c", "aa", "b"]
 
   function unique(array) {
-    console.log([...new Set(array)])
-    // console.log(array.filter((ele, index, arr)=> arr.indexOf(ele) === index))
+    //console.log([...new Set(array)])
+    console.log(array.filter((ele, index, arr)=> arr.indexOf(ele) === index))
   }
 
   unique([1, 1, 2, 3, 3]) //=> [1, 2, 3]

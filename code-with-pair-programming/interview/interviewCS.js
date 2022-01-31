@@ -14,7 +14,13 @@ NOTE: do not use the native Math.min or Math.max methods. For example minAndMax(
 Create a function 'addNumbers' that takes a number as an argument. 'addNumbers' should add up all the numbers from 1 to the number you passed to the function.
 For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
 */
-
+const addNumbers = (nums) =>{
+   let sum = 0;
+   for(let i = 0; i <= nums ; i++)
+      sum+= i;
+    return sum;
+}
+// console.log(addNumbers(4))
 /*
 Create a function "between50And500" that takes a number as an argument.
 "between50And500" should return a true if the number passed to it is between 50 and 500 exclusive.
@@ -55,6 +61,14 @@ Define a function "isPalindrome" that takes a string, and returns a boolean valu
 (a palindrome is any string that has the same value when reversed - for example, "LEVEL" or "RACECAR")
 */
 
+const isPalindrome = (string)=>{
+  string = string.replace(/\W/g, '').toLowerCase();
+  if(string.length === 0 || string.length ===1 ) return true;
+  return string[0] === string[string.length-1]  && isPalindrome(string.slice(1,-1))
+}
+
+// console.log(isPalindrome('RACECAR')) // true
+// console.log(isPalindrome('hello meow')) // false
 
 /*
 Count recursively the total number of "abc" and "aba" substrings that appear in the given string.
@@ -72,7 +86,9 @@ Example:
 const addBy10 = add(10)
 addBy10(20) -> 30
 */
-
+const  add = (num) => (value) => num + value;
+const addBy10 = add(10)
+//console.log(addBy10(20)) // -> 30
 
 
 /*
@@ -81,6 +97,26 @@ Example:
 const twoDimArray = [ ['fred', 'barney'], [30, 40], [true, false] ]
 console.log(transpose(twoDimArray)); // -> [['fred', 30, true], ['barney', 40, false]]
 */
+
+const transpose = (array) =>{
+  const result = [];
+  for(let i = 0 ; i < array[0].length; i++){
+     const subArr = []
+     for(let j = 0 ; j < array.length ; j++){
+          subArr.push(array[j][i])
+     }
+     result.push(subArr)
+  }
+  return result;
+  // return array.reduce((acc, curr) =>{
+  //       const subArr = []
+  //       for(let i = 0 ; i < curr.length ; i++){
+  //            subArr.push(curr)
+  //       }
+  // })
+}
+const twoDimArray = [ ['fred', 'barney'], [30, 40], [true, false] ]
+// console.log(transpose(twoDimArray)); // -> [['fred', 30, true], ['barney', 40, false]]
 
 
 
@@ -122,8 +158,18 @@ cubeStored('a') --> "Please enter a valid number"
 cubeStored('a') --> "Please enter a valid number"
 cubeStored(2) --> '2: 8'
 */
-
-
+const stored = (cb)=>{
+ 
+}
+const cube = (n) => n ** 3;
+const cubeStored = stored(cube);
+console.log(cubeStored(2) )//--> 8
+console.log(cubeStored(2)) //--> '2: 8'
+console.log(cubeStored(3)) //--> 27
+console.log(cubeStored(3)) //--> '3: 27'
+console.log(cubeStored('a')) //--> "Please enter a valid number"
+console.log(cubeStored('a')) //--> "Please enter a valid number"
+console.log(cubeStored(2)) //--> '2: 8'
 
 
 
