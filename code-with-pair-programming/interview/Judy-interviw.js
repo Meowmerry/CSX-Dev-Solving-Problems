@@ -58,6 +58,7 @@ const between50And500 = (nums) => {
 
 
 
+
 /*
 Create a function "divBy100" that takes a number as an argument.
 "divBy100" should return a true if the number passed to it is divisible by 100.

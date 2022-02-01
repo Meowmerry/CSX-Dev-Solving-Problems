@@ -158,18 +158,7 @@ cubeStored('a') --> "Please enter a valid number"
 cubeStored('a') --> "Please enter a valid number"
 cubeStored(2) --> '2: 8'
 */
-const stored = (cb)=>{
- 
-}
-const cube = (n) => n ** 3;
-const cubeStored = stored(cube);
-console.log(cubeStored(2) )//--> 8
-console.log(cubeStored(2)) //--> '2: 8'
-console.log(cubeStored(3)) //--> 27
-console.log(cubeStored(3)) //--> '3: 27'
-console.log(cubeStored('a')) //--> "Please enter a valid number"
-console.log(cubeStored('a')) //--> "Please enter a valid number"
-console.log(cubeStored(2)) //--> '2: 8'
+
 
 
 

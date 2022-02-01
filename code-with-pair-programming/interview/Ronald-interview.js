@@ -136,11 +136,11 @@ const favoriteAuthors = [
     { name: 'Steven King' },
 ];
 const nextAuthor = itemRetriever(favoriteAuthors, 'name');
-// console.log(nextAuthor()); // Earnest Hemingway
-// console.log(nextAuthor()); // Agatha Christie
-// console.log(nextAuthor()); // 'J.K. Rowling'
-// console.log(nextAuthor()); // 'Steven King'
-// console.log(nextAuthor()); // Earnest Hemingway
+console.log(nextAuthor()); // Earnest Hemingway
+console.log(nextAuthor()); // Agatha Christie
+console.log(nextAuthor()); // 'J.K. Rowling'
+console.log(nextAuthor()); // 'Steven King'
+console.log(nextAuthor()); // Earnest Hemingway
 
 
 

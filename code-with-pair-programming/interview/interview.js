@@ -75,7 +75,7 @@ sumOfCubes([3, 4, 5]) //➞ 216
 4*4*4
 5*5*5
 sumOfCubes([2]) //➞ 8
-sumOfCubes([]) //➞ 0*/
+sumOfCubes([]) //➞ 0 */
 // In : Array
 // Out : Number
 // create sum a varible set to 0
