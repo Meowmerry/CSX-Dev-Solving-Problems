@@ -1,6 +1,3 @@
-
-
-
 /*Create a function that takes in an array of numbers and returns the sum of its cubes.
 
 Examples
@@ -136,9 +133,9 @@ function search(arr, item, index = 0) {
     //create a fxn called search
     //search for index at item in array
     if (arr[0] === item) return index;
-  //if present, ret true
-  //otherwise, -1
-  abase case: when arr length is zero
+    //if present, ret true
+    //otherwise, -1
+    // base case: when arr length is zero
     if (arr.length === 0) return -1
     //solve recursively
     index++
@@ -235,8 +232,7 @@ function mode(array) {
         //if true, increment that key's value 
         if (!newObj[element]) {
             newObj[element] = 1;
-        }
-        else if (newObj[element]) newObj[element]++;
+        } else if (newObj[element]) newObj[element]++;
         //if false, create that object key initializing it to 0 
     })
     console.log(newObj)

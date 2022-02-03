@@ -60,9 +60,9 @@ const isPalindrome = str => {
     return str === reverseStr;
 };
 
-// console.log(isPalindrome('LeVeL')); //=> true
-// console.log(isPalindrome('cheeSe')); //=> false
-// console.log(isPalindrome('RACECAR')); //=> true
+console.log(isPalindrome('LeVeL')); //=> true
+console.log(isPalindrome('cheeSe')); //=> false
+console.log(isPalindrome('RACECAR')); //=> true
 
 /*
 Create a function "add" that takes an argument (a number) and returns a function.
@@ -174,3 +174,4 @@ const transpose = array => {
 
 const twoDimArray = [['fred', 'barney'], [30, 40], [true, false]]
 // console.log(transpose(twoDimArray)); // -> [['fred', 30, true], ['barney', 40, false]]
+

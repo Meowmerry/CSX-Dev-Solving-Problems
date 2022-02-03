@@ -15,7 +15,7 @@ function reverseWords(string) {
 console.log(reverseWords(" the sky is blue")) //➞ "blue is sky the"
 console.log(reverseWords("hello   world!  ")) //➞ "world! hello"
 console.log(reverseWords("a good example")) //➞ "example good a"
-/* ======================== Solution 1 ===============*/
+/* ======================== Solution 2 ===============*/
 function reverseWords2(str) {
     const words = str.trim().split(' ');
     // return words.filter(function (el) {
@@ -37,17 +37,12 @@ console.log(reverseWords3(" the sky is blue")) //➞ "blue is sky the"
 console.log(reverseWords3("hello   world!  ")) //➞ "world! hello"
 console.log(reverseWords3("a good example")) //➞ "example good a"
 
-function reverseString(str){
+/* ======================== Solution 4 ===============*/
+function reverseWords4(str) {
+  return str.trim().split(' ').filter(Boolean).join(' ');
+}
 
-    const arr = [...str];
-    let reverse= "";
-  
-    while(arr.length){
-      // joining the reversed string
-       reverse = reverse + arr.pop();
-    }
-  
-    return reverse;
-  }
-  
-  console.log(reverseString('hi')); // ih
+console.log(reverseWords4(" the sky is blue")) //➞ "blue is sky the"
+console.log(reverseWords4("hello   world!  ")) //➞ "world! hello"
+console.log(reverseWords4("a good example")) //➞ "example good a"
+
