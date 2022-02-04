@@ -42,3 +42,26 @@ while (i < num) {
     }
     i++;
 }
+
+/* ========================== SOLUTION 3  ======================================
+================================================================================ */
+/*
+Fizzbuzz : 
+use a lop to iterate through numbers 1 - 21 and push the numbers into the array using the 'Fizzbuzz'
+ */
+
+const fizzbuzzList = [];
+
+for (let i = 1; i <= 21; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        fizzbuzzList.push('fizzbuzz')
+    }
+    else if (i % 3 === 0) {
+        fizzbuzzList.push('fizz')
+    } else if (i % 5 === 0) {
+        fizzbuzzList.push('buzz')
+    } else {
+        fizzbuzzList.push(i)
+    }
+}
+console.log(fizzbuzzList)

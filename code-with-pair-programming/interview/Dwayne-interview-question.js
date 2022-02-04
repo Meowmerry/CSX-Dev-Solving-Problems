@@ -304,3 +304,41 @@ const cubeStored = stored(cube);
 // console.log(cubeStored('a')) // --> "Please enter a valid number"
 
 
+/*
+Create a function "checkerLogger" that takes one argument (a function that returns a boolean value) The returned function should have the following behavior:
+If the function is invoked with an argument, the checker callback function is invoked and its boolean result is returned.
+If the function is invoked without any arguments, instead return a count of the number of times the callback function has been invoked and evaluated true or false.
+
+Example:
+const isOdd = num => num % 2 === 1;
+const oddCounter = checkerLogger(isOdd);
+oddCounter(); -> { true: 0, false: 0 }
+oddCounter(3); -> true
+oddCounter(2); -> false
+oddCounter(); -> { true: 1, false: 1 }
+*/
+
+
+/*
+Create a function "countChar" that takes two arguments (an input string and a target string).
+"countChar" will return the number of times the target string is found in the input string.
+
+Example:
+countChar('hello world', 'o'); -> 2
+countChar('javascript', 'j'); -> 1
+Note: Do not use any native JS methods, or loops.
+*/
+
+
+
+
+/*
+Write a function 'subsetSum' that is given an array of integers and a target number. It should return true if there is a subset of the array that sums up to the target and returns false otherwise. A subset can be any size and the elements do not have to appear consecutively in the array.
+
+Examples:
+subsetSum([3, 2], 5)
+subsetSum([3, 7, 4, 2], 5)           -> true (3 + 2 = 5)
+subsetSum([3, 34, 4, 12, 5, 12], 32) -> true (3 + 12 + 5 + 12 = 32)
+subsetSum([8, 2, 4, 12], 13)         -> false
+subsetSum([8, -2, 1, -3], 6)         -> true (8 + 1 + (-3) = 6)
+*/

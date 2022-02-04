@@ -105,7 +105,7 @@
 // function sum(n, res = []) {
 //   if(n === 0) return res.reduce((acc,curr)=>acc + curr);
 //   res.push(n);
-// 	return sum(n - 1, res)
+// 	 return sum(n - 1, res)
 // }
 
 // function sum(n) { // n = 2

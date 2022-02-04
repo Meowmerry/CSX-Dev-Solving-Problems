@@ -167,3 +167,4 @@ console.log(pow(2, 4)); // -> 16
 console.log(pow(3, 5)); // -> 243
 console.log(pow(2, 0)) // 1
 console.log(pow(2, 1)) // 2
+console.log(pow(2, 2)) // 2

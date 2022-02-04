@@ -123,3 +123,16 @@ console.log(palindrome("a")); //-> true
 console.log(palindrome("Anne, I vote more cars race Rome-to-Vienna")); //-> true
 console.log(palindrome("llama mall")); //-> true
 console.log(palindrome("jmoney")); //-> false
+
+/* ========================== SOLUTION 6  ======================================
+================================================================================ */
+const palindrome = (string) => {
+    string = string.replace(/\W/g, '').toLowerCase();
+    if (!string.length) return true;
+    return string[0] === string[string.length -1] && palindrome(string.slice(1,-1))
+}
+console.log(palindrome("")); //-> true
+console.log(palindrome("a")); //-> true
+console.log(palindrome("Anne, I vote more cars race Rome-to-Vienna")); //-> true
+console.log(palindrome("llama mall")); //-> true
+console.log(palindrome("jmoney")); //-> false
