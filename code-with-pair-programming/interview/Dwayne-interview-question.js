@@ -327,13 +327,38 @@ Example:
 countChar('hello world', 'o'); -> 2
 countChar('javascript', 'j'); -> 1
 Note: Do not use any native JS methods, or loops.
+
+Input : string and target string
+Output : Number
+
+create a funct countChar that takes string and target string, and will declare count = 0
+    base case : if string at count not equal to target return count
+    increment count by 1;
+    recursive case,
 */
-
-
-
+// function countChar(string, target){
+//     let count = 0;
+//     for(let i = 0 ; i < string.length ; i++){
+//         if(string[i] === target) count ++
+//     }
+//     return count;
+// }
+function countChar(string, target , index = 0,  count = 0 ){
+     if(string === '') return count;
+     if(string[index++] === target) count +=1;   
+     if(!string[index]) return count;
+     return countChar(string, target, index, count)
+    
+}
+console.log(countChar('')) // 0
+console.log(countChar('hello world', 'o')) // 2
+console.log(countChar('javascript', 'j')) // 1
+console.log(countChar('study js', 'c')) // 0
 
 /*
-Write a function 'subsetSum' that is given an array of integers and a target number. It should return true if there is a subset of the array that sums up to the target and returns false otherwise. A subset can be any size and the elements do not have to appear consecutively in the array.
+Write a function 'subsetSum' that is given an array of integers and a target number. 
+It should return true if there is a subset of the array that sums up to the target and returns false otherwise. 
+A subset can be any size and the elements do not have to appear consecutively in the array.
 
 Examples:
 subsetSum([3, 2], 5)
