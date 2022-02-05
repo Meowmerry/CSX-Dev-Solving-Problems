@@ -319,10 +319,11 @@ oddCounter(); -> { true: 1, false: 1 }
 */
 
 
+
+
 /*
 Create a function "countChar" that takes two arguments (an input string and a target string).
 "countChar" will return the number of times the target string is found in the input string.
-
 Example:
 countChar('hello world', 'o'); -> 2
 countChar('javascript', 'j'); -> 1
@@ -331,20 +332,15 @@ Note: Do not use any native JS methods, or loops.
 Input : string and target string
 Output : Number
 
-create a funct countChar that takes string and target string, and will declare count = 0
-    base case : if string at count not equal to target return count
+create a funct countChar that takes string and target string, and will declare index and count = 0
+    base case : 
+    increment index by 1
+    - if string each element equal to target so increment count by 1
+    - if string empty return count 
     increment count by 1;
     recursive case,
 */
-// function countChar(string, target){
-//     let count = 0;
-//     for(let i = 0 ; i < string.length ; i++){
-//         if(string[i] === target) count ++
-//     }
-//     return count;
-// }
 function countChar(string, target , index = 0,  count = 0 ){
-     if(string === '') return count;
      if(string[index++] === target) count +=1;   
      if(!string[index]) return count;
      return countChar(string, target, index, count)
@@ -352,7 +348,7 @@ function countChar(string, target , index = 0,  count = 0 ){
 }
 console.log(countChar('')) // 0
 console.log(countChar('hello world', 'o')) // 2
-console.log(countChar('javascript', 'j')) // 1
+console.log(countChar('javascript and java are different but j are same j', 'j')) // 4
 console.log(countChar('study js', 'c')) // 0
 
 /*

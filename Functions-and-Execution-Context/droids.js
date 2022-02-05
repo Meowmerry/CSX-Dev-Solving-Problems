@@ -1,5 +1,7 @@
 /*Challenge: droids
-Complete the function droids that accepts an array of strings and iterates through the array using a FOR loop. Update the variable result to "Found Droids!" if the array contains the string "Droids". Otherwise update the variable result to "These are not the droids you're looking for." Return your updated result. */
+Complete the function droids that accepts an array of strings and iterates through the array using a FOR loop. 
+Update the variable result to "Found Droids!" if the array contains the string "Droids". 
+Otherwise update the variable result to "These are not the droids you're looking for." Return your updated result. */
 // input : array of string;
 // output : string when we find the 'Droids' in array input
 /* ========================== SOLUTION 1  ======================================
@@ -46,14 +48,14 @@ function droids2(arr) {
     return `These are not the droids you're looking for`
 }
 
-const starWars2 = ["Luke", "Finn", "Rey", "Kylo", "Droids"]
+const starWars2 = ["Luke", "Droids", "Rey", "Kylo", "xxx"]
 const thrones2 = ["Jon", "Danny", "Tyrion", "The Mountain", "Cersei"]
 console.log(droids2(starWars2)) // should log: "Found Droids!"
 console.log(droids2(thrones2)) // should log: "These are not the droids you're looking for.
 
 /* ========================== SOLUTION 3  ======================================
 ================================================================================ */
-const droids = (arr) => arr.reduce((accumulated, current) => current === 'Droids' ? accumulated = "Found Droids!" : accumulated = `These are not the droids you're looking for.`, '')
+const droids2 = (arr) => arr.reduce((accumulated, current) => current === 'Droids' ? accumulated = "Found Droids!" : accumulated = `These are not the droids you're looking for.`, '')
 
 
 const starWars3 = ["Luke", "Finn", "Rey", "Kylo", "Droids"]
@@ -62,23 +64,7 @@ console.log(droids2(starWars3)) // should log: "Found Droids!"
 console.log(droids2(thrones3)) // should log: "These are not the droids you're looking for.
 
 
-/* ========================== SOLUTION 4  ======================================
-================================================================================ */
-const droids4 = (arr) => {
-    let result = '';
-    arr.forEach(name => {
-        if (name === 'Droids') {
-            result = "Found Droids!";
-        } else {
-            result = "These are not the droids you're looking for";
-        }
-    })
-    return result;
-}
 
-const starWars4 = ["Luke", "Finn", "Rey", "Kylo", "Droids"]
-const thrones4 = ["Jon", "Danny", "Tyrion", "The Mountain", "Cersei"]
-console.log(droids4(starWars4)) // should log: "Found Droids!"
-console.log(droids4(thrones4)) // should log: "These are not the droids you're looking for.
+
 
 
