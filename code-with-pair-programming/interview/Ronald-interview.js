@@ -125,7 +125,7 @@ const itemRetriever = (favoriteAuthors, author) => {
     let index = 0;
     return () => {
         if (index >= favoriteAuthors.length) index = 0;
-        return favoriteAuthors[index++].name;
+        return favoriteAuthors[index++][author];
     };
 };
 
