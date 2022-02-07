@@ -83,8 +83,8 @@ console.log(multiMap2(items2, functions2)); // should log: { catfood: ['CATFOOD'
 // create a function multiMap accepts array and arrayOfCallback
 const multiMap3 = (array, arrOfCallback) => {
     return array.reduce((accumulator, currentValue) => {
-        const callbackInner = arrOfCallback.map(callback => {
-            return callback(currentValue)
+        const callbackInner = arrOfCallback.map(func => {
+            return func(currentValue)
         })
         accumulator[currentValue] = callbackInner;
         return accumulator;

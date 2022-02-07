@@ -59,7 +59,7 @@ console.log(usePotions1("A5B9A123")) //➞ "410123"
 
 /*==================== SOLUTION 3 ====================== */
 function usePotions3(str) {
-    let modChar = str.split("");
+    const modChar = str.split("");
     for (let i = 0; i < modChar.length; i++) {
       if (modChar[i] === "A") {
         modChar[i - 1] = addOne(Number(modChar[i - 1]));
