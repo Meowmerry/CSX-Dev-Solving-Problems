@@ -1,11 +1,6 @@
 /* Declare a variable ‘names’ and set it to an array with the values ‘Chris’, ‘Samantha’, ‘Richard’, and ‘Kyle’ in it. */
 
 
-/*
-create a function that takes in that name string and outputs a string with all the vowels removed
-for example: "David" -> "Dvd"
-*/
-
 
 /*
 Create a function that takes in a string and returns that string in alternating cases starting with Upper Case
@@ -14,6 +9,33 @@ dog -> DoG
 chair -> ChAiR
 elephant -> ElEpHaNt 
 */
+// In : String
+// Out : String with Uppercase alternating
+// create a func alternating that accept string
+    // declare result assign to empty string
+        // interate thru string use a for loop
+            // check if i is even reassign string to Uppercase
+            // otherwish i result lowercase
+
+    // return string
+const alteratingStr  = (str) =>{
+    let result = '';
+    for(let i = 0 ; i < str.length ; i++){
+        if(i % 2 === 0)result += str[i].toUpperCase();
+        else result += str[i];
+    }
+    return result;
+}
+console.log(alteratingStr('dog'))
+console.log(alteratingStr('chair'))
+console.log(alteratingStr('elephant'))
+
+/*
+create a function that takes in that name string and outputs a string with all the vowels removed
+for example: "David" -> "Dvd"
+*/
+
+
 
 /*Create a function that takes in an array of numbers and returns the sum of its cubes.
 Examples

@@ -20,19 +20,16 @@ Create a function 'addNumbers' that takes a number as an argument
 */
 
 const addNumbers = (nums) => {
-
-    let sum = 0;
-
-    for (let i = 0; i <= nums; i++) {
-
-        sum += i;
-
-    }
-
-    return sum;
+    // let sum = 0;
+    // for (let i = 0; i <= nums; i++) {
+    //     sum += i;
+    // }
+    // return sum;
+    
+    if ( nums === 0 ) return nums;
+    return nums + addNumbers(nums - 1)
 }
-
-// console.log(addNumbers(4)) // 10
+console.log(addNumbers(4)) // 10
 
 
 
