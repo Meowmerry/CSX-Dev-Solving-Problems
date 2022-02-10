@@ -17,6 +17,7 @@ Check that your 'addNumbers' function is working correctly by passing your varia
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
+
 QUESTION 3a
 Create a function "between50And500" that takes a number as an argument.
 "between50And500" should return a true if the number passed to it is between 50 and 500 exclusive.
@@ -49,7 +50,8 @@ Create a function "passAllTests" that takes an array of functions and another va
 Each function in your array will return a boolean value. "passAllTests" should pass your value argument to each function.
 If all functions in your array return true then "passAllTests" will return true. Otherwise "passAllTests" should return false
 
-Use your "passAllTests" function to test if the number 300 is greater than the number 50 and less than the number 500, divisible by 100, and a negative number OR even. Then test the number 250.
+Use your "passAllTests" function to test if the number 300 is greater than the number 50 and less than the number 500,
+divisible by 100, and a negative number OR even. Then test the number 250.
 */
 
 
@@ -83,7 +85,8 @@ Write a function "getLength" that returns the length of a string. Accomplish thi
 
 /*
 Question 10a
-Write a function 'rotateGrid' that is given an NxN grid of elements represented by a 2D array, and outputs a grid equivalent to the same grid rotated 90 degrees clockwise.
+Write a function 'rotateGrid' that is given an NxN grid of elements represented by a 2D array, and outputs a grid equivalent to the 
+same grid rotated 90 degrees clockwise.
 Example:
 const sampleGrid = [ [1, 2, 3],
                     [4, 5, 6],
@@ -104,14 +107,18 @@ Declare a variable ‘names’ and set it to an array with the values ‘Chris�
 
 /*
 Question 2b
-A group of friends have decided to start a secret society. The name will be the first letter of each of their names, sorted in alphabetical order. Create a function ‘societyName’ that takes in an array of names and returns the name of the secret society. For example, if our input is [‘Adam’, ‘Sarah’, ‘Malcolm’] then ‘societyName’ should return the string ‘AMS’
+A group of friends have decided to start a secret society. 
+The name will be the first letter of each of their names, sorted in alphabetical order. 
+Create a function ‘societyName’ that takes in an array of names and returns the name of the secret society. 
+For example, if our input is [‘Adam’, ‘Sarah’, ‘Malcolm’] then ‘societyName’ should return the string ‘AMS’
 */
 
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
 QUESTION 3b
-Create a function “countTimes” that takes in two arguments (an array and a search value). “countTimes” should return the number of times the search value is present in the array.
+Create a function “countTimes” that takes in two arguments (an array and a search value). 
+“countTimes” should return the number of times the search value is present in the array.
 Example: countTimes([1, 8, 9, 9, 10], 9) -> 2
 */
 
@@ -528,20 +535,36 @@ iRemember(true); -> ['hello', 1, 'world', true]
 
 // Declare a variable 'randomNumber' and set it equal to the number 10
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Create a function 'amplify' that takes a number and returns an array from 1 to the given number, where: If the number can be divided evenly by 4, amplify it by 10 (i.e. return 10 times the number) and if the number cannot be divided evenly by 4, simply return the number.
 For example, if we pass the number 5 to the function 'amplify' it should return the array [1, 2, 3, 40, 5]
 */
 
-// Check that your 'amplify' function is working correctly by passing the value of 'randomNumber' to the 'amplify' function
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Declare a variable 'programmingLanguages' and set it to an array that contains the values 'C++', 'Java', 'Python', Javascript', and 'Swift'.
+
+/* Check that your 'amplify' function is working correctly by passing the value of 'randomNumber' to the 'amplify' function */
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Declare a variable 'programmingLanguages' and set it to an array that contains the values 'C++', 'Java', 'Python', Javascript', and 'Swift'. */
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /*
 Create a function 'containsJ' that takes a string as an argument
 'containsJ' should return a boolean value based off of whether or not the string being passed to it contains the letter 'j' or 'J.
 For example, if the input is 'Cat' then your function should return false, and if the input is 'Jaguar' it should return true.
 */
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /*
 Create a function 'screen' that takes in two arguments an array and a callback function that will be applied to every element in the array.
@@ -550,21 +573,41 @@ If the result of the callback function is true then that element in the array wi
 For example, if we were to call 'screen' and pass to it an array containing the elements 1, 2, 3, 4, 5, and 6 as the first argument and a callback function that tested if its argument was even for the second argument, then we should get the result [2, 4, 6] from our call to 'screen'
 */
 
-// Check that your 'screen' function is working correctly by passing it your 'programmingLanguages' array and your 'containsJ' function
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*  Check that your 'screen' function is working correctly by passing it your 'programmingLanguages' array and your 'containsJ' function */
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /*
 Create a function "countChars" that takes argument (a string).
 "countChars" should return the number of characters in the string. You should not count whitespace as characters.
 */
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 /*
 Create a function "doToEachElement" that takes two arguments (an array and a callback function).
 "doToEachElement" should return a new array containing the returned values from running the callback function on each element in the array.
 */
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 /*
 Check that your "doToEachElement" function is working properly by calling it with the array containing the strings "hello world", "I love programming", and "Twin Snakes are my favorite candy" and your "countChars" function.
 */
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /*
 Create a function "sumAllElements" that takes in two arguments (an array of numbers and a initial value). "sumAllElements" will return the sum of the elements in the array starting at the initial value.
@@ -572,6 +615,10 @@ Example:
 sumAllElements([1,2,3,4], 10) -> 20
 Note: Do NOT use any native JS methods, or loops
 */
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /*
 Create a function "fastCache" that takes one argument (a function) and returns a function. When fastCache is invoked it creates an object that tracks calls to the returned function, where each input to the returned function is associated with its output. Every subsequent call to that returned function with the same argument will return the output directly from the object, instead of invoking the original function again.
@@ -591,3 +638,135 @@ cachedSumMultiplyBy2(5, 10); // -> 30
 cachedSumMultiplyBy2(1, 2); // -> 6
 cachedSumMultiplyBy2(5, 10); // -> 30 // from the cache object
 */
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+Create a function "checkerLogger" that takes one argument (a function that returns a boolean value) The returned function should have the following 
+behavior:
+If the function is invoked with an argument, the callback function is invoked and its boolean result is returned.
+If the function is invoked without any arguments, instead return a count of the number of times the callback function has been invoked and evaluated true or false.
+
+Example:
+const isOdd = (num) => num % 2 === 1;
+const oddCounter = checkerLogger(isOdd);
+console.log(oddCounter()); //->  { true: 0, false: 0 }
+console.log(oddCounter(3)); //-> true
+console.log(oddCounter(2)); //->  false
+console.log(oddCounter()); //-> { true: 1, false: 1 }
+*/
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+Create a function groupBy that accepts an array and a callback, and returns an object. 
+groupBy will iterate through the array and perform the callback on each element. Each return value from the callback will be saved as a key on the object. 
+The value associated with each key will be an array consisting of all the elements that resulted in that return value when passed into the callback.
+
+const floored = function(num) { return Math.floor(num); };
+console.log(groupBy(numbers, floored)); // should log: { 1: [1.3], 2: [2.1, 2.4] }
+*/
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+Given a string, compute recursively a new string where all the lowercase 'x' chars have been moved to the end of the string.
+*/
+
+// console.log(endX("Myexesloveme")) //→ "Myeeslovemex"
+// console.log(endX("xxre")) //→ "rexx"
+// console.log(endX("xxhixx")) //→ "hixxxx"
+// console.log(endX("xhixhix")) //→ "hihixxx"
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+Write a function that takes in an array and returns a new array with duplicates removed
+Ex: deleteDups(['a','a','a']) -> ['a']
+*/
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+In each input array, every number repeats at least once, except for two. Write a function that returns the two unique numbers.
+
+Examples
+ returnUnique([1, 9, 8, 8,stored 7, 6, 1, 6]); // ➞ [9, 7]
+
+returnUnique([5, 5, 2, 4, 4, 4, 9, 9, 9, 1]); // ➞ [2, 1]
+
+returnUnique([9, 5, 6, 8, 7, 7, 1, 1, 1, 1, 1, 9, 8]); // ➞ [5, 6]
+*/
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+Write a function 'anagrams' that produces all possible anagrams of a string and outputs them as an array.
+Example:
+console.log(anagrams('aabc')); -> [ 'aabc', 'aacb', 'abac', 'abca', 'acab', 'acba', 'baac', 'baca', 'bcaa', 'caab', 'caba', 'cbaa' ]
+*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+Write a function 'stored' that takes in a function and returns a new function. The new function
+will check if it has already computed the result for the given argument. If it hasn't, it will
+run the passed-in function on the argument and return the result. If it has, it will return
+the stored argument along with its result. If an argument is not a number, the new function
+will not store the argument and instead return the error message "Please enter a valid number".
+
+Ex:
+const cube = (n) => n ** 3;
+const cubeStored = stored(cube);
+cubeStored(2) --> 8
+cubeStored(2) --> '2: 8'
+cubeStored(3) --> 27
+cubeStored(3) --> '3: 27'
+cubeStored('a') --> "Please enter a valid number"
+cubeStored('a') --> "Please enter a valid number"
+cubeStored(2) --> '2: 8'
+*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+Count recursively the total number of "abc" and "aba" substrings that appear in the given string.
+
+countAbc("abc") → 1
+countAbc("abcxxabc") → 2
+countAbc("abaxxaba") → 2
+*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+Write a function 'subsetSum' that is given an array of integers and a target number. 
+It should return true if there is a subset of the array that sums up to the target and returns false otherwise. 
+A subset can be any size and the elements do not have to appear consecutively in the array.
+
+Examples:
+subsetSum([3, 2], 5)
+subsetSum([3, 7, 4, 2], 5)           -> true (3 + 2 = 5)
+subsetSum([3, 34, 4, 12, 5, 12], 32) -> true (3 + 12 + 5 + 12 = 32)
+subsetSum([8, 2, 4, 12], 13)         -> false
+subsetSum([8, -2, 1, -3], 6)         -> true (8 + 1 + (-3) = 6)
+*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Challenge: Loops - Multiple Conditions
+Write a function addingAllTheWeirdStuff which adds the sum of all the odd numbers in array2 to each element under 10 in array1. 
+Similarly, addingAllTheWeirdStuff should also add the sum of all the even numbers in array2 to those elements over 10 in array1.
+
+BONUS: If any element in array2 is greater than 20, add 1 to every element in array1. */
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -52,6 +52,7 @@ const between50And500 = (nums) => {
         return true;
     }
     return false;
+  
 }
 // console.log(between50And500(45)); // false;
 // console.log(between50And500(472)); // true;
@@ -126,12 +127,13 @@ Output : boolean
 */
 
 const passAllTests = (array, val) => {
-    array.forEach(fuc => {
-        if (!fuc(val)) {
-            pass = false;
-        }
-    })
-    return true;
+    // array.forEach(fuc => {
+    //     if (!fuc(val)) {
+    //         pass = false;
+    //     }
+    // })
+    // return true;
+    return array.every(func => func(val))
 }
 
 console.log(passAllTests([between50And500, divBy100, negativeOrEven], 10)) // false
@@ -237,7 +239,29 @@ cubeStored('a') --> "Please enter a valid number"
 cubeStored('a') --> "Please enter a valid number"
 cubeStored(2) --> '2: 8'
 */
+function stored (func){
+    const cache = {}
+    function inner(num){
+       if(typeof num !== 'number') return "Please enter a valid number"
+       else if(cache[num]){
+         return `${num} : ${cache[num]}`;
+       }else{
+        cache[num]  = func(num)
+        return cache[num];
+       }
+    }
+    return inner;
+}
 
+const cube = (n) => n ** 3;
+const cubeStored = stored(cube);
+console.log(cubeStored(2)) //--> 8
+console.log(cubeStored(2)) //--> '2: 8'
+console.log(cubeStored(3)) //--> 27
+console.log(cubeStored(3) )//--> '3: 27'
+console.log(cubeStored('a')) //--> "Please enter a valid number"
+console.log(cubeStored('a')) //--> "Please enter a valid number"
+// console.log(cubeStored(2))//--> '2: 8'
 
 function countAbc(str, count =0) {
     //o: count of abc AND aba
@@ -265,11 +289,6 @@ function countAbc(str, count =0) {
     console.log(countAbc("abc"))// → 1
     console.log(countAbc("abcxxabc"))// → 2
     console.log(countAbc("abaxxaba"))// → 2
-
-
-
-
-
 
 
 
