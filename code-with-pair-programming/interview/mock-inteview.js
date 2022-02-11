@@ -51,6 +51,7 @@ sumOfCubes([]) //➞ 0 */
 /*
 Create a function 'addNumbers' that takes a number as an argument. 'addNumbers' should add up all the numbers from 1 to the number you passed to the function.
 For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
+
 */
 
 /*
@@ -58,13 +59,6 @@ Create a function "between50And500" that takes a number as an argument.
 "between50And500" should return a true if the number passed to it is between 50 and 500 exclusive.
 For example, if the input is 45 then your function should return false and if the input is 472 it should return true.
 
-In : Number
-Out : Boolean
-
-Create a function "between50And500" that takes a number as an argument
-        check if numberInput > 50 and < 500 return true
-        otherwish return false
-        	
 */
 
 /*

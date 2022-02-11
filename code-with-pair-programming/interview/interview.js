@@ -74,7 +74,7 @@ sumOfCubes([3, 4, 5]) //➞ 216
 5*5*5
 sumOfCubes([2]) //➞ 8
 sumOfCubes([]) //➞ 0 */
-// In : Array
+// In : Array  
 // Out : Number
 // create sum a varible set to 0
 // iterate thru arr use a for loop

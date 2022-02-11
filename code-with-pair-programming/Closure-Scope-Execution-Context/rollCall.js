@@ -53,3 +53,30 @@ console.log(roll())  // => should log 'Juan'
 console.log(roll())  // => should log 'Ruth'
 console.log(roll())  // => should log 'Everyone accounted for'
 
+/* ========================== SOLUTION 3  ======================================
+================================================================================ */
+/*
+Input : Array of name
+Output : fucntion with print out string of name
+Closure 
+    create a function reollCall3 takes array as arguments
+        declare index assign to 0
+        declare function
+            if index === array length
+                return 'Everyone accounted for'
+            else 
+                return current element and incremnt index by 1
+
+*/
+const rollCall3 = ( array ) =>{
+    let index = 0; 
+    return () =>{
+        if(index === array.length) return 'Everyone accounted for';
+        else return array[index++]
+    }
+}
+const roll3 = rollCall3(['Victoria', 'Juan', 'Ruth'])
+console.log(roll3()) // => should log 'Victoria'
+console.log(roll3())  // => should log 'Juan'
+console.log(roll3())  // => should log 'Ruth'
+console.log(roll3())  // => should log 'Everyone accounted for'

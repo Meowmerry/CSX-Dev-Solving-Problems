@@ -35,7 +35,7 @@ console.log(groupBy(decimals, floored)); // should log: { 1: [1.3], 2: [2.1, 2.4
 ================================================================================ */
 const groupBy1 = (arr, callback) => (
     arr.reduce((objOutput, current) => {
-        objOutput[callback(current)] === undefined ? objOutput[callback(current)] = [current] : objOutput[callback(current)].push(current)
+        !objOutput[callback(current)] ? objOutput[callback(current)] = [current] : objOutput[callback(current)].push(current)
         return objOutput;
     }, {}))
 

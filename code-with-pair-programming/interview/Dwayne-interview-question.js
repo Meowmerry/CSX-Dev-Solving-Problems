@@ -48,13 +48,7 @@ Create a function "between50And500" that takes a number as an argument
         	
 */
 
-const between50And500 = (nums) => {
-
-    if (nums > 50 && nums < 500) return true;
-
-    else return false;
-
-}
+const between50And500 = (nums) => nums > 50 && nums < 500 ? true: false;
 
 // console.log(between50And500(45)) // false
 // console.log(between50And500(472)) // true
@@ -75,13 +69,7 @@ Create a function "divBy100" that takes a number as an argument.
 
 */
 
-const divBy100 = (nums) => {
-
-    if (nums % 100 === 0) return true;
-
-    else return false;
-
-}
+const divBy100 = (nums) => nums % 100 === 0 ? true : false;
 
 // console.log(divBy100(120)) // false
 // console.log(divBy100(600)) // true
@@ -102,13 +90,8 @@ Create a function "negativeOrEven" that takes a number as an argument.
 
 */
 
-const negativeOrEven = (nums) => {
+const negativeOrEven = (nums) => nums < 0 || nums % 2 === 0 ? true : false;
 
-    if (nums < 0 || nums % 2 === 0) return true;
-
-    else return false;
-
-}
 // console.log(negativeOrEven(7)) // false
 // console.log(negativeOrEven(-3)) // true
 // console.log(negativeOrEven(400)) // true
