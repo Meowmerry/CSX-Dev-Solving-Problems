@@ -14,8 +14,7 @@ function average() {
       if(!args) {
         //if array doesnt have length return 0
         if (!output.length) return 0
-           //otherwise return average
-        
+           //otherwise return average    
         for (let i=0;i<output.length;i++){
          count += output[i] 
         }

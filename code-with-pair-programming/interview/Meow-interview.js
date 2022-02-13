@@ -32,6 +32,8 @@ const minArr = array =>{
     return [min, max];
 }
 console.log(minArr([7, 68, 2, 19]))
+console.log(minArr([1, 19, 3, 6])); // [1, 19]
+console.log(minArr([20, 17, 14, 8])); // [8, 20]
 
 const minAndMax = (array) => {
 

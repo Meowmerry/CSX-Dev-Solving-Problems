@@ -14,16 +14,35 @@ creat a function that accept a string as arguments
     - recursive : call the Palindrome itself, 
         newInput will check if the first letter and the lastletter are not equal,  will call function and passed in string use a slice with (1, -1)
 */
+/* ================ SOLUTION 2 ========================== */
 const isPalindrome = (string) => {
-    string = string.replace(/\W/g, '').toLowerCase();
-    if (!string.length) return true;
-    return string[0] === string[string.length - 1] && isPalindrome(string.slice(1, -1))
+  string = string.replace(/\W/g, "").toLowerCase();
+  if (!string.length) return true;
+  return (
+    string[0] === string[string.length - 1] && isPalindrome(string.slice(1, -1))
+  );
+};
+console.log(isPalindrome("a")); // => true
+console.log(isPalindrome("")); // => true
+console.log(isPalindrome("Kayak")); // => true
+console.log(isPalindrome("NEVERODDOREVEN")); // => true
+console.log(isPalindrome("Tacocat")); // => true
+console.log(isPalindrome("straw warts")); // => true
+console.log(isPalindrome("this is not a palindrome")); // => false
+console.log(isPalindrome("hello, I love $%# to code and learn Js ")); // => false
+
+/* ================ SOLUTION 2 ========================== */
+function isPalindrome1(string, i = 0) {
+  if(string.length === 1 || string.length === 0) return true;
+  if(string[0] !== string[string.length - 1]) return false;
+  return isPalindrome1(string, i += 1)
 }
-console.log(isPalindrome('a')); // => true
-console.log(isPalindrome('')); // => true
-console.log(isPalindrome('Kayak')); // => true
-console.log(isPalindrome('NEVERODDOREVEN')); // => true
-console.log(isPalindrome('Tacocat')); // => true
-console.log(isPalindrome('straw warts')); // => true
-console.log(isPalindrome('this is not a palindrome')); // => false
-console.log(isPalindrome('hello, I love $%# to code and learn Js ')); // => false
+
+console.log(isPalindrome1("a")); // => true
+console.log(isPalindrome1("")); // => true
+console.log(isPalindrome1("Kayak")); // => true
+console.log(isPalindrome1("NEVERODDOREVEN")); // => true
+console.log(isPalindrome1("Tacocat")); // => true
+console.log(isPalindrome1("straw warts")); // => true
+console.log(isPalindrome1("this is not a palindrome")); // => false
+console.log(isPalindrome1("hello, I love $%# to code and learn Js ")); // => false
