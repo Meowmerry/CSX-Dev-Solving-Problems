@@ -312,13 +312,12 @@ Note: Do not use any native JS methods, or loops.
 Input : string and target string
 Output : Number
 
-create a funct countChar that takes string and target string, and will declare index and count = 0
-    base case : 
-    increment index by 1
-    - if string each element equal to target so increment count by 1
-    - if string empty return count 
-    increment count by 1;
-    recursive case,
+Create function take string , target , i = 0 ; count = 0 ;
+	base case : 
+    - if string[i++] === target increment count by 1
+    - if string has no index return count
+		recursive case :
+    - invoke countChar passed in string, target , i , count
 */
 function countChar(string, target , index = 0,  count = 0 ){
      if(string[index++] === target) count +=1;   

@@ -91,9 +91,8 @@ Output : String
 Create a function "usePotions" that returns a string according to these rules,
         declare a variable output assign to empty string 
     	
-      iterate thru string input use a for loop
-      	
-            check if the current element is equal to "A"
+        iterate thru string input use a for loop
+      	    if the current element is equal to "A"
                     reassign output assign to invoke addOne function 
           
           check if the current element is equal to "B";

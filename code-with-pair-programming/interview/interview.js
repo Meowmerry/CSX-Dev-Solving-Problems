@@ -21,19 +21,21 @@ create a function that takes in that name string and outputs a string with all t
 // Input : String
 // Output : String
 const createName = (string) => {
-    // will take all vowels remove from input
-    let vowels = ['a', 'e', 'i', 'o', 'u']; // 
+    // declare a vowels assign to array of element a e i o u
+    let vowels = ['a', 'e', 'i', 'o', 'u']; 
+    // declare a variable output assign to empty string
     let output = "";
     // iterate thru input string using for loop
     for (let i = 0; i < string.length; i++) {
-        // convert the letter to lowercase 
+        // declare the letter assign to convert the current element to lowercase 
         let letter = string[i].toLowerCase()
-        // check if vowel is indide of the object
+        // check if vowel is not includes in vowels
         // if not, reassign output 
         if (!vowels.includes(letter)) {
             output += string[i];
         }
     }
+    // return output 
     return output;
 };
 // console.log(createName("CodeSmith")) // CdSmth

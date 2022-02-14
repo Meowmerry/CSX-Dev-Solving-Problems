@@ -12,7 +12,8 @@ creat a function that accept a string as arguments
     - get rid of all space or any symble and transform all to lowercase
     - base case : check if string has no length return true;
     - recursive : call the Palindrome itself, 
-        newInput will check if the first letter and the lastletter are not equal,  will call function and passed in string use a slice with (1, -1)
+        newInput will check if the first letter and the lastletter are not equal, 
+         will call function and passed in string use a slice with (1, -1)
 */
 /* ================ SOLUTION 2 ========================== */
 const isPalindrome = (string) => {
@@ -32,10 +33,10 @@ console.log(isPalindrome("this is not a palindrome")); // => false
 console.log(isPalindrome("hello, I love $%# to code and learn Js ")); // => false
 
 /* ================ SOLUTION 2 ========================== */
-function isPalindrome1(string, i = 0) {
+function isPalindrome1(string) {
   if(string.length === 1 || string.length === 0) return true;
   if(string[0] !== string[string.length - 1]) return false;
-  return isPalindrome1(string, i += 1)
+  return isPalindrome1(string.slice(1,-1))
 }
 
 console.log(isPalindrome1("a")); // => true
