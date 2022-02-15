@@ -17,3 +17,15 @@ CS-Interview:
 http://csbin.io/interview/ms
 http://csbin.io/interview/wendy
 http://csbin.io/callbacks/
+
+
+
+CS Bin
+http://csbin.io/cs-prep-unit-1/YOUR-UNIQUE-ROOM-NAME
+http://csbin.io/cs-prep-unit-2/YOUR-UNIQUE-ROOM-NAME
+http://csbin.io/oop/YOUR-ROOM-NAME-HERE
+http://csbin.io/closures/UNIQUE-NAME
+http://csbin.io/cs-prep-recursion/YOUR-UNIQUE-ROOM-NAME-HERE
+http://csbin.io/cs-prep-algorithms/YOUR-UNIQUE-ROOM-NAME-HERE
+http://csbin.io/cs-prep-unit-8/YOUR-UNIQUE-ROOM-NAME-HERE
+http://csbin.io/cs-prep-big-data/YOUR-UNIQUE-ROOM-NAME-HERE
