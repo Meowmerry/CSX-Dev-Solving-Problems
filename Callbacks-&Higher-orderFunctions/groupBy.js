@@ -109,3 +109,20 @@ const decimals3 = [1.3, 2.1, 2.4];
 const floored3 = function (num) { return Math.floor(num); };
 console.log(groupBy3(decimals3, floored3)); // should log: { 1: [1.3], 2: [2.1, 2.4] }
 
+/* ========================== SOLUTION 5  ======================================
+================================================================================ */
+// function groupBy5(array, callback) {
+// return array.reduce(function (acc, curr) {
+//     if (!acc[callback(curr)]) {
+//         acc[callback(curr)] = [curr]
+//     } else {
+//         acc[callback(curr)].push(curr)
+//     }
+//     return acc
+// }, {})
+
+// }
+//const groupBy5 = (arr, cb) => arr.reduce((obj, key => obj[cb(key)] ? obj, {})
+const decimals5 = [1.3, 2.1, 2.4];
+const floored5 = function (num) { return Math.floor(num); };
+console.log(groupBy5(decimals5, floored5)); // should log: { 1: [1.3], 2: [2.1, 2.4] }

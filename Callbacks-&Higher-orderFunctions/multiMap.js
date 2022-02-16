@@ -117,3 +117,24 @@ function repeater4(str) { return str + str; }
 const items4 = ['catfood', 'glue', 'beer'];
 const functions4 = [uppercaser4, capitalize4, repeater4];
 console.log(multiMap4(items4, functions4)); // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
+
+
+
+function objectFilter(obj, callback) {
+    console.log('xxxx')
+    //   return Object.keys(obj).reduce((acc, key)=>{
+    //     	console.log(key)
+
+    // 	},{})
+
+}
+
+const cities = {
+    London: 'LONDON',
+    LA: 'Los Angeles',
+    Paris: 'PARIS',
+};
+
+
+console.log(objectFilter(cities, city => city.toUpperCase())) // Should log { London: 'LONDON', Paris: 'PARIS'}
+
