@@ -128,6 +128,7 @@ const intersection6 = arr => arr.reduce((acc, curr) => acc.filter(ele => curr.in
 const arr61 = [5, 10, 15, 20];
 const arr62 = [15, 88, 1, 5, 7];
 const arr63 = [1, 10, 15, 5, 20];
+
 console.log(intersection6([arr61, arr62, arr63])); // should log: [5, 15]
 
 /* ========================== SOLUTION 7 ======================================*/

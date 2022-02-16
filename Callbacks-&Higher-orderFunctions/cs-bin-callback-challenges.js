@@ -61,9 +61,22 @@ function objOfMatches(array1, array2, callback) {}
 // should log: { hi: 'HI', bye: 'BYE', later: 'LATER' }
 
 // Challenge 10
-function multiMap(arrVals, arrCallbacks) {}
+/*
+Input : Array
+Output : Object with sub array
 
-// console.log(multiMap(['catfood', 'glue', 'beer'], [function(str) { return str.toUpperCase(); }, function(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }, function(str) { return str + str; }]));
+
+*/
+function multiMap(arrVals, arrCallbacks) {
+  return arrVals.reduce((acc, curr) => {
+        
+  },{})
+}
+
+console.log(multiMap(['catfood', 'glue', 'beer'], 
+[function(str) { return str.toUpperCase(); }, 
+function(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }, 
+function(str) { return str + str; }]));
 // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
 
 // Challenge 11
@@ -219,9 +232,9 @@ const groupOfFuncs = {};
 groupOfFuncs.double = (n) => n * 2;
 groupOfFuncs.addTen = (n) => n + 10;
 groupOfFuncs.inverse = (n) => n * -1;
-console.log(highestFunc(groupOfFuncs, 5)); // should log: 'addTen'
-console.log(highestFunc(groupOfFuncs, 11)); // should log: 'double'
-console.log(highestFunc(groupOfFuncs, -20)); // should log: 'inverse'
+// console.log(highestFunc(groupOfFuncs, 5)); // should log: 'addTen'
+// console.log(highestFunc(groupOfFuncs, 11)); // should log: 'double'
+// console.log(highestFunc(groupOfFuncs, -20)); // should log: 'inverse'
 
 // Challenge 22
 const combineOperations = (startVal, arrOfFuncs) =>

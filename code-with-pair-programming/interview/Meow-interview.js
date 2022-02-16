@@ -105,6 +105,20 @@ Create a function "usePotions" that returns a string according to these rules,
         return output;
 */
 
+/*
+Create a function "checkerLogger" that takes one argument (a function that returns a boolean value) The returned function should have the following behavior:
+If the function is invoked with an argument, the checker callback function is invoked and its boolean result is returned.
+If the function is invoked without any arguments, instead return a count of the number of times the callback function has been invoked and evaluated true or false.
+
+Example:
+const isOdd = num => num % 2 === 1;
+const oddCounter = checkerLogger(isOdd);
+oddCounter(); -> { true: 0, false: 0 }
+oddCounter(3); -> true
+oddCounter(2); -> false
+oddCounter(); -> { true: 1, false: 1 }
+*/
+
 
 /*
 Write a function called 'transpose' that accepts a two dimensional array and returns a transposed version of that array.
@@ -113,7 +127,21 @@ const twoDimArray = [ ['fred', 'barney'], [30, 40], [true, false] ]
 console.log(transpose(twoDimArray)); // -> [['fred', 30, true], ['barney', 40, false]]
 */
 
-
+/*
+Declare function "itemRetriever" that returns function that when called,  will return one of my favorite authors.
+The function "itemRetriever" will take two argument (an array of objects and a string that will represent a key).
+When the returned function is called it should return the next object in the array at the key that was passed to "itemRetriever".
+example.
+const favoriteAuthors = [
+  { name: 'Earnest Hemingway' },
+  { name: 'Agatha Christie' },
+  { name: 'J.K. Rowling' },
+  { name: 'Steven King' },
+];
+const nextAuthor = itemRetriever(favoriteAuthors, 'name');
+nextAuthor() -> 'Earnest Hemingway'
+nextAuthor() -> 'Agatha Christie'
+*/
 
 /*
 Write a function 'stored' that takes in a function and returns a new function. The new function
@@ -133,6 +161,12 @@ cubeStored('a') --> "Please enter a valid number"
 cubeStored('a') --> "Please enter a valid number"
 cubeStored(2) --> '2: 8'
 */
+/* 
+Create a function "countChar" that takes two arguments (an input string and a target string).
+"countChar" will return the number of times the target string is found in the input string.
+Example:
+countChar('hello world', 'o'); -> 2
+countChar('javascript', 'j'); -> 1
 
 /*
 Count recursively the total number of "abc" and "aba" substrings that appear in the given string.
