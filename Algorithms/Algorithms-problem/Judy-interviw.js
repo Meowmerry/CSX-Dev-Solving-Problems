@@ -24,11 +24,11 @@ Output : Number
 
 
 const addNumbers = (number) => {
-    let sum = 0;
-    for (let i = 0; i <= number; i++) {
-        sum += i
-    }
-    return sum;
+  let sum = 0;
+  for (let i = 0; i <= number; i++) {
+    sum += i
+  }
+  return sum;
 }
 // console.log(addNumbers(4)) // 10 
 
@@ -48,11 +48,11 @@ check if numInput is greater than 50 and less than 500
 
 */
 const between50And500 = (nums) => {
-    if (nums > 50 && nums < 500) {
-        return true;
-    }
-    return false;
-  
+  if (nums > 50 && nums < 500) {
+    return true;
+  }
+  return false;
+
 }
 // console.log(between50And500(45)); // false;
 // console.log(between50And500(472)); // true;
@@ -74,10 +74,10 @@ Output : boolean
 */
 
 const divBy100 = (nums) => {
-    if (nums % 100 === 0) {
-        return true;
-    }
-    return false;
+  if (nums % 100 === 0) {
+    return true;
+  }
+  return false;
 }
 
 // console.log(divBy100(250))// false
@@ -101,8 +101,8 @@ Outp : boolean
 
 */
 const negativeOrEven = (nums) => {
-    if (nums < 0 || nums % 2 === 0) return true;
-    else return false;
+  if (nums < 0 || nums % 2 === 0) return true;
+  else return false;
 }
 
 // console.log(negativeOrEven(7)) // false
@@ -127,13 +127,13 @@ Output : boolean
 */
 
 const passAllTests = (array, val) => {
-    // array.forEach(fuc => {
-    //     if (!fuc(val)) {
-    //         pass = false;
-    //     }
-    // })
-    // return true;
-    return array.every(func => func(val))
+  // array.forEach(fuc => {
+  //     if (!fuc(val)) {
+  //         pass = false;
+  //     }
+  // })
+  // return true;
+  return array.every(func => func(val))
 }
 
 console.log(passAllTests([between50And500, divBy100, negativeOrEven], 10)) // false
@@ -172,13 +172,13 @@ Output : boolean
 
 const isPalindrome = (string) => {
 
-    //      string = string.replace(/\W/g, "").toLowerCase();
+  //    string = string.replace(/\W/g, "").toLowerCase();
 
-    //   	if( string.length === 0|| string.length === 1 ) return true
+  //   	if( string.length === 0|| string.length === 1 ) return true
 
-    //     if( string[0] !== string[string.length - 1] ) return false;
+  //     if( string[0] !== string[string.length - 1] ) return false;
 
-    // 		return isPalindrome( string.slice(1,-1) );
+  // 		return isPalindrome( string.slice(1,-1) );
 }
 
 
@@ -207,12 +207,12 @@ countAbc("abaxxaba") → 2
 */
 
 function countAbc(string, counter = 0) {
-    //base case
-    if (string === '') return counter;
+  //base case
+  if (string === '') return counter;
 
-    if (string.startsWith('abc') || string.startsWith('aba')) counter++;
+  if (string.startsWith('abc') || string.startsWith('aba')) counter++;
 
-    return countAbc(string.slice(1), counter)
+  return countAbc(string.slice(1), counter)
 }
 
 
@@ -239,18 +239,18 @@ cubeStored('a') --> "Please enter a valid number"
 cubeStored('a') --> "Please enter a valid number"
 cubeStored(2) --> '2: 8'
 */
-function stored (func){
-    const cache = {}
-    function inner(num){
-       if(typeof num !== 'number') return "Please enter a valid number"
-       else if(cache[num]){
-         return `${num} : ${cache[num]}`;
-       }else{
-        cache[num]  = func(num)
-        return cache[num];
-       }
+function stored(func) {
+  const cache = {}
+  function inner(num) {
+    if (typeof num !== 'number') return "Please enter a valid number"
+    else if (cache[num]) {
+      return `${num} : ${cache[num]}`;
+    } else {
+      cache[num] = func(num)
+      return cache[num];
     }
-    return inner;
+  }
+  return inner;
 }
 
 const cube = (n) => n ** 3;
@@ -258,37 +258,37 @@ const cubeStored = stored(cube);
 console.log(cubeStored(2)) //--> 8
 console.log(cubeStored(2)) //--> '2: 8'
 console.log(cubeStored(3)) //--> 27
-console.log(cubeStored(3) )//--> '3: 27'
+console.log(cubeStored(3))//--> '3: 27'
 console.log(cubeStored('a')) //--> "Please enter a valid number"
 console.log(cubeStored('a')) //--> "Please enter a valid number"
 // console.log(cubeStored(2))//--> '2: 8'
 
-function countAbc(str, count =0) {
-    //o: count of abc AND aba
-      
-    //base case
-      // when does not include abc or aba return count
-     if (!str.includes("abc") && !str.includes("aba") ) return count; 
-      //recursive case:
-    //test is str includes val1 or val 2, inc count
-      if (str.includes("abc"))  {
-          count++
-          str = str.replace("abc", "");
-        return countAbc(str, count)
-      } 
-          
-    if (str.includes("aba"))  {
-          count++
-          str = str.replace("aba", "");
-        return countAbc(str, count)
-      } 
-        
-      return countAbc(str, count)
-    }
-    
-    console.log(countAbc("abc"))// → 1
-    console.log(countAbc("abcxxabc"))// → 2
-    console.log(countAbc("abaxxaba"))// → 2
+function countAbc(str, count = 0) {
+  //o: count of abc AND aba
+
+  //base case
+  // when does not include abc or aba return count
+  if (!str.includes("abc") && !str.includes("aba")) return count;
+  //recursive case:
+  //test is str includes val1 or val 2, inc count
+  if (str.includes("abc")) {
+    count++
+    str = str.replace("abc", "");
+    return countAbc(str, count)
+  }
+
+  if (str.includes("aba")) {
+    count++
+    str = str.replace("aba", "");
+    return countAbc(str, count)
+  }
+
+  return countAbc(str, count)
+}
+
+console.log(countAbc("abc"))// → 1
+console.log(countAbc("abcxxabc"))// → 2
+console.log(countAbc("abaxxaba"))// → 2
 
 
 

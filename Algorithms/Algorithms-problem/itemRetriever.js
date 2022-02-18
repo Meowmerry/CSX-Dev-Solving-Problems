@@ -22,7 +22,6 @@ create func itemRetriever take arr of obje
 */
 const itemRetriever = (arrObj, key) => {
     let index = 0;
-
     return () => {
         return arrObj[index++][key];
     };

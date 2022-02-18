@@ -59,3 +59,19 @@ const isOdd1 = function (num) { return num % 2 === 1; };
 console.log(majority1([1, 2, 3, 4, 5], isOdd1)); // should log: true
 console.log(majority1([2, 3, 4, 5], isOdd1)); // should log: false
 
+/* ========================== SOLUTION 3  ======================================
+================================================================================ */
+const majority3 = (arr, callback) => {
+    let countTrue = 0;
+    let countFalse = 0;
+    return arr.reduce((acc, curr) => {
+        if (callback(curr)) countTrue += 1;
+        else countFalse += 1;
+        countFalse < countTrue ? acc = true : acc;
+        return acc;
+    }, false)
+}
+
+const isOdd3 = function (num) { return num % 2 === 1; };
+console.log(majority3([1, 2, 3, 4, 5], isOdd3)); // should log: true
+console.log(majority3([2, 3, 4, 5], isOdd3)); // should log: false
