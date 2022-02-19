@@ -22,7 +22,7 @@ const censor = () => {
         // console.log(cache)
         // if one string is passed in, modify the string to replace any instance of the keys in the cache with the corresponding values in the cache;
         Object.keys(cache).forEach(key => {
-            console.log(key)
+
             str1 = str1.replace(key, cache[key])
         })
         // then return the modified string;
@@ -45,7 +45,6 @@ function censor2() {
             pairs[str1] = str2;
             strings.push(pairs);
         }
-        console.log(strings)
         if (!str2) {
             const replaceStrings = (arrOfPairs, string) =>
                 arrOfPairs.reduce(

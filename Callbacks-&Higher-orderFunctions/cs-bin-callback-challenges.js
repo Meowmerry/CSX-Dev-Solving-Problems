@@ -197,7 +197,7 @@ function prioritize(array, callback) {
 const startsWithS = function (str) {
   return str[0] === "s" || str[0] === "S";
 };
-// console.log(prioritize(['curb', 'rickandmorty', 'seinfeld', 'sunny', 'friends'], startsWithS)); // should log:
+console.log(prioritize(['curb', 'rickandmorty', 'seinfeld', 'sunny', 'friends'], startsWithS)); // should log:
 // ['seinfeld', 'sunny', 'curb', 'rickandmorty', 'friends']
 
 // Challenge 14

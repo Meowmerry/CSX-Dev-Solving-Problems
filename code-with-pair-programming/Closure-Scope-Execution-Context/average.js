@@ -7,39 +7,63 @@ Create a function average that accepts no arguments, and returns a function (tha
 */
 /* ========================== SOLUTION 1  ======================================
 ================================================================================ */
-function average() { 
-    let output = [];
-    return (args) => {
-      let count = 0;
-      if(!args) {
-        //if array doesnt have length return 0
-        if (!output.length) return 0
-           //otherwise return average    
-        for (let i=0;i<output.length;i++){
-         count += output[i] 
-        }
-        count += output[index++] 
-              return count/output.length
-          } else {
-      
-        output.push(args)
-         for (let i=0;i<output.length;i++){
-             count += output[i]
-         }
-        return count/output.length;
+function average() {
+  let output = [];
+  return (args) => {
+    let count = 0;
+    if (!args) {
+      //if array doesnt have length return 0
+      if (!output.length) return 0;
+      //otherwise return average
+      for (let i = 0; i < output.length; i++) {
+        count += output[i];
       }
-  
+      count += output[index++];
+      return count / output.length;
+    } else {
+      output.push(args);
+      for (let i = 0; i < output.length; i++) {
+        count += output[i];
       }
-  } 
-  // /*** Uncomment these to check your work! ***/ 
-  const avgSoFar = average(); 
-  //4+8=12/2=8
-  // console.log(avgSoFar()); // => should log 0 
-  // console.log(avgSoFar(4)); // => should log 4 
-  // console.log(avgSoFar(8)); // => should log 6 
-  // console.log(avgSoFar()); // => should log 6 
-  // console.log(avgSoFar(12)); // => should log 8
-  //12+8+4/arr.length/3
-  //average== total/count
-  
-  // console.log(avgSoFar()); // => should log 8
+      return count / output.length;
+    }
+  };
+}
+// /*** Uncomment these to check your work! ***/
+const avgSoFar = average();
+//4+8=12/2=8
+// console.log(avgSoFar()); // => should log 0
+// console.log(avgSoFar(4)); // => should log 4
+// console.log(avgSoFar(8)); // => should log 6
+// console.log(avgSoFar()); // => should log 6
+// console.log(avgSoFar(12)); // => should log 8
+//12+8+4/arr.length/3
+//average== total/count
+// console.log(avgSoFar()); // => should log 8
+
+/* ========================== SOLUTION 2  ======================================
+================================================================================ */
+function average2() {
+  let count = 0;
+  let sum = 0;
+  return (num) => {
+    if (!num) {
+      if (count === 0) {
+        return 0;
+      }
+      return sum / count;
+    }
+    count++;
+    sum += num;
+    return sum / count;
+  };
+}
+
+// /*** Uncomment these to check your work! ***/
+const avgSoFar2 = average2();
+console.log(avgSoFar2()); // => should log 0
+console.log(avgSoFar2(4)); // => should log 4
+console.log(avgSoFar2(8)); // => should log 6
+console.log(avgSoFar2()); // => should log 6
+console.log(avgSoFar2(12)); // => should log 8
+console.log(avgSoFar2()); // => should log 8

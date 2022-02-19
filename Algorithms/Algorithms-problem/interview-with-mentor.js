@@ -131,22 +131,15 @@ return result
 
 */
 const transpose = (array) => {
-
     const result = [];
-
     for (let i = 0; i < array[0].length; i += 1) {
-
         const subArr = [];
-
         for (let j = 0; j < array.length; j += 1) {
-
             subArr.push(array[j][i]);
-
         }
         result.push(subArr);
     }
     return result;
-
 }
 
 const twoDimArray = [['fred', 'barney'], [30, 40], [true, false]]

@@ -71,7 +71,6 @@ const majority3 = (arr, callback) => {
         return acc;
     }, false)
 }
-
 const isOdd3 = function (num) { return num % 2 === 1; };
 console.log(majority3([1, 2, 3, 4, 5], isOdd3)); // should log: true
 console.log(majority3([2, 3, 4, 5], isOdd3)); // should log: false
