@@ -14,7 +14,6 @@ crete a func addEvenNumbers that take number
 */
 const addEvenNumbers = (nums) => {
     let sum = 0;
-
     for (let i = 0; i <= nums; i += 1) {
         if (i % 2 === 0) {
             sum += i;
@@ -98,11 +97,8 @@ create function strCopies take three aguments
 */
 const strCopies = (string, subStr, value, count = 0) => {
     if (string === "") return false;
-
     if (string.startsWith(subStr)) count += 1;
-
     if (count === value) return true;
-
     return strCopies(string.slice(1), subStr, value, count);
 };
 
@@ -265,9 +261,18 @@ There's no such thing as private properties on a JavaScript object! But,
 maybe there are? Implement a function createSecretHolder(secret) 
 which accepts any value as secret and returns an object with ONLY two methods. 
 getSecret() which returns the secret setSecret() which sets the secret
-
-
-
+*/
+const createSecretHolder = (secret) => {
+    const secreatHolder = {
+        getSecret: function () { console.log(secret) },
+        setSecret: function (value) { secret = value }
+    }
+    return secreatHolder;
+}
+const obj = createSecretHolder(5)
+obj.getSecret(); // => returns 5
+obj.setSecret(2);
+obj.getSecret(); // => returns 2
 /*
 Given a collection of distinct integers, write a function getPermutations to return all possible permutations.
 Input:[1, 2, 3]

@@ -15,11 +15,15 @@ create a function takes array
     iterate through array 
 
 */
-const subsets = function(nums) {
-    return nums.reduce((acc, curr) =>{
-        acc.push(curr);
-        console.log('acc' ,acc)
-    }, [])
+const subsets = function (nums, buffer = [], ans = [], i = 0) {
+    if (i === nums.length) ans.push([...buffer]);
+    else {
+        buffer.push(nums[i]);
+        subsets(nums, buffer, ans, i + 1);
+        buffer.pop();
+        subsets(nums, buffer, ans, i + 1);
+    }
+    return ans;
 };
-console.log(subsets([1,2,3])) // [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+console.log(subsets([1, 2, 3])) // [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 console.log(subsets([0])) // [[],[0]]

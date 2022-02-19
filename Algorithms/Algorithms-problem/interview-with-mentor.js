@@ -87,7 +87,6 @@ const favoriteAuthors = [
     { name: 'Steven King', age: 85, genre: 'Horrors' },
 ];
 
-
 const itemRetriever = (arrObj, string) => {
     let index = 0;
     return () => arrObj[index++][string]
@@ -118,15 +117,11 @@ Output : New Array with two sub Array
 
 crete a func take array
  declare a result assign to empty
-
    iterate thru array star at first index
         declare a subarray assign to empty array
         iterate thre array 
-            fillthe subAarry ousing push
-          
-     reasign result by pushing subarray     
-     
-
+            fillthe subAarry ousing push 
+     reasign result by pushing subarray    
 return result
 
 */

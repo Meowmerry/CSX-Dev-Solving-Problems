@@ -1,46 +1,49 @@
+/* 
+Is Palindrome
+A palindrome is a word that is spelled the same forwards and backwards. For example, "LEVEL", "RACECAR", and "KAYAK" are all palindromes, while "MOTOR", "RUDDER", and "DOGGED" are not palidromes.
 
-/*
-Define a function "isPalindrome" that takes a string, and returns a boolean value indicating whether the string is a palindrome
-(a palindrome is any string that has the same value when reversed - for example, "LEVEL" or "RACECAR")
-*/
-/*
+Write a recursive function, isPalindrome, to check if a string is a palindrome. Return true if the string is a palindrome; otherwise, return false.
+
 Input : String
 Output : Boolean
 
-Define a function "isPalindrome" that takes a string and returns a boolean 
-   reassign string by removing all space and symbol and using split and join method
-   crete a reverse string, remove all space , symbol using split and reverse string and join method
-   compare the two strings, if strictly equal, return true
 
+creat a function that accept a string as arguments
+    - get rid of all space or any symble and transform all to lowercase
+    - base case : check if string has no length return true;
+    - recursive : call the Palindrome itself, 
+        newInput will check if the first letter and the lastletter are not equal, 
+         will call function and passed in string use a slice with (1, -1)
 */
-
-
-const isPalindrome = (str) => {
-  str = str.replace(/\W/g,'').toLowerCase();
-  const reverse = [...str].reverse().join('');
-  return str === reverse;
+/* ================ SOLUTION 2 ========================== */
+const isPalindrome = (string) => {
+  string = string.replace(/\W/g, "").toLowerCase();
+  if (!string.length) return true;
+  return (
+    string[0] === string[string.length - 1] && isPalindrome(string.slice(1, -1))
+  );
 };
-console.log(isPalindrome("LEVEL"))  //--> true
-console.log(isPalindrome("RACECAR"))  //--> true
-console.log(isPalindrome("car"))  //--> false
-console.log(isPalindrome("a")); //-> true
-console.log(isPalindrome("Anne, I vote more cars race Rome-to-Vienna")); //-> true
-console.log(isPalindrome("llama mall")); //-> true
-console.log(isPalindrome("jmoney")); //-> false
+console.log(isPalindrome("a")); // => true
+console.log(isPalindrome("")); // => true
+console.log(isPalindrome("Kayak")); // => true
+console.log(isPalindrome("NEVERODDOREVEN")); // => true
+console.log(isPalindrome("Tacocat")); // => true
+console.log(isPalindrome("straw warts")); // => true
+console.log(isPalindrome("this is not a palindrome")); // => false
+console.log(isPalindrome("hello, I love $%# to code and learn Js ")); // => false
 
-/* ====================== SOLUTION 1 ============================ */
-//declare fun that accepts a string
-//create reversed variable using split, reverse, and join methods
-//compare the two strings, if strictly equal, return true
+/* ================ SOLUTION 2 ========================== */
 function isPalindrome1(string) {
-    const reversed = string.split(``).reverse().join(``);
-    if (string === reversed) return true;
-    return false;
-  }
-  console.log(isPalindrome1("LEVEL"))  //--> true
-  console.log(isPalindrome1("RACECAR"))  //--> true
-  console.log(isPalindrome1("car"))  //--> false
-  console.log(isPalindrome1("a")); //-> true
-  console.log(isPalindrome1("Anne, I vote more cars race Rome-to-Vienna")); //-> true
-  console.log(isPalindrome1("llama mall")); //-> true
-  console.log(isPalindrome1("jmoney")); //-> false
+  if(string.length === 1 || string.length === 0) return true;
+  if(string[0] !== string[string.length - 1]) return false;
+  return isPalindrome1(string.slice(1,-1))
+}
+
+console.log(isPalindrome1("a")); // => true
+console.log(isPalindrome1("")); // => true
+console.log(isPalindrome1("Kayak")); // => true
+console.log(isPalindrome1("NEVERODDOREVEN")); // => true
+console.log(isPalindrome1("Tacocat")); // => true
+console.log(isPalindrome1("straw warts")); // => true
+console.log(isPalindrome1("this is not a palindrome")); // => false
+console.log(isPalindrome1("hello, I love $%# to code and learn Js ")); // => false
