@@ -14,7 +14,7 @@ const after = (numOfcall, callback) => {
     // establish our count variable assign to 0;
     let count = 0;
     // closure requires us to return  a function, the function accept args.. string
-    return (string) => {
+    return (...string) => {
         // each time  our  returned function is  called we need to increment out count
         count++
         // check if count is greater or equal to the numOfCalls that was passed in

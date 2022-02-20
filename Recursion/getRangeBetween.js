@@ -34,3 +34,21 @@ console.log(getRangeBetween(-5, 5)) //-> [-4, -3, -2, 1, 0, 1, 2, 3, 4]
 
 /* ========================== SOLUTION 2 for Loop  ===========================
 ============================================================================================= */
+
+
+const getRangeBetween = (x, y, arr = []) => {
+  // base case : 
+  // if i <= y - 1 return arr
+
+  if (x === y - 1) return arr;
+  // increment i = x +1 ;
+  arr.push(x + 1)
+  // recursive case : getRangeBetween passed num1 , num2 ,  arr , i + 1;
+  return getRangeBetween(x + 1, y, arr);
+
+}
+console.log(getRangeBetween(2, 9)) //-> [3, 4, 5, 6, 7, 8]
+console.log(getRangeBetween(-5, 5)) //-> [-4, -3, -2, 1, 0, 1, 2, 3, 4]
+
+
+
