@@ -40,7 +40,23 @@ const createName = (string) => {
 };
 // console.log(createName("CodeSmith")) // CdSmth
 
+function removeVowel(text){
+    let output=''
+        let textConvert = text.toLowerCase()
+        let resault = textConvert.split('')
+        let outputArray= resault.filter(x=>{
+      return x!=='a' && x!=='e' && x!=='i'&& x!=='o'&& x!=='u'
+      })
 
+      for(let i= 0;i<outputArray.length;i++){
+
+    output += outputArray[i]
+      }
+ return outp
+ 
+
+}
+console.log(removeVowel("CodeSmith")) // CdSmth
 /*
 Create a function that takes in a string and returns that string in alternating cases starting with Upper Case
 for example:

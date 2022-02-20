@@ -130,7 +130,7 @@ const addingAllTheWeirdStuff4 =  (arr1, arr2) => {
     const isMoreThan20 = +arr2.some(num => num > 20)
    
     // using map to add odd or even to the arr1
-    return arr1.map(num => num + isMoreThan20 + (num < 10 ? num + sumOdd : num + sumEven))
+    return arr1.map(num => num + isMoreThan20 + (num < 10 ? sumOdd :  sumEven))
 }
 
 console.log(addingAllTheWeirdStuff4([1, 3, 5, 17, 15], [1, 2, 3, 4, 5])); // expected log [10, 12, 14, 23, 21]
