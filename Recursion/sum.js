@@ -68,9 +68,10 @@ console.log(sum([1, 2, 3, 4, 5, 6])); // -> returns 21
 /* ========================== SOLUTION 3  ======================================
 ================================================================================ */
 function sum(array) {
-//    if(array.length === 1) return array[0]
-//    if(!array.length) return 0;
-//    return array.pop() + sum(array)
+    //    if(array.length === 1) return array[0]
+    //    if(!array.length) return 0;
+    //    return array.pop() + sum(array)
 }
 console.log(sum([1, 1, 1])); // -> returns 3
 console.log(sum([1, 2, 3, 4, 5, 6])); // -> returns 21
+

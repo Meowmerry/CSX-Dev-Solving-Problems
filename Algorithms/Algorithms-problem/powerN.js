@@ -5,6 +5,7 @@ powerN(3, 1) → 3
 powerN(3, 2) → 9
 powerN(3, 3) → 27
 */
+/* ================ SOLUTION 1 =============== */
 const powerN = (base, exponent, product = 1) => {
     // base case : if exponent === 0 return product;
     if (exponent === 0) return product;
@@ -15,3 +16,9 @@ const powerN = (base, exponent, product = 1) => {
 console.log(powerN(3, 1)) //→ 3
 console.log(powerN(3, 2)) //→ 9
 console.log(powerN(3, 3)) //→ 27
+
+/* ================ SOLUTION 2 =============== */
+const powerN1 = (base, n) => (n === 0) ? 1 : base * powerN1(base, n -= 1);
+console.log(powerN1(3, 1)) //→ 3
+console.log(powerN1(3, 2)) //→ 9
+console.log(powerN1(3, 3)) //→ 27
