@@ -186,7 +186,7 @@ function getLength(array) {
 
 console.log(getLength([1])); // -> 1
 console.log(getLength([1, 2])); // -> 2
-console.log(getLength([1, 2, 3, 4, 5])); // -> 5
+console.log(getLength([1, , 3, 4, 5])); // -> 5
 console.log(getLength([])); // -> 0 
 
 
@@ -255,12 +255,12 @@ create a getLengthInternal func that accept array and count
     base case: if array has not count , return count
     recursive case : invoke getLengthInternal and passed array , count +1
 */
-const getLength = (array)=>{
+const getLength = (array) => {
     return getLengthInternal(array, count = 0)
 }
-const getLengthInternal = (array, count) =>{
-     if(!array[count]) return count;
-     return getLengthInternal(array, count +1 )
+const getLengthInternal = (array, count) => {
+    if (!array[count]) return count;
+    return getLengthInternal(array, count + 1)
 }
 console.log(getLength([1])); // -> 1
 console.log(getLength([1, 2])); // -> 2
@@ -280,10 +280,10 @@ create getLength func that accept array and set default count = 0
     base case : if array has count return count;
     recursive case : invoke getLength func and passed array, with count increment by 1
 */
-const getLength15 = (arr, count = 0)=>{
-    if(!arr.hasOwnProperty(count)) return count;
+const getLength15 = (arr, count = 0) => {
+    if (!arr.hasOwnProperty(count)) return count;
     return getLength15(arr, count + 1)
 }
-console.log(getLength15([1,2,3])) // 3
+console.log(getLength15([1, 2, 3])) // 3
 console.log(getLength15([])) // 0
-console.log(getLength15([1,undefined, 2,3, 4])) // 5
+console.log(getLength15([1, undefined, 2, 3, 4])) // 5

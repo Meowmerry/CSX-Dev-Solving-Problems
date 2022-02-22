@@ -137,6 +137,31 @@ console.log(updateHobbies4('baking', 1)); // --> { yoga: 0, baking: 1, piano: 0}
 console.log(updateHobbies4()); // --> 'tracker has been reset!'
 console.log(updateHobbies4('yoga', 1)); // --> { yoga: 1, baking: 0, piano: 0}
 
+/* ========================== SOLUTION 5  ======================================
+================================================================================ */
+function hobbyTracker5(hobbies) {
+    const cache = hobbies.reduce((acc, hobby) => (acc[hobby] = 0, acc), {})
+    return (str, interger) => {
+        if (str && interger) {
+            cache[str] = cache[str] + interger;
+            return cache;
+        } else {
+            Object.keys(cache).forEach(key => cache[key] = 0)
+            return 'tracker has been reset!'
+        }
+    }
+}
+
+const updateHobbies5 = hobbyTracker5(['yoga', 'baking', 'piano']);
+updateHobbies5('yoga', 2);
+updateHobbies5('baking', 4);
+updateHobbies5('yoga', 1);
+console.log(updateHobbies5('piano', 2)); // --> { yoga: 3, baking: 4, piano: 2 }
+console.log(updateHobbies5()); // --> 'tracker has been reset!'
+console.log(updateHobbies5('baking', 1)); // --> { yoga: 0, baking: 1, piano: 0}
+console.log(updateHobbies5()); // --> 'tracker has been reset!'
+console.log(updateHobbies5('yoga', 1)); // --> { yoga: 1, baking: 0, piano: 0}
+
 
 function find_max(nums) {
     let max_num = Number.NEGATIVE_INFINITY; // smaller than all other numbers

@@ -115,32 +115,6 @@ console.log(subsetSum([8, -2, 1, -3], 6));//         -> true (8 + 1 + (-3) = 6)
 
 
 
-/* RECURSION
-Write a function getRangeBetween that returns an array of all integers between values x and y, not including x and y.
-input : Two nubmer
-output : Array
-
-
-*/
-const getRangeBetween = (x, y, arr = []) => {
-  // base case : 
-  // if i <= y - 1 return arr
-
-  if (x === y - 1) return arr;
-  // increment i = x +1 ;
-  arr.push(x + 1)
-  // recursive case : getRangeBetween passed num1 , num2 ,  arr , i + 1;
-  return getRangeBetween(x + 1, y, arr);
-
-}
-console.log(getRangeBetween(2, 9)) //-> [3, 4, 5, 6, 7, 8]
-console.log(getRangeBetween(-5, 5)) //-> [-4, -3, -2, 1, 0, 1, 2, 3, 4]
-
-
-
-
-
-
 
 
 /*
@@ -182,6 +156,11 @@ const amplify = (nums) => {
 
 // Check all values in an array÷
 // Write a function called all which accepts an array and a callback and returns true if every value in the array returns true when passed as parameter to the callback function
+// var allAreLessThanSeven = all([1,2,9], function(num){
+//  	return num < 7;
+//  });
+// console.log(allAreLessThanSeven); // false
+
 
 /* 
 
@@ -200,7 +179,6 @@ create a func takes array and callback
 const all = (arr, callback) => {
 
   return arr.reduce((acc, curr) => {
-
     if (!callback(curr)) {
       acc = false;
     } else {
@@ -211,7 +189,7 @@ const all = (arr, callback) => {
   }, false)
 
 }
-
+const all1 = (arr, cb) => arr.reduce((acc, curr) => !cb(curr) ? acc = false : acc = true, false);
 // var allAreLessThanSeven = all([1,2,9], function(num){
 //  	return num < 7;
 //  });
@@ -283,60 +261,73 @@ const stored = (callback) => {
 
 
 
+/* RECURSION
+Write a function getRangeBetween that returns an array of all integers between values x and y, not including x and y.
+input : Two nubmer
+output : Array
+console.log(getRangeBetween(2, 9)) //-> [3, 4, 5, 6, 7, 8]
+console.log(getRangeBetween(-5, 5)) //-> [-4, -3, -2, 1, 0, 1, 2, 3, 4]
+
+*/
+const getRangeBetween = (x, y, arr = []) => {
+  // base case : 
+  // if i <= y - 1 return arr
+
+  if (x === y - 1) return arr;
+  // increment i = x +1 ;
+  arr.push(x + 1)
+  // recursive case : getRangeBetween passed num1 , num2 ,  arr , i + 1;
+  return getRangeBetween(x + 1, y, arr);
+
+}
+console.log(getRangeBetween(2, 9)) //-> [3, 4, 5, 6, 7, 8]
+console.log(getRangeBetween(-5, 5)) //-> [-4, -3, -2, 1, 0, 1, 2, 3, 4]
+
+
+
+
 /*
 Challenge :
 Given a string, return recursively a "cleaned" string where adjacent chars that are the same have been reduced to a single char. So "yyzzza" yields "yza".
 
-Input : String 
-Output : modifi String toLowerCase
+console.log(cleaned("")) // "";
+console.log(cleaned("yyzzza")) // "yza";
+console.log(cleaned("aabbcc")) // "abc";
+console.log(cleaned("Helloo")) // "helo";
 
-creat a fucntion take string
-    delare a default i = 0 , result = '';
+In : String
+Out : String without same letter
 
-	
-    base case : 
-    = if string is empty return result
-    - if string at curent letter , increment i by 1 
-    reassign result as the by adding the letter to 
-    - if string at current letter equal  result 
-  
-    recusive case : invoke cleaned passed in string, i , result
+
+create a func cleaned take a string
+  reassign strin to lowercase
+  declare a result variarble assign to empty string 
+  declare a index assign to 0
+
+  base case : 
+  if string at current is undefined return result;
+  if string at current letter is not equal to the next letter 
+      reasign result by adding to the result
+
+  recursive case :
+  - invoke cleaned function passed in strin, result , i increment by 1
 
 */
-// const cleaned = (str , i = 0 , result = '') =>{
 
-//   if(str === '') return result;
+const cleaned = (str, i = 0, result = '') => {
 
-//   if(str[i] === str[i+1] ) result += str[i++];
-//   if(str[i++] === undefined ) return result;
-
-//   return cleaned(str, i , result)
-
-// }
-
-function cleaned(str, i = 0, result = "") {
   str = str.toLowerCase();
-  // base case:
-  if (!str[i]) return result;
-  // recursive case
-  //yyzzza
-  // console.log("before", str[i])
 
-  if (str[i] !== str[i + 1]) {
-    // console.log("after", str[i])
-    result += str[i]; // y index = 0;
-    // console.log("res", result)
-    //str[i+1]// i++
-  }
+  if (str[i] === undefined) return result;
 
-  return cleaned(str, i + 1, result)
+  if (str[i] !== str[i + 1]) result += str[i];
+
+  return cleaned(str, i + 1, result);
 }
 
-// console.log(cleaned("")) // "";
-// console.log(cleaned("yyzzza")) // "yza";
-// console.log(cleaned("aabbcc")) // "abc";
-// console.log(cleaned("Helloo")) // "helo";
-
+console.log(cleaned("")) // "";
+console.log(cleaned("yyzzza")) // "yza";
+console.log(cleaned("aabbcc")) // "abc";
 
 
 

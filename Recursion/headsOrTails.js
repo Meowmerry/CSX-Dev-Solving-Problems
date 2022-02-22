@@ -21,13 +21,15 @@ console.log(headsOrTails(3));
 ]
 */
 function headsOrTails(n, buffer = [], ans = []) {
-    if (buffer.length === n) {
-      ans.push(buffer);
-      return ans;
-    }
-  
-    headsOrTails(n, [...buffer, "heads"], ans);
-    headsOrTails(n, [...buffer, "tails"], ans);
-  
+  if (buffer.length === n) {
+    ans.push(buffer);
     return ans;
   }
+
+  headsOrTails(n, [...buffer, "heads"], ans);
+  headsOrTails(n, [...buffer, "tails"], ans);
+
+  return ans;
+}
+console.log(headsOrTails(2)); // -> [['heads', 'heads'], ['heads', 'tails'], ['tails', 'heads'], ['tails', 'tails']]
+console.log(headsOrTails(3));
