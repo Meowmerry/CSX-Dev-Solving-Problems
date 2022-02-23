@@ -3,6 +3,7 @@
 QUESTION 1a
 Declare a variable 'number' and set it to the value 10.
 */
+let number = 10;
 
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -13,6 +14,24 @@ For example, if the input is 4 then your function should return 10 because 1 + 2
 
 Check that your 'addNumbers' function is working correctly by passing your variable 'number' to the 'addNumbers' function
 */
+const addNumbersLoop = (nums, sum = 0) => {
+    for (let i = 1; i <= nums; i += 1){
+        sum += i;
+    }
+    return sum;
+}
+
+// console.log(addNumbersLoop(4)) // 10
+// console.log(addNumbersLoop(3)) // 6
+// console.log(addNumbersLoop(5)) // 15
+
+const addNumbers = (nums, sum = 0) => {
+    if (nums === 0) return sum;
+    return addNumbers(nums - 1 , sum+nums)
+}
+// console.log(addNumbers(4)) // 10
+// console.log(addNumbers(3)) // 6
+// console.log(addNumbers(5)) // 15
 
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,7 +81,23 @@ QUESTION 7a
 Define a function "isPalindrome" that takes a string, and returns a boolean value indicating whether the string is a palindrome
 (a palindrome is any string that has the same value when reversed - for example, "LEVEL" or "RACECAR")
 */
+const isPalindrome = (str) => {
+    return str === str.split('').reverse().join('')
+}
+// console.log(isPalindrome('LEVEL')) // true
+// console.log(isPalindrome('RACECAR')) // true
+// console.log(isPalindrome('RACECARsa')) // true
 
+const isPalindromeRecursive = (str) => {
+    str = str.replace(/\W/g, '').toLowerCase();
+    if (str === '' || str.length === 1) return true;
+    return str[0] === str[str.length-1] && isPalindromeRecursive(str.slice(1,-1))
+
+}
+// console.log(isPalindromeRecursive('LEVEL')) // true
+// console.log(isPalindromeRecursive('RACECAR')) // true
+// console.log(isPalindromeRecursive('RACECARsa')) // false
+// console.log(isPalindromeRecursive('RAhslwo CECARsa')) // false
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -73,6 +108,11 @@ Example:
 const addBy10 = add(10)
 addBy10(20) -> 30
 */
+const add = (num1) => {
+    return (num2) => num1 + num2;
+}
+const addBy10 = add(10)
+//console.log(addBy10(20)) // -> 30
 
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -81,6 +121,13 @@ QUESTION 9a
 Write a function "getLength" that returns the length of a string. Accomplish this without using any loops, native JS methods, or the length property.
 */
 
+const getLength = (str, i = 0) => {
+    if (str[i] === undefined) return i;
+    return getLength(str, i+1)
+}
+// console.log(getLength('')) // 0
+// console.log(getLength('aa')) // 2
+// console.log(getLength('hello')) // 5
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -102,7 +149,7 @@ console.log(rotateGrid(sampleGrid)); // -> [[7, 4, 1],
 QUESTION 1b
 Declare a variable ‘names’ and set it to an array with the values ‘Chris’, ‘Samantha’, ‘Richard’, and ‘Kyle’ in it.
 */
-
+const names = ['Chris', 'Samantha' , 'Kyle']
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -112,7 +159,23 @@ The name will be the first letter of each of their names, sorted in alphabetical
 Create a function ‘societyName’ that takes in an array of names and returns the name of the secret society. 
 For example, if our input is [‘Adam’, ‘Sarah’, ‘Malcolm’] then ‘societyName’ should return the string ‘AMS’
 */
-
+const upperCase = (str) => {
+    return str.toUpperCase()
+}
+const societyName = (arr) => {
+    return arr.reduce((acc, curr ) => {
+        [...curr].forEach(ele => {
+            // if (ele.toUpperCase() === ele) {
+            if (upperCase(ele) === ele) {
+                acc += ele
+            }
+        })     
+        return acc.split('').sort().join('')
+  },'')
+}
+// console.log(societyName(['Adam', 'Sarah', 'Malcolm'])) // ASM
+// console.log(societyName(['Meow', 'Manddy', 'Ann'])) // AMM
+// console.log(societyName(['Cecilia', 'Andrea', 'Ronald'])) // ACR
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*

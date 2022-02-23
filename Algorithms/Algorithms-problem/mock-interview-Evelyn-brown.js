@@ -73,16 +73,19 @@ create a func take Array and Nubmer
     return initValue
 */
 
-const countTimes = (arr, target) => {
+// const countTimes = (arr, target) => {
+//     return arr.reduce((acc, curr) => {
+//         if (curr === target) {
+//             acc += 1;
+//         }
+//         return acc;
+//     }, 0)
+// }
 
-    return arr.reduce((acc, curr) => {
-
-        if (curr === target) {
-
-            acc += 1;
-        }
-        return acc;
-    }, 0)
+const countTimes = (arr, target, i = 0, count = 0) => {
+    if (arr[i] === undefined) return count;
+    if (arr[i] === target) count += 1;
+    return countTimes(arr, target, i + 1, count)
 
 }
 // console.log(countTimes([1, 8, 9, 9, 10], 9)) // -> 2
@@ -104,8 +107,8 @@ Output : Number
 create a func take string and target String
         declare defalut value, i assign to 0 , count assign to 0
         base case 
-    -  if str input is undefined or return count
-    - if str with i increment by 1 , current strin === target increment count by 1
+     -  if str input is undefined or return count
+     - if str with i increment by 1 , current strin === target increment count by 1
   
     recuresive case: invoke countChar func and passed str, target, i ,count
  
@@ -114,11 +117,11 @@ create a func take string and target String
 const countChar = (str, target, i = 0, count = 0) => {
 
     if (str[i] === undefined) return count;
-    if (str[i++] === target) count += 1;
+    if (str[i] === target) count += 1;
 
-    return countChar(str, target, i, count)
+    return countChar(str, target, i + 1, count)
 }
-// console.log(countChar( '', 'j')); //-> 0
+// console.log(countChar('', 'j')); //-> 0
 // console.log(countChar('hello world', 'o')); //-> 2
 // console.log(countChar('javascript', 'j')); //-> 1
 
@@ -126,7 +129,8 @@ const countChar = (str, target, i = 0, count = 0) => {
 /*
 Write a function "passwordSafe" that takes two arguments: a string which will be the password, and a value which will be the "safe". "passwordSafe" should return a function that takes in a password as a string.
 If that password doesn’t match the one originally provided, return the string “You have entered the wrong password”. If the passwords do match, return the safe.
- 
+console.log(mySafe('wrongPassword') )//-> "You have entered the wrong password"
+console.log(mySafe('myPassword')) //-> "My Super Secret"
  
 Input  : Two String will passwordOutter and safe
 Ouput : closure 
@@ -197,7 +201,7 @@ const transpose = (array) => {
 }
 
 const twoDimArray = [['fred', 'barney'], [30, 40], [true, false]]
-  // console.log(transpose(twoDimArray)); // -> [['fred', 30, true], ['barney', 40, false]]
+// console.log(transpose(twoDimArray)); // -> [['fred', 30, true], ['barney', 40, false]]
 
 
 /*
@@ -213,6 +217,38 @@ console.log(copyOfTools[0].editor.favorite.mine === tools[0].editor.favorite.min
 console.log(copyOfTools[0].editor.favorite.mine.name === tools[0].editor.favorite.mine.name); // -> true
 */
 
+const deepCopy = (arr) => {
+
+    let output = {};
+    for (let i = 0; i < arr.length; i += 1) {
+
+        for (let key in arr[i]) {
+            for (let key1 in arr[i][key]) {
+                console.log(key1)
+            }
+        }
+    }
+
+    // return () => {
+    //     return arr.reduce((acc, curr, i) => {
+    //         if (arr === copyOfTools) {
+    //             arr = ture;
+    //         }
+    //         console.log('curr', curr)
+    //         return acc;
+    //     }, false)
+    // }
+
+}
+
+const tools = [{ editor: { favorite: { mine: { name: 'vscode' } } } }, { shell: 'zsh' }];
+const copyOfTools = deepCopy(tools);
+console.log(copyOfTools)
+console.log(copyOfTools === tools);                                                           // -> false
+// console.log(copyOfTools[0].editor === tools[0].editor);                                       // -> false
+//console.log(copyOfTools[0].editor.favorite === tools[0].editor.favorite);                     // -> false
+// console.log(copyOfTools[0].editor.favorite.mine === tools[0].editor.favorite.mine);           // -> false
+// console.log(copyOfTools[0].editor.favorite.mine.name === tools[0].editor.favorite.mine.name); // -> true
 
 /*
 QUESTION 2:
@@ -229,7 +265,19 @@ wordSearchLetterCounter([
 "D" shows up 3 times: twice in first row, once in third row.
 */
 
-
+const wordSearchLetterCounter = (array, letter) => {
+    return array.reduce((acc, curr) => {
+        acc += countTimes(curr, letter);
+        return acc;
+    }, 0)
+}
+// console.log(wordSearchLetterCounter([
+//     ["D", "E", "Y", "H", "A", "D"],
+//     ["C", "B", "Z", "Y", "J", "K"],
+//     ["D", "B", "C", "A", "M", "N"],
+//     ["F", "G", "G", "R", "S", "R"],
+//     ["V", "X", "H", "A", "S", "S"]
+// ], "D")) // ➞ 3 "D" shows up 3 times: twice in first row, once in third row.
 
 
 

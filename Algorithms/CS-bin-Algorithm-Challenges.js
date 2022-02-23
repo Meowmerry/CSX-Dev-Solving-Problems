@@ -105,7 +105,8 @@ function ransomTests() {
 // Write a function that takes in an array and returns a new array with duplicates removed
 
 function deleteDups(arr) {
-
+    // return [...new Set(arr)]
+    return arr.filter((ele, idx, arr) => arr.indexOf(ele) === idx)
 }
 
 // Extension: solve in 0(n) time
@@ -116,7 +117,7 @@ function dupsTests() {
     console.log(deleteDups(['a', 'b', 'c', 'd', 'a', 'b', 'c', 'd']), ' -> [a, b, c, d]');
 }
 
-// dupsTests() // Uncomment to check code!
+dupsTests() // Uncomment to check code!
 
 ////////////////////////////
 //     Challenge 6

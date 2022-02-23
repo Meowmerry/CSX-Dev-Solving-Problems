@@ -1,7 +1,6 @@
 /* Declare a variable ‘names’ and set it to an array with the values ‘Chris’, ‘Samantha’, ‘Richard’, and ‘Kyle’ in it. */
 
 
-
 /*
 Create a function that takes in a string and returns that string in alternating cases starting with Upper Case
 for example:
@@ -19,23 +18,24 @@ elephant -> ElEpHaNt
 
 // return string
 const alteratingStr = (str) => {
-    let result = '';
-    for (let i = 0; i < str.length; i++) {
-        if (i % 2 === 0) result += str[i].toUpperCase();
-        else result += str[i];
-    }
-    return result;
+  return [...str].reduce((output, curr, i) => {
+    if (i % 2 !== 0) output += curr.toLowerCase();
+    else output += curr.toUpperCase();
+    return output;
+  }, '')
 }
-console.log(alteratingStr('dog'))
-console.log(alteratingStr('chair'))
-console.log(alteratingStr('elephant'))
+// console.log(alteratingStr('dog')) // DoG
+// console.log(alteratingStr('chair')) // ChAiR
+// console.log(alteratingStr('elephant')) // ElEpHaNt
 
 /*
 create a function that takes in that name string and outputs a string with all the vowels removed
 for example: "David" -> "Dvd"
 */
-
-
+const removeVowel = (str) => {
+  return str.replace(/[aeiou]/g, '')
+}
+console.log(removeVowel('David')) // "Dvd"
 
 /*Create a function that takes in an array of numbers and returns the sum of its cubes.
 Examples
@@ -51,22 +51,48 @@ sumOfCubes([]) //➞ 0 */
 /*
 Create a function 'addNumbers' that takes a number as an argument. 'addNumbers' should add up all the numbers from 1 to the number you passed to the function.
 For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
-
 */
-
+/* ============= SOLUTION 1 Loop  ============================= */
+const addNumbers = (nums) => {
+  let sum = 0;
+  for (let i = 0; i <= nums; i += 1) {
+    sum += i
+  }
+  return sum;
+}
+//console.log(addNumbers(4))
+/* ============= SOLUTION 1 Recursive  ============================= */
+const addNumbersRecursive = (nums, sum = 0) => {
+  if (nums === 0) return sum;
+  return addNumbersRecursive(nums - 1, sum + nums)
+}
+//console.log(addNumbersRecursive(4))
 /*
-Create a function "between50And500" that takes a number as an argument.
-"between50And500" should return a true if the number passed to it is between 50 and 500 exclusive.
-For example, if the input is 45 then your function should return false and if the input is 472 it should return true.
-
+Create a function "between40And400" that takes a number as an argument.
+"between40And400" should return a true if the number passed to it is between 40 and 400 exclusive.
+For example, if the input is 35 then your function should return false and if the input is 372 it should return true.
 */
+
+const between40And400 = (nums) => {
+  if (nums > 40 && nums <= 400) return true;
+  else return false;
+}
+// console.log(between40And400(35)) // false
+// console.log(between40And400(372)) // true
+// console.log(between40And400(200)) // true
 
 /*
 Create a function "divBy100" that takes a number as an argument.
 "divBy100" should return a true if the number passed to it is divisible by 100.
-For example, if the input is 120 then your function should return false and if the input is 600 it should return true.
+For example, if the input is 130 then your function should return false and if the input is 500 it should return true.
 */
-
+const divBy100 = (nums) => {
+  if (nums % 100 === 0) return true;
+  else return false;
+}
+console.log(divBy100(130)) // false
+console.log(divBy100(500)) // true
+console.log(divBy100(300)) // true
 
 /*
 Create a function "negativeOrEven" that takes a number as an argument.
@@ -83,7 +109,7 @@ If all functions in your array return true then "passAllTests" will return true.
 
 
 /*
-Use your "passAllTests" function to test if the number 300 is greater than the number 50 and less than the number 500,
+Use your "passAllTests" function to test if the number 300 is greater than the number 40 and less than the number 400,
 divisible by the 100, and a negative number OR even. Then test the number 250.
 */
 
@@ -118,16 +144,6 @@ console.log(transpose(twoDimArray)); // -> [['fred', 30, true], ['barney', 40, f
 */
 
 
-
-
-
-
-
-
-
-
-
-
 /*
 Create a function 'amplify' that takes a number and returns an array from 1 to the given number, where: 
 If the number can be divided evenly by 4, amplify it by 10 (i.e. return 10 times the number) and if the number 
@@ -135,7 +151,29 @@ cannot be divided evenly by 4, simply return the number.
 For example, if we pass the number 5 to the function 'amplify' it should return the array [1, 2, 3, 40, 5]
 */
 
+// Input : Number
+// Output : ARray
+// create a fucn take Number as argument
+// declare an array assign to empty array
+// iterate thru number
+// check if the nubmer whice divided by 4 and times 10 and push to array
+// other number pust to array
+// return array
 
+const amplify = (nums) => {
+  const newArr = [];
+  for (let i = 1; i <= nums; i++) {
+    if (i % 4 === 0) {
+      newArr.push(i * 10);
+    } else {
+      newArr.push(i)
+    }
+  }
+  return newArr;
+}
+// console.log(amplify(5)) // [1, 2, 3, 40, 5]
+// console.log(amplify(10)) // [1, 2, 3, 40, 5 , 6 , 7 , 80 , 9 , 10]
+// console.log(amplify(12)) // [1, 2, 3, 40, 5 , 6 , 7 , 80 , 9 , 10, 11 , 120]
 /* 
 Check all values in an array÷
 Write a function called all which accepts an array and a callback and returns true if every value in the array returns true when passed as parameter to the callback function
@@ -144,7 +182,47 @@ var allAreLessThanSeven = all([1,2,9], function(num){
  });
 console.log(allAreLessThanSeven); // false
 */
+const all = (arr, callback) => arr.reduce((acc, curr) => ((callback(curr) ? acc = true : acc = false), acc), false)
+var allAreLessThanSeven = all([1, 2, 9], function (num) {
+  return num < 7;
+});
+console.log(allAreLessThanSeven); // false
 
+/*
+
+Write a function rollCall that accepts an array of names and returns a function. The first time the returned function is invoked, it should log the first name to the console. The second time it is invoked, it should log the second name to the console, and so on, until all names have been called. Once all names have been called, it should log 'Everyone accounted for'.
+
+
+const rollCaller = rollCall(['Victoria', 'Juan', 'Ruth'])
+rollCaller() // => should log 'Victoria'
+rollCaller() // => should log 'Juan'
+rollCaller() // => should log 'Ruth'
+rollCaller() // => should log 'Everyone accounted for'
+*/
+
+/* 
+Create a function cycleIterator that accepts an array, and returns a function. The returned function will accept zero arguments. When first invoked, the returned function will return the first element of the array. When invoked a second time, the returned function will return the second element of the array, and so forth. After returning the last element of the array, the next invocation will return the first element of the array again, and continue on with the second after that, and so forth.
+
+const threeDayWeekend = ['Fri', 'Sat', 'Sun'];
+const getDay = cycleIterator(threeDayWeekend);
+console.log(getDay()); // => should log 'Fri'
+console.log(getDay()); // => should log 'Sat'
+console.log(getDay()); // => should log 'Sun'
+console.log(getDay()); // => should log 'Fri'
+
+*/
+
+/*
+Create a function saveOutput that accepts a function (that will accept one argument), and a string (that will act as a password). saveOutput will then return a function that behaves exactly like the passed-in function, except for when the password string is passed in as an argument. When this happens, the returned function will return an object with all previously passed-in arguments as keys, and the corresponding outputs as values.
+
+
+const multiplyBy2 = function(num) { return num * 2; };
+const multBy2AndLog = saveOutput(multiplyBy2, 'boo');
+console.log(multBy2AndLog(2)); // => should log 4
+console.log(multBy2AndLog(9)); // => should log 18
+console.log(multBy2AndLog('boo')); // => should log { 2: 4, 9: 18 }
+
+*/
 
 /*
 Create a function makeFuncTester that accepts an array (of two-element sub-arrays), and returns a function (that will accept a callback). The returned function should return true if the first elements (of each sub-array) being passed into the callback all yield the corresponding second elements (of the same sub-array). Otherwise, the returned function should return false.
@@ -197,7 +275,22 @@ console.log(getRangeBetween(2, 9)) //-> [3, 4, 5, 6, 7, 8]
 console.log(getRangeBetween(-5, 5)) //-> [-4, -3, -2, 1, 0, 1, 2, 3, 4]
 
 */
-
+/*
+Input : Two Number  (x, y)
+Output : Array 
+create a funciton take two number
+declare a newArr assign to newArr
+base case : x === y - 1  return newArr
+fil the array of x + 1 each time function call
+recursive case : invoke getRangeBetween and passed x increment by1, y, newArr
+*/
+const getRangeBetween = (x, y, newArr = []) => {
+  if (x === y - 1) return newArr;
+  newArr.push(x + 1);
+  return getRangeBetween(x + 1, y, newArr)
+}
+// console.log(getRangeBetween(2, 9)) //-> [3, 4, 5, 6, 7, 8]
+// console.log(getRangeBetween(-5, 5)) //-> [-4, -3, -2, 1, 0, 1, 2, 3, 4]
 
 /*
 Challenge :
@@ -208,3 +301,55 @@ console.log(cleaned("yyzzza")) // "yza";
 console.log(cleaned("aabbcc")) // "abc";
 console.log(cleaned("Helloo")) // "helo";
 */
+
+/* 
+Input : String 
+Output : Strin with out repeat
+
+create a func take string as aguments
+  declare a variable result assign to empty string
+  declare a i assign to 0
+  base case : string is empty return result
+  if(string[i] === string[i + 1]) reassign result at to current element
+  recursive case : invoke cleaned func passed string, result , i increment by 1
+
+*/
+const cleaned = (str, result = '', i = 0) => {
+  if (str[i] === undefined) return result;
+  if (str[i] !== str[i + 1]) result += str[i];
+  return cleaned(str, result, i + 1)
+}
+
+
+// console.log(cleaned("")) // "";
+// console.log(cleaned("yyzzza")) // "yza";
+// console.log(cleaned("aabbcc")) // "abc";
+// console.log(cleaned("Helloo")) // "helo";
+
+/* Given a string and a non-empty substring sub, compute recursively if at least n copies of sub appear in the string somewhere, possibly with overlapping. N will be non-negative. 
+
+console.log(strCopies("catcowcat", "cat", 2) )//=> true
+console.log(strCopies("catcowcat", "cow", 2)) //=> false
+console.log(strCopies("catcowcat", "cow", 1)) //=> true
+*/
+
+const strCopies = () => {
+
+
+}
+console.log(strCopies("catcowcat", "cat", 2))//=> true
+console.log(strCopies("catcowcat", "cow", 2)) //=> false
+console.log(strCopies("catcowcat", "cow", 1)) //=> true
+
+
+function strCopies(string, subString, num, numOfTimes = 0) {
+  if (string === '') return false;
+  if (num === numOfTimes) return true;
+  let subString2 = string.slice(0, 3);
+  if (subString2 === subString) numOfTimes += 1;
+  return strCopies(string.slice(1), subString, num, numOfTimes);
+}
+
+console.log(strCopies("catcowcat", "cat", 2))//=> true
+console.log(strCopies("catcowcat", "cow", 2)) //=> false
+console.log(strCopies("catcowcat", "cow", 1)) //=> true
