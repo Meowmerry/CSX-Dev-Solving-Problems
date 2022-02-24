@@ -6,15 +6,8 @@ console.log(anagrams('aabc')); // -> [ 'aabc', 'aacb', 'abac', 'abca', 'acab', '
 
 */
 
-const anagrams = (string) => {
-
-
-}
-
-console.log(anagrams('aabc')); // -> [ 'aabc', 'aacb', 'abac', 'abca', 'acab', 'acba', 'baac', 'baca', 'bcaa', 'caab', 'caba', 'cbaa' ]
-
-
-const allAnagrams = function (string) {
+/* =================== SOLUTION 1 ==================== */
+const anagrams = function (string) {
 
     function findAnagrams(start, stringRemainder) {
         if (stringRemainder.length === 1) {
@@ -35,4 +28,23 @@ const allAnagrams = function (string) {
     return findAnagrams('', string);
 };
 
-console.log(allAnagrams('aabc'));
+console.log(anagrams('aabc'));
+
+/* =================== SOLUTION 2 ==================== */
+function anagrams(str) {
+    if (str.length < 2) {
+        return str;
+    }
+    let newArr = [];
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+        if (str.indexOf(char) != i)
+            continue;
+        let remainingChars = str.slice(i + 1, str.length) + str.slice(0, i);
+        for (let results of anagrams(remainingChars)) {
+            newArr.push(char + results);
+        }
+    }
+    return newArr;
+}
+console.log(anagrams('aabc'));

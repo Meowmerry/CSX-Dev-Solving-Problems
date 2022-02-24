@@ -15,7 +15,7 @@ For example, if the input is 4 then your function should return 10 because 1 + 2
 Check that your 'addNumbers' function is working correctly by passing your variable 'number' to the 'addNumbers' function
 */
 const addNumbersLoop = (nums, sum = 0) => {
-    for (let i = 1; i <= nums; i += 1){
+    for (let i = 1; i <= nums; i += 1) {
         sum += i;
     }
     return sum;
@@ -27,7 +27,7 @@ const addNumbersLoop = (nums, sum = 0) => {
 
 const addNumbers = (nums, sum = 0) => {
     if (nums === 0) return sum;
-    return addNumbers(nums - 1 , sum+nums)
+    return addNumbers(nums - 1, sum + nums)
 }
 // console.log(addNumbers(4)) // 10
 // console.log(addNumbers(3)) // 6
@@ -91,7 +91,7 @@ const isPalindrome = (str) => {
 const isPalindromeRecursive = (str) => {
     str = str.replace(/\W/g, '').toLowerCase();
     if (str === '' || str.length === 1) return true;
-    return str[0] === str[str.length-1] && isPalindromeRecursive(str.slice(1,-1))
+    return str[0] === str[str.length - 1] && isPalindromeRecursive(str.slice(1, -1))
 
 }
 // console.log(isPalindromeRecursive('LEVEL')) // true
@@ -123,7 +123,7 @@ Write a function "getLength" that returns the length of a string. Accomplish thi
 
 const getLength = (str, i = 0) => {
     if (str[i] === undefined) return i;
-    return getLength(str, i+1)
+    return getLength(str, i + 1)
 }
 // console.log(getLength('')) // 0
 // console.log(getLength('aa')) // 2
@@ -149,7 +149,7 @@ console.log(rotateGrid(sampleGrid)); // -> [[7, 4, 1],
 QUESTION 1b
 Declare a variable ‘names’ and set it to an array with the values ‘Chris’, ‘Samantha’, ‘Richard’, and ‘Kyle’ in it.
 */
-const names = ['Chris', 'Samantha' , 'Kyle']
+const names = ['Chris', 'Samantha', 'Kyle']
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -159,23 +159,33 @@ The name will be the first letter of each of their names, sorted in alphabetical
 Create a function ‘societyName’ that takes in an array of names and returns the name of the secret society. 
 For example, if our input is [‘Adam’, ‘Sarah’, ‘Malcolm’] then ‘societyName’ should return the string ‘AMS’
 */
+/* ================= SOLUTION 1 ======================== */
 const upperCase = (str) => {
     return str.toUpperCase()
 }
 const societyName = (arr) => {
-    return arr.reduce((acc, curr ) => {
+    return arr.reduce((acc, curr) => {
         [...curr].forEach(ele => {
             // if (ele.toUpperCase() === ele) {
             if (upperCase(ele) === ele) {
                 acc += ele
             }
-        })     
+        })
         return acc.split('').sort().join('')
-  },'')
+    }, '')
 }
 // console.log(societyName(['Adam', 'Sarah', 'Malcolm'])) // ASM
 // console.log(societyName(['Meow', 'Manddy', 'Ann'])) // AMM
 // console.log(societyName(['Cecilia', 'Andrea', 'Ronald'])) // ACR
+
+/* ================= SOLUTION 2 ======================== */
+
+const strAtFirstChar = str => str[0];
+const societyName2 = (arr) => arr.map(strAtFirstChar).sort().join('');
+
+console.log(societyName2(['Adam', 'Sarah', 'Malcolm'])) // ASM
+console.log(societyName2(['Meow', 'Manddy', 'Ann'])) // AMM
+console.log(societyName2(['Cecilia', 'Andrea', 'Ronald'])) // ACR
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -391,10 +401,10 @@ console.log(anagrams(‘aabc’)); -> [ ‘aabc’, ‘aacb’, ‘abac’, ‘a
 /*
 QUESTION 1e
 Declare a variable myNumbers and set it to array containing the numbers 8, 3, and 14
-​*/
+ */
 
 //////////////////////////////////////////////////////////////////////////////////////////
-​
+
 /*
 QUESTION 2e
 Create a function 'cubeNum' that takes in a number as an argument and returns the number cubed.
@@ -402,7 +412,7 @@ For example, if we pass the number 3 to 'cubeNum' it will return 27 because 3 * 
 */
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-​
+
 /*
 QUESTION 3e
 Create a function 'sumOfCubes' that takes in an array of numbers as and argument and uses your 'cubeNum' function.
@@ -411,25 +421,25 @@ For example, if we pass the array [1,5,9] to the function 'sumOfCubes' it should
 
 Check that your 'sumOfCubes' function is working correctly by passing the value of 'myNumbers' to it
 */
-​
-​/////////////////////////////////////////////////////////////////////////////////////////​
-​
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
 /*
 QUESTION 4e
 Declare a variable 'programmingLanguages' and set it to an array that contains the values 'C++', 'Java', 'Python', Javascript', and 'Swift'.
-​*/
+ */
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-​
+
 /*
 QUESTION 5e
 Create a function 'containsJ' that takes a string as an argument
 'containsJ' should return a boolean value based off of whether or not the string being passed to it contains the letter 'j' or 'J.
 For example, if the input is 'Cat' then your function should return false, and if the input is 'Jaguar' it should return true.
 */
-​​
+
 ///////////////////////////////////////////////////////////////////////////////////////////
-​
+
 /*
 QUESTION 6e
 Create a function 'screen' that takes in two arguments an array and a callback function that will be applied to every element in the array.
@@ -439,17 +449,17 @@ For example, if we were to call 'screen' and pass to it an array containing the 
 
 Check that your 'screen' function is working correctly by passing it your 'programmingLanguages' array and your 'containsJ' function
 */
-​
-​//////////////////////////////////////////////////////////////////////////////////////////
-​
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
 /*
 QUESTION 7e
 Create a function "countChars" that takes argument (a string).
 "countChars" should return the number of characters in the string. You should not count whitespace as characters.
 */
-​
-​//////////////////////////////////////////////////////////////////////////////////////////
-​
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
 /*
 QUESTION 8e
 Create a function "doToEachElement" that takes two arguments (an array and a callback function).
@@ -458,10 +468,10 @@ Create a function "doToEachElement" that takes two arguments (an array and a cal
 Check that your "doToEachElement" function is working properly by calling it with the array containing the strings "hello world", "I love programming", and "Twin Snakes are my favorite candy" and your "countChars" function.
 
 */
-​
-​//////////////////////////////////////////////////////////////////////////////////////////
-​
-​
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
 /*
 QUESTION 9e
 Write a function "memoryMaker" that accepts no parameters, and returns a function. Have the returned function accept a value, and every time the returned function is called, return an array of all the previously passed values.
@@ -597,13 +607,22 @@ iRemember(true); -> ['hello', 1, 'world', true]
 ///////////////////* Sanaya Third Interview *//////////////////
 
 // Declare a variable 'randomNumber' and set it equal to the number 10
+let randomNumber = 10;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Create a function 'amplify' that takes a number and returns an array from 1 to the given number, where: If the number can be divided evenly by 4, amplify it by 10 (i.e. return 10 times the number) and if the number cannot be divided evenly by 4, simply return the number.
 For example, if we pass the number 5 to the function 'amplify' it should return the array [1, 2, 3, 40, 5]
 */
-
+const amplify = (nums) => {
+    let newArr = [];
+    for (let i = 1; i <= nums; i += 1) {
+        if (i % 4 === 0) newArr.push(i * 10);
+        else newArr.push(i)
+    }
+    return newArr
+}
+//console.log(amplify(randomNumber)) // [1, 2, 3, 40, 5 , 6 , 7 , 80 , 9 , 10]
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -615,7 +634,7 @@ For example, if we pass the number 5 to the function 'amplify' it should return 
 
 /* Declare a variable 'programmingLanguages' and set it to an array that contains the values 'C++', 'Java', 'Python', Javascript', and 'Swift'. */
 
-
+const programmingLanguages = ['C++', 'Java', 'Python', 'Javascript', 'Swift'];
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -706,7 +725,7 @@ cachedSumMultiplyBy2(5, 10); // -> 30 // from the cache object
 
 
 /*
-Create a function "checkerLogger" that takes one argument (a function that returns a boolean value) The returned function should have the following 
+Create a function "checkerLogger" that takes one argument (a function that returns a boolean value) The returned function should have the following
 behavior:
 If the function is invoked with an argument, the callback function is invoked and its boolean result is returned.
 If the function is invoked without any arguments, instead return a count of the number of times the callback function has been invoked and evaluated true or false.
@@ -725,8 +744,8 @@ console.log(oddCounter()); //-> { true: 1, false: 1 }
 
 
 /*
-Create a function groupBy that accepts an array and a callback, and returns an object. 
-groupBy will iterate through the array and perform the callback on each element. Each return value from the callback will be saved as a key on the object. 
+Create a function groupBy that accepts an array and a callback, and returns an object.
+groupBy will iterate through the array and perform the callback on each element. Each return value from the callback will be saved as a key on the object.
 The value associated with each key will be an array consisting of all the elements that resulted in that return value when passed into the callback.
 
 const floored = function(num) { return Math.floor(num); };
@@ -812,8 +831,8 @@ countAbc("abaxxaba") → 2
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
-Write a function 'subsetSum' that is given an array of integers and a target number. 
-It should return true if there is a subset of the array that sums up to the target and returns false otherwise. 
+Write a function 'subsetSum' that is given an array of integers and a target number.
+It should return true if there is a subset of the array that sums up to the target and returns false otherwise.
 A subset can be any size and the elements do not have to appear consecutively in the array.
 
 Examples:
@@ -827,7 +846,7 @@ subsetSum([8, -2, 1, -3], 6)         -> true (8 + 1 + (-3) = 6)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* Challenge: Loops - Multiple Conditions
-Write a function addingAllTheWeirdStuff which adds the sum of all the odd numbers in array2 to each element under 10 in array1. 
+Write a function addingAllTheWeirdStuff which adds the sum of all the odd numbers in array2 to each element under 10 in array1.
 Similarly, addingAllTheWeirdStuff should also add the sum of all the even numbers in array2 to those elements over 10 in array1.
 
 BONUS: If any element in array2 is greater than 20, add 1 to every element in array1. */

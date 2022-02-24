@@ -229,15 +229,6 @@ const deepCopy = (arr) => {
         }
     }
 
-    // return () => {
-    //     return arr.reduce((acc, curr, i) => {
-    //         if (arr === copyOfTools) {
-    //             arr = ture;
-    //         }
-    //         console.log('curr', curr)
-    //         return acc;
-    //     }, false)
-    // }
 
 }
 

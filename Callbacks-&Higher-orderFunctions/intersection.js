@@ -13,12 +13,12 @@ Construct a function intersection that compares input arrays and returns a new a
 const intersection = (arrays) => {
     // declare a variable accumulator set to the last element of array input;
     let accumulator = arrays.pop();
-  
+
     // use a while loop iterate throgh length of array input;
     while (arrays.length) {
         // declare a currentValue set to the the last element of the array input
         const currentValue = arrays.pop();
-        console.log('currentValue',currentValue)
+        console.log('currentValue', currentValue)
         // declear a result and set to empty array []
         let result = [];
         // use a forEach to iterate through currentValue to check 
@@ -106,7 +106,7 @@ console.log(intersection4([arr41, arr42, arr43])); // should log: [5, 15]
 /* ========================== SOLUTION 5 ======================================*/
 /* 
 */
-const intersection5 = arr => arr.reduce((acc,curr) => acc.filter(ele=> curr.includes(ele)))
+const intersection5 = arr => arr.reduce((acc, curr) => acc.filter(ele => curr.includes(ele)))
 
 const arr51 = [5, 10, 15, 20];
 const arr52 = [15, 88, 1, 5, 7];
