@@ -42,7 +42,13 @@ Create a function "between50And500" that takes a number as an argument.
 "between50And500" should return a true if the number passed to it is between 50 and 500 exclusive.
 For example, if the input is 45 then your function should return false and if the input is 472 it should return true.
 */
-
+const between50And500 = (nums) => {
+    if (nums >= 50 && nums < 500) return true;
+    else return false;
+}
+// console.log(between50And500(45)) // false
+// console.log(between50And500(455)) // true
+// console.log(between50And500(300)) // true
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -51,7 +57,11 @@ Create a function "divBy100" that takes a number as an argument.
 "divBy100" should return a true if the number passed to it is divisible by 100.
 For example, if the input is 120 then your function should return false and if the input is 600 it should return true.
 */
-
+const divBy100 = (nums) => nums % 100 === 0 ? true : false;
+// console.log(divBy100(45)) // false
+// console.log(divBy100(455)) // false
+// console.log(divBy100(300)) // true
+// console.log(divBy100(500)) // true
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -60,7 +70,12 @@ Create a function "negativeOrEven" that takes a number as an argument.
 "negativeOrEven" should return a true if the number passed to it is a negative number OR it is an even number.
 For example, if the input is 7 then your function should return false and if the input is -3 it should return true.
 */
+const negativeOrEven = (nums) => nums < 0 || nums % 2 === 0 ? true : false;
 
+// console.log(negativeOrEven(-45)) // true
+// console.log(negativeOrEven(455)) // false
+// console.log(negativeOrEven(315)) // false
+// console.log(negativeOrEven(500)) // true
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -72,8 +87,18 @@ If all functions in your array return true then "passAllTests" will return true.
 Use your "passAllTests" function to test if the number 300 is greater than the number 50 and less than the number 500,
 divisible by 100, and a negative number OR even. Then test the number 250.
 */
+const passAllTests = (arrFunc, value) => {
+    return arrFunc.reduce((acc, curr) => {
+        if (!curr(value)) {
+            acc = false;
+        }
+        return acc;
+    }, true)
 
-
+}
+// console.log(passAllTests([between50And500, divBy100, negativeOrEven], 100)) // true
+// console.log(passAllTests([between50And500, divBy100, negativeOrEven], -45)) // false
+// console.log(passAllTests([between50And500, divBy100, negativeOrEven], 300)) // true
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -90,14 +115,14 @@ const isPalindrome = (str) => {
 
 const isPalindromeRecursive = (str) => {
     str = str.replace(/\W/g, '').toLowerCase();
-    if (str === '' || str.length === 1) return true;
+    if (str.length === 1 || str.length === 0) return true;
     return str[0] === str[str.length - 1] && isPalindromeRecursive(str.slice(1, -1))
 
 }
-// console.log(isPalindromeRecursive('LEVEL')) // true
-// console.log(isPalindromeRecursive('RACECAR')) // true
-// console.log(isPalindromeRecursive('RACECARsa')) // false
-// console.log(isPalindromeRecursive('RAhslwo CECARsa')) // false
+console.log(isPalindromeRecursive('LEVEL')) // true
+console.log(isPalindromeRecursive('RACECAR')) // true
+console.log(isPalindromeRecursive('RACECARsa')) // false
+console.log(isPalindromeRecursive('RAhslwo CECARsa')) // false
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -125,9 +150,9 @@ const getLength = (str, i = 0) => {
     if (str[i] === undefined) return i;
     return getLength(str, i + 1)
 }
-// console.log(getLength('')) // 0
-// console.log(getLength('aa')) // 2
-// console.log(getLength('hello')) // 5
+console.log(getLength('')) // 0
+console.log(getLength('aa')) // 2
+console.log(getLength('hello')) // 5
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -142,6 +167,10 @@ console.log(rotateGrid(sampleGrid)); // -> [[7, 4, 1],
                                            [8, 5, 2],
                                            [9, 6, 3] ]
 */
+
+const rotateGrid = (arr) => {
+
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -197,7 +226,7 @@ Example: countTimes([1, 8, 9, 9, 10], 9) -> 2
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-/*
+/*+==`
 QUESTION 4b
 Create a function called “wordSearchLetterCounter” that takes two arguments (a 2 dimensional array of letters known as our word search, and a letter that we are going to search for). “wordSearchLetterCounter” should use your “countTimes” function to count the total number of times a letter show up in the word search.
 Example: wordSearchLetterCounter([ [“D”, “E”, “Y”, “H”, “A”, “D”], [“C”, “B”, “Z”, “Y”, “J”, “K”], [“D”, “B”, “C”, “A”, “M”, “N”], [“F”, “G”, “G”, “R”, “S”, “R”], [“V”, “X”, “H”, “A”, “S”, “S”] ], “D”) ➞ 3 “D” shows up 3 times: twice in first row, once in third row.
@@ -780,7 +809,7 @@ Ex: deleteDups(['a','a','a']) -> ['a']
 In each input array, every number repeats at least once, except for two. Write a function that returns the two unique numbers.
 
 Examples
- returnUnique([1, 9, 8, 8,stored 7, 6, 1, 6]); // ➞ [9, 7]
+returnUnique([1, 9, 8, 8,stored 7, 6, 1, 6]); // ➞ [9, 7]
 
 returnUnique([5, 5, 2, 4, 4, 4, 9, 9, 9, 1]); // ➞ [2, 1]
 
