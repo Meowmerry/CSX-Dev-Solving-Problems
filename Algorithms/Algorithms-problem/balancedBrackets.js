@@ -12,6 +12,7 @@ balancedBrackets("[(]{)}");                              // -> false
 balancedBrackets(" gibberish { howdy: partner() }");     // -> true
 balancedBrackets(" isThisAFunction?() { notReally();");  // -> false
 */
+/* =================== SOLUTION  1 ======================== */
 const balancedBrackets = (str) => {
     //str = str.replace(/[\w\s]/gi, '', "");
     let stack = [];
@@ -87,3 +88,40 @@ console.log(balancedBrackets2("[({}Call me Ishmael)]")); // -> true
 console.log(balancedBrackets2("[(]{)}")); // -> false
 console.log(balancedBrackets2(" gibberish { howdy: partner() }")); // -> true
 console.log(balancedBrackets2(" isThisAFunction?() { notReally();")); // -> false
+
+/* =================== SOLUTION  3 ======================== */
+function balancedBrackets(string) {
+    const validObjects = ['(', ')', '{', '}', '[', ']'];
+    let testString = "";
+    let parens = 0;
+    let square = 0;
+    let curly = 0;
+
+    for (let el of string) {
+        if (validObjects.includes(el)) testString += el;
+    }
+
+    for (let el of testString) {
+        if (el === '(') parens += 1;
+        if (el === ')') parens -= 1;
+
+        if (el === '[') square += 1;
+        if (el === ']') square -= 1;
+
+        if (el === '{') curly += 1;
+        if (el === '}') curly -= 1;
+
+        if (parens === -1 || square === -1 || curly === -1) return false;
+    }
+    if (parens === 0 && square === 0 && curly === 0) return true;
+    else return false;
+}
+
+  // console.log(balancedBrackets(" { }    n"));                           // -> true
+  // console.log(balancedBrackets("hi][  "));                              // -> false
+  // console.log(balancedBrackets("[{random words and such}]"));           // -> true
+  // console.log(balancedBrackets("[The]Rains(In){Spain}"));               // -> true
+  // console.log(balancedBrackets("[({}Call me Ishmael)]"));               // -> true
+  // console.log(balancedBrackets("[(]{)}"));                              // -> false
+  // console.log(balancedBrackets(" gibberish { howdy: partner() }"));     // -> true
+  // console.log(balancedBrackets(" isThisAFunction?() { notReally"));  // -> false

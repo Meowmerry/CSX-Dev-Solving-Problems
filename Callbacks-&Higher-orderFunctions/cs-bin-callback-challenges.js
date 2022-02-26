@@ -101,7 +101,6 @@ function objOfMatches(array1, array2, callback) {
     if (callback(curr) === array2[i]) {
       acc[curr] = array2[i];
     }
-
     return acc;
   }, {});
 }

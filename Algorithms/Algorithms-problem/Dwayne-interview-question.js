@@ -25,8 +25,8 @@ const addNumbers = (nums) => {
     //     sum += i;
     // }
     // return sum;
-    
-    if ( nums === 0 ) return nums;
+
+    if (nums === 0) return nums;
     return nums + addNumbers(nums - 1)
 }
 console.log(addNumbers(4)) // 10
@@ -48,7 +48,7 @@ Create a function "between50And500" that takes a number as an argument
         	
 */
 
-const between50And500 = (nums) => nums > 50 && nums < 500 ? true: false;
+const between50And500 = (nums) => nums > 50 && nums < 500 ? true : false;
 
 // console.log(between50And500(45)) // false
 // console.log(between50And500(472)) // true
@@ -221,15 +221,11 @@ Out : Nubmer
 
 
 const countAbc = (string, count = 0) => {
-
     if (string === "") return count;
-
-
     if (string.startsWith('abc') || string.startsWith('aba')) count++
 
 
     return countAbc(string.slice(1), count)
-
 }
 
 // console.log(countAbc("abc")) //→ 1
@@ -271,18 +267,26 @@ Write a function 'stored' that takes in a function and returns a new function
 */
 
 const stored = (cb) => {
+    const cache = {};
     return (value) => {
         if (typeof value !== 'number') return "Please enter a valid number";
-        return cb(value);
+        if (cache[value]) {
+            return `${value} : ${cache[value]}`
+        }
+        cache[value] = cb(value);
+        return cache[value];
     }
 }
 
 const cube = (n) => n ** 3;
 const cubeStored = stored(cube);
-// console.log(cubeStored(2)) // --> 8
-// console.log(cubeStored(3)) // --> 27
-// console.log(cubeStored('a')) // --> "Please enter a valid number"
-
+console.log(cubeStored(2)) //--> 8
+console.log(cubeStored(2)) //--> '2: 8'
+console.log(cubeStored(3)) //--> 27
+console.log(cubeStored(3)) //--> '3: 27'
+console.log(cubeStored('a')) //--> "Please enter a valid number"
+console.log(cubeStored('a')) //--> "Please enter a valid number"
+console.log(cubeStored(2)) //--> '2: 8'
 
 /*
 Create a function "checkerLogger" that takes one argument (a function that returns a boolean value) The returned function should have the following behavior:
@@ -296,11 +300,31 @@ oddCounter(); -> { true: 0, false: 0 }
 oddCounter(3); -> true
 oddCounter(2); -> false
 oddCounter(); -> { true: 1, false: 1 }
+In : callback
+Out : Object or Boolean
+create a func takes callback as args,
+    declare a cache assign to { true: 0, false: 0 }
+    create inner func will take number or without args
+        check if has no argements return cache
+        otherwise, reassign KEY by invoke callback and increment 1 to object to VALUE 
+        return callback will passed argments
 */
+const checkerLogger = (callback) => {
+    const cache = { true: 0, false: 0 };
+    return (args) => {
+        if (!args) return cache;
+        cache[callback(args)] += 1;
+        return callback(args)
+    }
+}
 
 
-
-
+const isOdd = num => num % 2 === 1;
+const oddCounter = checkerLogger(isOdd);
+console.log(oddCounter()); // -> { true: 0, false: 0 }
+console.log(oddCounter(3)); // -> true
+console.log(oddCounter(2)); // -> false
+console.log(oddCounter()); // -> { true: 1, false: 1 }
 /*
 Create a function "countChar" that takes two arguments (an input string and a target string).
 "countChar" will return the number of times the target string is found in the input string.
@@ -309,26 +333,25 @@ countChar('hello world', 'o'); -> 2
 countChar('javascript', 'j'); -> 1
 Note: Do not use any native JS methods, or loops.
 
-Input : string and target string
-Output : Number
-
-Create function take string , target , i = 0 ; count = 0 ;
-	base case : 
-    - if string[i++] === target increment count by 1
-    - if string has no index return count
-		recursive case :
-    - invoke countChar passed in string, target , i , count
+In : String and letter 
+Out : Number
+create a func takes string and letter as arguments
+    declear default value , count assign to 0  and i assign to 0
+    base case : 
+    - if str at i is underfined return count
+    - if str as i is equal to target increment count by 1
+    recuresive case : 
+    - invoke countChar func and passed string, letter, count and increment i by 1
 */
-function countChar(string, target , index = 0,  count = 0 ){
-     if(string[index++] === target) count +=1;   
-     if(!string[index]) return count;
-     return countChar(string, target, index, count)
-    
+const countChar = (str, letter, count = 0, i = 0) => {
+    if (str[i] === undefined) return count;
+    if (str[i] === letter) count += 1;
+    return countChar(str, letter, count, i + 1);
 }
-console.log(countChar('')) // 0
-console.log(countChar('hello world', 'o')) // 2
-console.log(countChar('javascript and java are different but j are same j', 'j')) // 4
-console.log(countChar('study js', 'c')) // 0
+// console.log(countChar('')) // 0
+// console.log(countChar('hello world', 'o')) // 2
+// console.log(countChar('javascript and java are different but j are same j', 'j')) // 4
+// console.log(countChar('study js', 'c')) // 0
 
 /*
 Write a function 'subsetSum' that is given an array of integers and a target number. 

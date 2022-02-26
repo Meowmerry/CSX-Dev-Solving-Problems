@@ -166,12 +166,17 @@ const sampleGrid = [ [1, 2, 3],
 console.log(rotateGrid(sampleGrid)); // -> [[7, 4, 1],
                                            [8, 5, 2],
                                            [9, 6, 3] ]
+Input : Array of subArray
+Output : New Array with newSubArray
+create a func takes array as arguments
+    iterate thru array 
 */
 
-const rotateGrid = (arr) => {
-
+const rotateGrid = (array) => {
+    return array[0].map((val, index) => array.map(row => row[index]).reverse())
 }
-
+const sampleGrid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+console.log(rotateGrid(sampleGrid)); // -> [[7, 4, 1], [8, 5, 2], [9, 6, 3] ]
 ///////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -222,8 +227,26 @@ QUESTION 3b
 Create a function “countTimes” that takes in two arguments (an array and a search value). 
 “countTimes” should return the number of times the search value is present in the array.
 Example: countTimes([1, 8, 9, 9, 10], 9) -> 2
-*/
 
+In : Array and Nubmer target
+Out : Number
+create a func takes array as aruments
+    declare default variable count assign to 0 , i assign to 0
+    base case : 
+    arr as i is undefined return count;
+    arr as i is equal to target, then count increment by 1;
+    
+    recursive case : 
+    invoke countTimes func passed in arr, target , count , i increment by 1
+
+*/
+const countTimes = (arr, target, count = 0, i = 0) => {
+    if (arr[i] === undefined) return count;
+    if (arr[i] === target) count += 1;
+    return countTimes(arr, target, count, i + 1);
+
+}
+// console.log(countTimes([1, 8, 9, 9, 10], 9)) //-> 2
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*+==`
@@ -231,14 +254,39 @@ QUESTION 4b
 Create a function called “wordSearchLetterCounter” that takes two arguments (a 2 dimensional array of letters known as our word search, and a letter that we are going to search for). “wordSearchLetterCounter” should use your “countTimes” function to count the total number of times a letter show up in the word search.
 Example: wordSearchLetterCounter([ [“D”, “E”, “Y”, “H”, “A”, “D”], [“C”, “B”, “Z”, “Y”, “J”, “K”], [“D”, “B”, “C”, “A”, “M”, “N”], [“F”, “G”, “G”, “R”, “S”, “R”], [“V”, “X”, “H”, “A”, “S”, “S”] ], “D”) ➞ 3 “D” shows up 3 times: twice in first row, once in third row.
 */
+/* ============ SOLUTION 1 ====================== */
+const wordSearchLetterCounter = (arr, letter) => countTimes(arr.flat(), letter);
+console.log(wordSearchLetterCounter([
+    ["D", "E", "Y", "H", "A", "D"],
+    ["C", "B", "Z", "Y", "J", "K"],
+    ["D", "B", "C", "A", "M", "N"],
+    ["F", "G", "G", "R", "S", "R"],
+    ["V", "X", "H", "A", "S", "S"]
+], "D")) //-> D ==>  3
 
+/* ============ SOLUTION 2 ====================== */
+const wordSearchLetterCounter2 = (arr, letter) => {
+    return arr.reduce((acc, curr) => {
+        curr.forEach((ele) => acc += countTimes(ele, letter))
+        return acc;
+    }, 0)
+
+}
+console.log(wordSearchLetterCounter2([
+    ["D", "E", "Y", "H", "A", "D"],
+    ["C", "B", "Z", "Y", "J", "K"],
+    ["D", "B", "C", "A", "M", "N"],
+    ["F", "G", "G", "R", "S", "R"],
+    ["V", "X", "H", "A", "S", "S"]
+], "D")) //-> D ==>  3
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
 QUESTION 5b
 Create a function “concatWithSpace” that takes in two arguments (both will be strings). “concatWithSpace” should return the two strings concatenated with a space in between them. For example, if the arguments are “hello” and “world” then “concatWithSpace” should return “hello world”.
 */
-
+const concatWithSpace = (str1, str2) => `${str1} ${str2}`
+console.log(concatWithSpace('hello', 'world'))
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -251,6 +299,12 @@ The callback function’s returned value becomes the new accumulator value
 The next loop executes with the new accumulator value.
 
 Check that your ‘shorten’ function is working correctly by passing an array to it with the string values ‘is’, ‘so’, ‘much’ and ‘fun!’ as the first argument. Pass your concatWithSpace function as our callback and the string ‘Programming’ as the initialValue argument. The result of this call to shorten should be the string ‘Programming is so much fun!’ */
+const shorten = (arr, cb, init) => arr.reduce(cb, init);
+console.log(shorten([1, 2, 3], (num1, num2) => num1 + num2, 0)); // 6
+
+const shorten1 = (arr, cb, init) => arr.reduce(cb, init);
+
+console.log(shorten1([1, 2, 3], (num1, num2) => num1 + num2, 0))
 
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -259,13 +313,20 @@ QUESTION 7b
 Create a function “countChar” that takes two arguments (an input string and a target string). “countChar” will return the number of times the target string is found in the input string.
 
 Example: countChar(‘hello world’, ‘o’); -> 2 countChar(‘javascript’, ‘j’); -> 1 Note: Do not use any native JS methods, or loops. */
-
+const countChar = (str, letter, count = 0, i = 0) => {
+    if (str[i] === undefined) return count;
+    if (str[i] === letter) count += 1;
+    return countChar(str, letter, count, i + 1)
+}
+console.log(countChar('hello world', 'o')); //-> 2 
+console.log(countChar('javascript', 'j')); //-> 1
 
 //////////////////////////////////////////////////////////////////////////////////////
 /*
 QUESTION 1c
 Create an object named "example" with a key "sentence" that has a value of the string "TODAY IS AN AWESOME DAY FOR CODING!"
 */
+const example = { sentence: "TODAY IS AN AWESOME DAY FOR CODING!" };
 
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -281,6 +342,9 @@ output: "The History Of Mathematics"
 
 Test your fixTile function by passing in the sentence value of your "example" object.
 */
+const fixTitle = () => {
+
+}
 
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -355,7 +419,9 @@ Create a function ‘containsJ’ that takes a string as an argument
 ‘containsJ’ should return a boolean value based off of whether or not the string being passed to it contains the letter ‘j’ or ’J.
 For example, if the input is ‘Cat’ then your function should return false, and if the input is ‘Jaguar’ it should return true.
 */
-
+const containsJ = (str) => str.includes("J") || str.includes('j');
+console.log(containsJ('Cat')) // false
+console.log(containsJ('Jaguar')) // true
 ////////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -557,7 +623,12 @@ Create a function 'doubleChar' that takes a string as an argument and returns a 
 
 For example, if we pass the string 'Hello World!!' to 'doubleChar' it should return the string 'HHeelllloo WWoorrlldd!!'
 */
-
+const doubleChar = (str, i = 0, result = '') => {
+    if (str[i] === undefined) return result;
+    if (str[i]) result += str[i] + str[i];
+    return doubleChar(str, i + 1, result);
+}
+console.log(doubleChar('Hello World!!'))
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*6f
@@ -744,7 +815,7 @@ cachedMultiplyBy2(100); // -> 200 // from the cache object
 
 MULTIPLE ARGUMENTS CASE
 const sumMultiplyBy2 = (num1, num2) => 2 * (num1 + num2);
-const cachedSumMultiplyBy2 = fastCacheMult(sumMultiplyBy2);
+const cachedSumMultiplyBy2 = fastCache(sumMultiplyBy2);
 cachedSumMultiplyBy2(5, 10); // -> 30
 cachedSumMultiplyBy2(1, 2); // -> 6
 cachedSumMultiplyBy2(5, 10); // -> 30 // from the cache object

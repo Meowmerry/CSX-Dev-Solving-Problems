@@ -63,16 +63,16 @@ console.log(cachedSumMultiplyBy2(5, 10)); // -> 30 // from the cache object
 const fastCache2 = (callback) => {
     const cache = {};
     return (args1, args2) => {
-        if (cache['key'] !== args1) {
-            cache['key'] = callback(args1);
+        if (cache["key"] !== args1) {
+            cache["key"] = callback(args1);
         }
-        cache['key'] = callback(args1, args2);
-        return cache['key'];
-    }
-}
+        cache["key"] = callback(args1, args2);
+        return cache["key"];
+    };
+};
 //example:
 //SINGLE ARGUMENT CASE
-const multiplyBy22 = num => num * 2;
+const multiplyBy22 = (num) => num * 2;
 const cachedMultiplyBy22 = fastCache2(multiplyBy22);
 console.log(cachedMultiplyBy22(100)); // -> 200
 console.log(cachedMultiplyBy22(150)); // -> 300
@@ -83,4 +83,31 @@ const sumMultiplyBy22 = (num1, num2) => 2 * (num1 + num2);
 const cachedSumMultiplyBy22 = fastCache2(sumMultiplyBy22);
 console.log(cachedSumMultiplyBy22(5, 10)); // -> 30
 console.log(cachedSumMultiplyBy22(1, 2)); // -> 6
-console.log(cachedSumMultiplyBy22(5, 10)); // -> 30 // from the cache object
+console.log(cachedSumMultiplyBy22(5, 10)); // -> 30 // from the cache
+
+/* =========== SOLUTION  3 ======================= */
+function fastCache3(callback) {
+    const cache = {};
+    return function func(args1, args2) {
+        if (cache[args1] === args1 && cache[args2] === args2) {
+            return cache[args1];
+        }
+        if (cache[args1] !== args1 && cache[args1] !== args1) {
+            cache[args1] = callback(args1, args2);
+            return callback(args1, args2);
+        }
+    };
+}
+
+const multiplyBy23 = (num) => num * 2;
+const cachedMultiplyBy3 = fastCache3(multiplyBy23);
+console.log(cachedMultiplyBy3(100)); // -> 200
+console.log(cachedMultiplyBy3(150)); // -> 300
+console.log(cachedMultiplyBy3(100)); // -> 200 // from the cache object
+// // //MULTIPLE ARGUMENTS CASE
+
+const sumMultiplyBy3 = (num1, num2) => 2 * (num1 + num2);
+const cachedSumMultiplyBy3 = fastCache3(sumMultiplyBy3);
+console.log(cachedSumMultiplyBy3(5, 10)); // -> 30
+console.log(cachedSumMultiplyBy3(1, 2)); // -> 6
+console.log(cachedSumMultiplyBy3(5, 10)); // -> 30 // from the cache
