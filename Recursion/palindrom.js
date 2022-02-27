@@ -129,10 +129,28 @@ console.log(palindrome("jmoney")); //-> false
 const palindrome = (string) => {
     string = string.replace(/\W/g, '').toLowerCase();
     if (!string.length) return true;
-    return string[0] === string[string.length -1] && palindrome(string.slice(1,-1))
+    return string[0] === string[string.length - 1] && palindrome(string.slice(1, -1))
 }
 console.log(palindrome("")); //-> true
 console.log(palindrome("a")); //-> true
 console.log(palindrome("Anne, I vote more cars race Rome-to-Vienna")); //-> true
 console.log(palindrome("llama mall")); //-> true
 console.log(palindrome("jmoney")); //-> false
+
+
+/* ========================== SOLUTION 7  ======================================
+================================================================================ */
+const palindrome7 = string => {
+    const stripped = string.replace(/\W/g, '').toLowerCase();
+    const paliHelper = i => { //
+        if (i > stripped.length / 2) return true;
+        if (stripped[i] !== stripped[stripped.length - i - 1]) return false;
+        return paliHelper(i + 1); // 
+    };
+    return paliHelper(0);
+};
+
+
+console.log(palindrome7("Anne, I vote more cars race Rome-to-Vienna")); //-> true
+console.log(palindrome7("llama mall")); //-> true
+console.log(palindrome7("jmoney")); //-> false

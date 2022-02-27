@@ -208,7 +208,7 @@ const societyName = (arr) => {
         return acc.split('').sort().join('')
     }, '')
 }
-// console.log(societyName(['Adam', 'Sarah', 'Malcolm'])) // ASM
+// console.log(  (['Adam', 'Sarah', 'Malcolm'])) // ASM
 // console.log(societyName(['Meow', 'Manddy', 'Ann'])) // AMM
 // console.log(societyName(['Cecilia', 'Andrea', 'Ronald'])) // ACR
 
@@ -450,6 +450,10 @@ Declare a function ‘isOdd’ that takes one input (a number) and return a bool
 For example, if we call ‘isOdd’ with an input of 3 it will return true.
 */
 
+const isOdd = n => n % 2 !== 0;
+// console.log(isOdd(3)) // true
+// console.log(isOdd(4)) // false
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -458,7 +462,13 @@ Create a function ‘atLeastOne’ that takes in two inputs (an array and a call
 The callback function will return a boolean value.
 The callback function will be called on every element in the array. If the callback function being called returns true for any of the elements in the array then ‘atLeastOne’ should return true. Otherwise it should return false.
 */
-
+const atLeastOne = (arr, callback) => arr.reduce((acc, curr) => {
+    callback(curr) ? acc = true : false;
+    return acc;
+}, false);
+console.log(atLeastOne([1, 3, 5, 6], isOdd)); // true;
+console.log(atLeastOne([2, 4, 6, 8], isOdd)); // false;
+console.log(atLeastOne([1, 4, 6, 8], isOdd)); // true;
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -952,3 +962,27 @@ Similarly, addingAllTheWeirdStuff should also add the sum of all the even number
 BONUS: If any element in array2 is greater than 20, add 1 to every element in array1. */
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+Given a non-negative int n, return the sum of its digits recursively (no loops).
+
+sumDigits(126) → 9
+sumDigits(49) → 13
+sumDigits(12) → 3
+*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+Write a function 'largestSwap' that takes a two-digit number and determines if it's the largest of two possible digit swaps.
+'largestSwap' should return a boolean.
+For example, if 57 is our our input, we should return false because swapping the digits gives us 75, and 75 > 57.
+Furthermore, if our input is 61 'largestSwap' should return true because swapping the digits gives us 61 and 61 > 16.
+*/
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Create a function longestWord that that retuns the longest word of a sentence.
+  If there are ties, the function should return the later word.  */
