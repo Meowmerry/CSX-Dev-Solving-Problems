@@ -88,7 +88,7 @@ function hobbyTracker3(hobbies) {
     return (string, interger) => {
         // update cache object aadding the value of the passed in interger to the cache at the key corresponding with the passed ing hobby, and return the cache object;
         if (string && interger) {
-            cache[string] = interger + cache[string]
+            cache[string] += interger;
             return cache;
         }
         // if the function return has no agrement, will reset all values in the cache object to zero and return 'tracker has been reset'
@@ -162,15 +162,34 @@ console.log(updateHobbies5('baking', 1)); // --> { yoga: 0, baking: 1, piano: 0}
 console.log(updateHobbies5()); // --> 'tracker has been reset!'
 console.log(updateHobbies5('yoga', 1)); // --> { yoga: 1, baking: 0, piano: 0}
 
+/* ========================== SOLUTION 6  ======================================
+================================================================================ 
+Input : Array
+Output : Object
+create a func hobbyTracker6 takes array as arguments
+    crete a cache object assign to empty object
+    iterate thrugh array 
+        each element will be KEY and assign VALUE 0
+    create a inner function take String and interger
+        check if cache 
 
-function find_max(nums) {
-    let max_num = Number.NEGATIVE_INFINITY; // smaller than all other numbers
-    for (let num of nums) {
-        if (num > max_num) {
-            num = max_num
-            max_num += 1
-        }
-    }
-    return max_num;
+*/
+const hobbyTracker6 = (array) => {
+    const cache = array.reduce((obj, curr) => {
+        obj[curr] = 0;
+        return obj;
+    }, {})
+    console.log(cache)
+    return (hobdy)
+
 }
-console.log(find_max([3, 4, 5]))
+
+const updateHobbies6 = hobbyTracker6(['yoga', 'baking', 'piano']);
+updateHobbies6('yoga', 2);
+updateHobbies6('baking', 4);
+updateHobbies6('yoga', 1);
+console.log(updateHobbies6('piano', 2)); // --> { yoga: 3, baking: 4, piano: 2 }
+console.log(updateHobbies6()); // --> 'tracker has been reset!'
+console.log(updateHobbies6('baking', 1)); // --> { yoga: 0, baking: 1, piano: 0}
+console.log(updateHobbies6()); // --> 'tracker has been reset!'
+console.log(updateHobbies6('yoga', 1)); // --> { yoga: 1, baking: 0, piano: 0}

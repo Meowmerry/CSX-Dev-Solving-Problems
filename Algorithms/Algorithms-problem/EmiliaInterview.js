@@ -22,9 +22,13 @@ console.log(groupBy(numbers, floored)); // should log: { 1: [1.3], 2: [2.1, 2.4]
 // else return object
 
 const groupBy = (arr, callback) => {
-  return arr.reduce((object, curr) => {
-    !object[callback(curr)] ? (object[callback(curr)] = callback(curr)) : "xxx";
-    return object;
+  return array.reduce(function (acc, curr) {
+    if (!acc[callback(curr)]) {
+      acc[callback(curr)] = [curr];
+    } else {
+      acc[callback(curr)].push(curr);
+    }
+    return acc;
   }, {});
 };
 

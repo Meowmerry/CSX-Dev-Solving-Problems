@@ -47,7 +47,6 @@ sumOfCubes([3, 4, 5]) //➞ 216
 sumOfCubes([2]) //➞ 8
 sumOfCubes([]) //➞ 0 */
 
-
 /*
 Create a function 'addNumbers' that takes a number as an argument. 'addNumbers' should add up all the numbers from 1 to the number you passed to the function.
 For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
@@ -355,77 +354,5 @@ console.log(strCopies("catcowcat", "cow", 1)) //=> true
 
 
 // ==== MOCK Interview with first interview =====
-/* Declare a variable 'myString' and set it equal to the string 'I love programming' */
+/* Declare a variable 'myString' and set it equal to the string 'I love programming'  */
 
-/*
-Create a function that takes an array of names and returns an array where only the first letter of each name is capitalized.
-
-console.log(capMe(["mavis", "senaida", "letty"])) // ➞ ["Mavis", "Senaida", "Letty"]
-console.log(capMe(["samuel", "MABELLE", "letitia", "meridith"])) // ➞ ["Samuel", "Mabelle", "Letitia", "Meridith"]
-*/
-
-/* Create a function that searches for the index of a given item in an array. If the item is present, it should return the index, otherwise, it should return -1.
-*/
-
-/*
-Declare a function ‘isOdd’ that takes one input (a number) and return a boolean indicating whether or not the number is odd.
-For example, if we call ‘isOdd’ with an input of 3 it will return true.
-*/
-
-/*
-Create a function ‘atLeastOne’ that takes in two inputs (an array and a callback function).
-The callback function will return a boolean value.
-The callback function will be called on every element in the array. If the callback function being called returns true for any of the elements in the array then ‘atLeastOne’ should return true. Otherwise it should return false.
-*/
-
-/*
-Create a function 'charCount' that takes two arguments (the first argument is a single character) and
-returns the number of times the character is found in the second argument.
-For example, charCount('i', 'Codesmith') should return the number 1
-*/
-
-
-/*
-Create a function makeFuncTester that accepts an array (of two-element sub-arrays), and returns a function (that will accept a callback). The returned function should return true if the first elements (of each sub-array) being passed into the callback all yield the corresponding second elements (of the same sub-array). Otherwise, the returned function should return false.
-
-
-const capLastTestCases = [];
-capLastTestCases.push(['hello', 'hellO']);
-capLastTestCases.push(['goodbye', 'goodbyE']);
-capLastTestCases.push(['howdy', 'howdY']);
-const shouldCapitalizeLast = makeFuncTester(capLastTestCases);
-const capLastAttempt1 = str => str.toUpperCase();
-const capLastAttempt2 = str => str.slice(0, -1) + str.slice(-1).toUpperCase();
-console.log(shouldCapitalizeLast(capLastAttempt1)); // => should log false
-console.log(shouldCapitalizeLast(capLastAttempt2)); // => should log true
-*/
-
-/* Given a string and a non-empty substring sub, compute recursively if at least n copies of sub appear in the string somewhere, possibly with overlapping. N will be non-negative.  
-*/
-
-
-/*
-Write a function “memoryMaker” that accepts no parameters, and returns a function. Have the returned function accept a value, and every time the returned function is called, return an array of all the previously passed values.
-example:
-const iRemember = memoryMaker();
-iRemember(‘hello’); -> [‘hello’]
-iRemember(1); -> [‘hello’, 1]
-iRemember(‘world’); -> [‘hello’, 1, ‘world’]
-iRemember(true); -> [‘hello’, 1, ‘world’, true]
-*/
-
-/*
-Create a function noseFinder that accepts an array of objects as an argument, and returns an array with the name of only the reindeer
-with a red nose as a first value, and the name of the color of that reindeers nose as a second value.
-Ex:
-console.log(noseFinder(santasReindeer))// ["Rudolph", "red"]
-*/
-
-/* Arrays can be mixed with various types. Your task for this challenge is to sum all the number elements in the given array. 
-Create a function that takes an array and returns the sum of all numbers in the array.
-
-console.log(numbersSum([1, 2, "13", "4", "645"])) //➞ 3
-console.log(numbersSum([true, false, "123", "75"])) //➞ 0
-console.log(numbersSum([1, 2, 3, 4, 5, true])) //➞ 15
-
-*/

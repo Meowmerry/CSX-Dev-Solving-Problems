@@ -986,3 +986,31 @@ Furthermore, if our input is 61 'largestSwap' should return true because swappin
 
 /* Create a function longestWord that that retuns the longest word of a sentence.
   If there are ties, the function should return the later word.  */
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+Create a function noseFinder that accepts an array of objects as an argument, and returns an array with the name of only the reindeer
+with a red nose as a first value, and the name of the color of that reindeers nose as a second value.
+Ex:
+console.log(noseFinder(santasReindeer))// ["Rudolph", "red"]
+*/
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Arrays can be mixed with various types. Your task for this challenge is to sum all the number elements in the given array. 
+Create a function that takes an array and returns the sum of all numbers in the array.
+
+console.log(numbersSum([1, 2, "13", "4", "645"])) //➞ 3
+console.log(numbersSum([true, false, "123", "75"])) //➞ 0
+console.log(numbersSum([1, 2, 3, 4, 5, true])) //➞ 15
+*/
+
+const numbersSum = (arr) => arr.reduce((acc, curr) => typeof curr === 'number' ? acc += curr : acc, 0);
+console.log(numbersSum([1, 2, "13", "4", "645"])) //➞ 3
+console.log(numbersSum([true, false, "123", "75"])) //➞ 0
+console.log(numbersSum([1, 2, 3, 4, 5, true])) //➞ 15
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

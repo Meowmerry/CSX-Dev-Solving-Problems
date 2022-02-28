@@ -204,6 +204,7 @@ run the passed-in function on the argument and return the result. If it has, it 
 the stored argument along with its result. If an argument is not a number, the new function
 will not store the argument and instead return the error message "Please enter a valid number".
 
+
 In : callback
 Out : closure ==> return function 
      create inner function will 
