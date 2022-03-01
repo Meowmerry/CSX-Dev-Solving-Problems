@@ -23,11 +23,20 @@ runInOrder([sayHi, sayBye, sayHowdy], [300, 600, 200]);
 /* ========================== SOLUTION 1  ======================================
 ================================================================================ */
 // Add code here
-const runInOrder = (arrFunc, arrTime) => {
-
+// declare a function call runInOrder takes tow arguments : functionsArray and waitTimesArray
+const runInOrder = (functionsArray, waitTimesArray) => {
+    // declare a variable to keep track of wait times as we loop
+    let time = 0;
+    // iterates throught input array(s)
+    for (let i = 0; i < functionsArray.length; i += 1) {
+        // update out time variable
+        time += waitTimesArray[i]
+        // invoke out setTimeout function 
+        setTimeout(functionsArray[i], time)
+    }
 
 }
-// /* Uncomment the following lines and click 'run' to test your work */
+/* Uncomment the following lines and click 'run' to test your work */
 
 function sayHi() {
     console.log('hi');
@@ -38,7 +47,6 @@ function sayBye() {
 function sayHowdy() {
     console.log('howdy');
 }
-
 runInOrder([sayHi, sayBye, sayHowdy], [200, 100, 300]);
 
 /*
