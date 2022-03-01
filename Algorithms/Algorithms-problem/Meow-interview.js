@@ -283,45 +283,36 @@ const countChar = (str, target, count = 0, i = 0) => {
 // console.log(countChar('javascript', 'j')); //-> 1
 // console.log(countChar('javascript js js', 'j')); //-> 3
 
+
 /*
 Write a function 'deepCopy' that creates a deep copy of every level of a given object or array, and returns it, no matter deep the object is nested.
 
 Input : Array of nested Object
 Output : Boolean
-
 creat a function deepCopy take array as aguments
-	
-         iterate thru array 
-                each current element check 
-      
-   
-
+         check if type of input doesn't object or null return input
+         declare a output set to array or object
+         iterates thru input 
+            fill output with key and invoke deepCopy passed in value
+        return output
 */
 const deepCopy = (collection) => {
-    // const copy = collection.constructor();
-    // for (const key in collection) {
-    //     if (typeof collection[key] === 'object') {
-    //         copy[key] = deepCopy(collection[key])
-    //         console.log(' copy', copy);
-    //     } else {
-    //         copy[key] = collection[key];
-    //     }
-    // }
-    // return copy;
-    const copy = Object.entries({},)
-
+    if (typeof collection !== 'object' || collection === null) return collection;
+    const output = Array.isArray(collection) ? [] : {};
+    for (const [key, value] of Object.entries(collection)) {
+        output[key] = deepCopy(value)
+    }
+    return output;
 };
-
 const tools = [
     { editor: { favorite: { mine: { name: "vscode" } } } },
     { shell: "zsh" },
 ];
 const copyOfTools = deepCopy(tools);
-console.log(copyOfTools);
+//console.log(copyOfTools);
 console.log(copyOfTools === tools); // -> false
 console.log(copyOfTools[0] === tools[0]); // -> false
 console.log(copyOfTools[0].editor === tools[0].editor); // -> false
 console.log(copyOfTools[0].editor.favorite === tools[0].editor.favorite); // -> false
 console.log(copyOfTools[0].editor.favorite.mine === tools[0].editor.favorite.mine);           // -> false
 console.log(copyOfTools[0].editor.favorite.mine.name === tools[0].editor.favorite.mine.name); // -> true
-

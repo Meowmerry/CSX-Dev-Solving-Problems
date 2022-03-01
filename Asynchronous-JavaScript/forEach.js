@@ -12,3 +12,28 @@ Putting it all together, run the delayLog function on each item of the delays ar
 */
 /* ========================== SOLUTION 1  ======================================
 ================================================================================ */
+// crete forEach function 
+// inputs : array adn callback
+
+const forEach = (arr, cb) => {
+    // iterate throught arr and invoke callback with each element and it's index passed in
+    for (let i = 0; i < arr.length; i += 1) {
+        cb(arr[i], i)
+    }
+}
+
+// create delays arr to hold 200,500,0,300
+const delays = [200, 500, 0, 300];
+// crete function delayLog 
+// inputs : number of ms called delayTime, and index i
+
+const delayLog = (delayTime, i) => {
+    // wait delayTime number of ms and then console log 'printing element i'
+    // use setTimeout
+    // arguments : callback that console.logs out string
+    // delayTime
+    setTimeout(() => console.log(`printing element ${i}`), delayTime)
+
+}
+// useing forEach iterate over delays and invoke delayLog on each element
+forEach(delays, delayLog);

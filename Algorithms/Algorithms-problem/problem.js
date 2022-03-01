@@ -125,8 +125,6 @@ console.log(capMe(["mavis", "senaida", "letty"])) // ➞ ["Mavis", "Senaida", "L
 capMe(["samuel", "MABELLE", "letitia", "meridith"]) // ➞ ["Samuel", "Mabelle", "Letitia", "Meridith"]
 
 
-
-
 // Create a function that searches for the index of a given item in an array. If the item is present, it should return the index, otherwise, it should return -1.
 
 function search(arr, item, index = 0) {
