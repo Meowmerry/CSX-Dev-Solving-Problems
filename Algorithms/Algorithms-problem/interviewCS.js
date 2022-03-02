@@ -411,6 +411,7 @@ QUESTION 1d
 Declare a variable ‘programmingLanguages’ and set it to an array that contains the values ‘C++’, ‘Java’, ‘Python’, Javascript’, and ‘Swift’.
 */
 
+
 //////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -420,6 +421,7 @@ Create a function ‘containsJ’ that takes a string as an argument
 For example, if the input is ‘Cat’ then your function should return false, and if the input is ‘Jaguar’ it should return true.
 */
 const containsJ = (str) => str.includes("J") || str.includes('j');
+
 console.log(containsJ('Cat')) // false
 console.log(containsJ('Jaguar')) // true
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -753,7 +755,6 @@ Create a function 'containsJ' that takes a string as an argument
 'containsJ' should return a boolean value based off of whether or not the string being passed to it contains the letter 'j' or 'J.
 For example, if the input is 'Cat' then your function should return false, and if the input is 'Jaguar' it should return true.
 */
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

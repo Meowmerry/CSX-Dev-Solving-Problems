@@ -9,7 +9,12 @@ In : Array and Callback
 Out : New Array
 
 */
-
+/* =================== SOLUTION 1 ===================== */
 const screen = (arr, callback) => arr.reduce((acc, curr) => (callback(curr) ? acc.push(curr) : acc, acc), []);
 const isEven = (num) => num % 2 === 0;
 console.log(screen([1, 2, 3, 4, 5, 6], isEven)) // [2, 4, 6]
+
+/* =================== SOLUTION 2 ===================== */
+const screen2 = (arr, callback) => arr.filter(ele => callback(ele));
+const isEven2 = (num) => num % 2 === 0;
+console.log(screen2([1, 2, 3, 4, 5, 6], isEven2)) // [2, 4, 6]

@@ -13,6 +13,7 @@ create a func take string as arguements
       otherwise return  false
 
 */
+/* =================== SOLUTION 1 ===================== */
 const containsJ = (str) => {
     return [...str].reduce((acc, curr) => {
         if (curr === "J" || curr === "j") {
@@ -25,3 +26,9 @@ const containsJ = (str) => {
 console.log(containsJ("cat")); // false
 console.log(containsJ("JavaScript")); // ture
 console.log(containsJ("Jaquar")); // true
+
+/* =================== SOLUTION 2 ===================== */
+const containsJ2 = (str) => str.includes('J') || str.includes('j')
+console.log(containsJ2("cat")); // false
+console.log(containsJ2("JavaScript")); // ture
+console.log(containsJ2("Jaquar")); // true
