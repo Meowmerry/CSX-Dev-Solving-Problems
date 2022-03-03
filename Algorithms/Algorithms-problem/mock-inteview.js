@@ -439,3 +439,71 @@ function iterate(...data) {
   console.log(data)
 }
 iterate(1, 2, 3)
+
+// MOCK FOR YOO JIN Change
+
+// Declare a variable 'programmingLanguages' and set it to an array that contains the values 'C++', 'Java', 'Python', Javascript', and 'Swift'.
+let programmingLanguages = ['C++', 'Java', 'Python', 'Javascript', 'Swift']
+// console.log(programmingLanguages)
+/*
+Create a function 'containsJ' that takes a string as an argument
+'containsJ' should return a boolean value based off of whether or not the string being passed to it contains the letter 'j' or 'J.
+For example, if the input is 'Cat' then your function should return false, and if the input is 'Jaguar' it should return true.
+*/
+//check whether the string contains the letter j or J and return that
+function containsJ(string) {
+  return string.includes('J') || string.includes('j')
+}
+// console.log(containsJ('Cat'))
+// console.log(containsJ('Jaguar'))
+/*
+Create a function 'screen' that takes in two arguments an array and a callback function that will be applied to every element in the array.
+The callback function will return a boolean value. When 'screen' is called it will apply the callback function on every element in the array.
+If the result of the callback function is true then that element in the array will be added to a new array. The 'screen' function will return that new array.
+For example, if we were to call 'screen' and pass to it an array containing the elements 1, 2, 3, 4, 5, and 6 as the first argument and a callback function that tested if its argument was even for the second argument, then we should get the result [2, 4, 6] from our call to 'screen'
+*/
+// Check that your 'screen' function is working correctly by passing it your 'programmingLanguages' array and your 'containsJ' function
+//apply the callback function to the array and filter out the values that are true
+// how do i reuse screen iwth other callbacks?
+function screen(array, callback) {
+  const output = array.filter(n => callback(n))
+  return output
+}
+console.log(screen(programmingLanguages, containsJ))
+/*
+Write a function "memoryMaker" that accepts no parameters, and returns a function. Have the returned function accept a value, and every time the returned function is called, return an array of all the previously passed values.
+example:
+const iRemember = memoryMaker();
+iRemember('hello'); -> ['hello']
+iRemember(1); -> ['hello', 1]
+iRemember('world'); -> ['hello', 1, 'world']
+iRemember(true); -> ['hello', 1, 'world', true]
+*/
+//closure
+//return a function that pushes new values into the existing array with protected values
+function memoryMaker() {
+  const output = []
+  return (arg) => {
+    output.push(arg)
+    return output
+  }
+}
+const iRemember = memoryMaker();
+// console.log(iRemember('hello')); //-> ['hello']
+// console.log(iRemember(1)); // -> ['hello', 1]
+// console.log(iRemember('world')); //-> ['hello', 1, 'world']
+// console.log(iRemember(true)) //; -> ['hello', 1, 'world', true]
+/*
+Create a function "sumAllElements" that takes in two arguments (an array of numbers and a initial value). "sumAllElements" will return the sum of the elements in the array starting at the initial value.
+Example:
+sumAllElements([1,2,3,4], 10) -> 20
+Note: Do NOT use any native JS methods, or loops
+*/
+//base case if element becomes undefined
+//recursive case is adding on the last element to the current element
+function sumAllElements(array, init, index = 0) {
+  // console.log(array)
+  if (index === array.length) return init
+  return sumAllElements(array, init + array[index], index + 1)
+}
+console.log(sumAllElements([1, 2, 3, 4], 10)) // -> 20

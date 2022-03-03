@@ -111,3 +111,5 @@ const cachedSumMultiplyBy3 = fastCache3(sumMultiplyBy3);
 console.log(cachedSumMultiplyBy3(5, 10)); // -> 30
 console.log(cachedSumMultiplyBy3(1, 2)); // -> 6
 console.log(cachedSumMultiplyBy3(5, 10)); // -> 30 // from the cache
+
+
