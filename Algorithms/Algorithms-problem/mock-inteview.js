@@ -470,6 +470,37 @@ function screen(array, callback) {
   return output
 }
 console.log(screen(programmingLanguages, containsJ))
+
+
+/*
+Write a function 'stored' that takes in a function and returns a new function. The new function
+will check if it has already computed the result for the given argument. If it hasn't, it will
+run the passed-in function on the argument and return the result. If it has, it will return
+the stored argument along with its result. If an argument is not a number, the new function
+will not store the argument and instead return the error message "Please enter a valid number".
+
+Ex:
+const cube = (n) => n ** 3;
+const cubeStored = stored(cube);
+cubeStored(2) --> 8
+cubeStored(2) --> '2: 8'
+cubeStored(3) --> 27
+cubeStored(3) --> '3: 27'
+cubeStored('a') --> "Please enter a valid number"
+cubeStored('a') --> "Please enter a valid number"
+cubeStored(2) --> '2: 8'
+*/
+
+
+/*
+Create a function "sumAllElements" that takes in two arguments (an array of numbers and a initial value). "sumAllElements" will return the sum of the elements in the array starting at the initial value.
+Example:
+sumAllElements([1,2,3,4], 10) -> 20
+Note: Do NOT use any native JS methods, or loops
+*/
+
+
+
 /*
 Write a function "memoryMaker" that accepts no parameters, and returns a function. Have the returned function accept a value, and every time the returned function is called, return an array of all the previously passed values.
 example:
@@ -506,4 +537,3 @@ function sumAllElements(array, init, index = 0) {
   if (index === array.length) return init
   return sumAllElements(array, init + array[index], index + 1)
 }
-console.log(sumAllElements([1, 2, 3, 4], 10)) // -> 20
