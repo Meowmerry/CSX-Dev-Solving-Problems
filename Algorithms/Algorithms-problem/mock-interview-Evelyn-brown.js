@@ -1,8 +1,12 @@
 
 /*
 Create a function "changeCase" that takes in a letter as an argument, and returns the letter in the opposite case. Inputting 'a' should return "A", and inputting "A" should return 'a'
-
 Examples:
+console.log(changeCase('a')) // A
+console.log(changeCase('A')) // a
+console.log(changeCase('b')) // B
+console.log(changeCase('B')) // b
+
 
 Input : String 
 Output : Sting
@@ -49,11 +53,12 @@ const effectString = (str, callback) => {
     }
 
     return output;
+    //return callback(str)
 }
 
-// console.log(effectString('hello', changeCase)) // HELLO
-// console.log(effectString('Hello World',changeCase)) // hELLO wORLD
-// console.log(effectString('CodeSmith',changeCase)) // cODEsMITH
+console.log(effectString('hello', changeCase)) // HELLO
+console.log(effectString('Hello World', changeCase)) // hELLO wORLD
+console.log(effectString('CodeSmith', changeCase)) // cODEsMITH
 
 
 /*

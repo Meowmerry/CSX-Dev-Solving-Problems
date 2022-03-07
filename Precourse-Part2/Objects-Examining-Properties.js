@@ -52,7 +52,7 @@ console.log(objToArray1)
 
 let divBy6 = false;
 for (let index = 0; index < objToArray1.length; index++) {
-    if (objToArray1[index] % 6 === 0) {
+    if (objToArray1[index] !== 0) {
         divBy6 = true
     }
 
