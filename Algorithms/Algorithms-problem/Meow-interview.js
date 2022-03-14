@@ -7,10 +7,9 @@ const randamNums = [1, 14, 7, 21, -6];
 Input :Array of Number
 Out : New Array with 2 numbers
 
-
 Create a function 'minAndMax' that takes an array of numbers
       declare a varible smallest assign to the fisrtIdx
-    declare a varible largest assign to the firstIdx
+      declare a varible largest assign to the firstIdx
     
         iterate thru array use a for loop 
             check if smallest is grater than current element 
@@ -18,8 +17,7 @@ Create a function 'minAndMax' that takes an array of numbers
         check if largest less than current element 
             reassign current element to largest
     
-    return newArr with smallest and largest;
- 
+        return newArr with smallest and largest;
 */
 const minArr = (array) => {
     let min = Infinity;
@@ -36,14 +34,11 @@ console.log(minArr([20, 17, 14, 8])); // [8, 20]
 
 const minAndMax = (array) => {
     let smallest = array[0];
-
     let largest = array[0];
-
     for (let i = 0; i < array.length; i++) {
         if (smallest > array[i]) smallest = array[i];
         else if (largest < array[i]) largest = array[i];
     }
-
     return [smallest, largest];
 };
 // console.log(minAndMax(randamNums)) // [-6, 21]

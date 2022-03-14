@@ -62,6 +62,16 @@ const favoriteAuthors = [
 { name: 'Steven King', age: 85 },
 ];
 
+//Example 1
+const nextAuthor = itemRetriever(favoriteAuthors, 'name');
+console.log(nextAuthor()) //-> 'Earnest Hemingway'
+console.log(nextAuthor()) //-> 'Agatha Christie'
+
+
+//Example 2
+const nextAuthorsAge = itemRetriever(favoriteAuthors, 'age');
+console.log(nextAuthorsAge()) //-> 50
+console.log(nextAuthorsAge())//-> 57
 
 
 /*
