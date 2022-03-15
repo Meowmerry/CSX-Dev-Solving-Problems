@@ -316,26 +316,15 @@ create a func cleaned take a string
 */
 
 const cleaned = (str, i = 0, result = '') => {
-
   str = str.toLowerCase();
-
   if (str[i] === undefined) return result;
-
   if (str[i] !== str[i + 1]) result += str[i];
-
   return cleaned(str, i + 1, result);
 }
 
 console.log(cleaned("")) // "";
 console.log(cleaned("yyzzza")) // "yza";
 console.log(cleaned("aabbcc")) // "abc";
-
-
-
-
-
-
-
 
 
 

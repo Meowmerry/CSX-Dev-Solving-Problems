@@ -440,6 +440,8 @@ function iterate(...data) {
 }
 iterate(1, 2, 3)
 
+
+
 // MOCK FOR YOO JIN Change
 
 // Declare a variable 'programmingLanguages' and set it to an array that contains the values 'C++', 'Java', 'Python', Javascript', and 'Swift'.
