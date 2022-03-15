@@ -3,6 +3,7 @@
 
 /* Challenge 7
 Write a function rollCall that accepts an array of names and returns a function. The first time the returned function is invoked, it should log the first name to the console. The second time it is invoked, it should log the second name to the console, and so on, until all names have been called. Once all names have been called, it should log 'Everyone accounted for'.
+
 */
 /* ========================== SOLUTION 1  ======================================
 ================================================================================ */
@@ -65,15 +66,15 @@ Create a function that take array
         check if index >= array.length return 'Everyone accounted for';
         else return array current element with increment index by 1;
 */
-const rollCall3 = (array) =>{
-     let index = 0 ;
-     return () => {
-         if(index === array.length){
-             return 'Everyone accounted for';
-         }else {
-             return array[index++]
-         }
-     }
+const rollCall3 = (array) => {
+    let index = 0;
+    return () => {
+        if (index === array.length) {
+            return 'Everyone accounted for';
+        } else {
+            return array[index++]
+        }
+    }
 
 }
 

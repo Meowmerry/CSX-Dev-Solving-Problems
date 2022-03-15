@@ -539,3 +539,56 @@ function sumAllElements(array, init, index = 0) {
   if (index === array.length) return init
   return sumAllElements(array, init + array[index], index + 1)
 }
+
+/*Declare a variable 'myRandomString' and set it to the value 'Codesmith' */
+
+/*
+Create a function 'doubleChar' that takes a string as an argument and returns a string in which each character is repeated once.
+For example, if we pass the string 'Hello World!!' to 'doubleChar' it should return the string 'HHeelllloo WWoorrlldd!!'
+
+Check that your 'doubleChar' function is working correctly by passing the value of 'myRandomString' to it
+*/
+
+
+/*
+Create a function goodKeys that accepts an object and a callback. The callback will return either true or false. goodKeys will iterate through the object and perform the callback on each value. goodKeys will then return an array consisting only the keys whose associated values yielded a true return value from the callback. 
+
+const sunny = { mac: 'priest', dennis: 'calculator', charlie: 'birdlaw', dee: 'bird', frank: 'warthog' };
+function startsWithBird(str) { return str.slice(0, 4).toLowerCase() === 'bird'; };
+console.log(goodKeys(sunny, startsWithBird)); // should log: ['charlie', 'dee']
+*/
+
+/* Challenge 7
+Write a function rollCall that accepts an array of names and returns a function. The first time the returned function is invoked, it should log the first name to the console. The second time it is invoked, it should log the second name to the console, and so on, until all names have been called. Once all names have been called, it should log 'Everyone accounted for'.
+const rollCaller = rollCall(['Victoria', 'Juan', 'Ruth'])
+console.log(rollCaller()) // => should log 'Victoria'
+console.log(rollCaller())  // => should log 'Juan'
+console.log(rollCaller())  // => should log 'Ruth'
+console.log(rollCaller())  // => should log 'Everyone accounted for'
+*/
+
+/*
+Create a function hobbyTracker that takes an array of hobbies as a parameter and creates a cache object with each hobby as a key. hobbyTracker should return a function that takes a string representing the hobby and an integer representing how many hours practiced as parameters.
+
+When the returned function is invoked, it should update the cache object adding the value of the passed in integer to the cache at the key corresponding with the passed in 'hobby' then should return the updated cache object. If the returned function is invoked with no arguments, it should reset all values in the cache object to zero and return the string 'tracker has been reset!'
+
+const updateHobbies = hobbyTracker(['yoga', 'baking', 'piano']);
+updateHobbies('yoga', 2);  // { yoga: 2, baking: 0, piano: 0 }
+updateHobbies('baking', 3); // { yoga: 2, baking: 3, piano: 0 }
+updateHobbies();  // 'tracker has been reset!'
+*/
+
+
+/* 
+Write a function "getLength" that returns the length of a string. Accomplish this without using any loops, native JS methods, 
+or the length property. 
+*/
+
+
+/*
+Count recursively the total number of "abc" and "aba" substrings that appear in the given string.
+countAbc("abc") → 1
+countAbc("abcxxabc") → 2
+countAbc("abaxxaba") → 2
+
+*/
