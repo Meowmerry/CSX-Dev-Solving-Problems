@@ -166,21 +166,28 @@ console.log(updateHobbies5('yoga', 1)); // --> { yoga: 1, baking: 0, piano: 0}
 ================================================================================ 
 Input : Array
 Output : Object
-create a func hobbyTracker6 takes array as arguments
-    crete a cache object assign to empty object
-    iterate thrugh array 
-        each element will be KEY and assign VALUE 0
-    create a inner function take String and interger
-        check if cache 
-
+create a function take array as argument
+    create a cache assign to object
+    iterate thru array use a reduce and fill cach by set KEY: element , VALUE : 0
+    inner function that take string and number as arguments
+    if no argument reset cache to 0 and return 'tracker has been reset!
+    otherwise, inclment cache VALUE by 1
 */
 const hobbyTracker6 = (array) => {
-    const cache = array.reduce((obj, curr) => {
-        obj[curr] = 0;
-        return obj;
+    const cache = array.reduce((obj, key) => {
+        obj[key] = 0;
+        return obj
     }, {})
-    console.log(cache)
-    return (hobdy)
+    return (str, integer) => {
+        if (!str && !integer) {
+            for (let key in cache) {
+                cache[key] = 0;
+            }
+            return 'tracker has been reset!'
+        }
+        cache[str] += integer;
+        return cache;
+    }
 
 }
 

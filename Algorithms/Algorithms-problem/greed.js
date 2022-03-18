@@ -1,4 +1,4 @@
-ใconst pesudoGreed = (dic) => {
+const pesudoGreed = (dic) => {
     // Declare a variabl 'SCORDS' and assign it to nad object containing property/value pairs that correspond to the given scoring system
 
     // Declare a number, 'total' - and initialize it to 0;

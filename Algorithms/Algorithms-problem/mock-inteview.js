@@ -540,6 +540,8 @@ function sumAllElements(array, init, index = 0) {
   return sumAllElements(array, init + array[index], index + 1)
 }
 
+
+
 /*Declare a variable 'myRandomString' and set it to the value 'Codesmith' */
 
 /*
@@ -558,7 +560,7 @@ function startsWithBird(str) { return str.slice(0, 4).toLowerCase() === 'bird'; 
 console.log(goodKeys(sunny, startsWithBird)); // should log: ['charlie', 'dee']
 */
 
-/* Challenge 7
+/*
 Write a function rollCall that accepts an array of names and returns a function. The first time the returned function is invoked, it should log the first name to the console. The second time it is invoked, it should log the second name to the console, and so on, until all names have been called. Once all names have been called, it should log 'Everyone accounted for'.
 const rollCaller = rollCall(['Victoria', 'Juan', 'Ruth'])
 console.log(rollCaller()) // => should log 'Victoria'

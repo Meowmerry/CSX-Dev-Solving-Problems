@@ -62,29 +62,25 @@ console.log(objOfMatches1(array1, array2, uppercaser1)); // should log: { hi: 'H
 Input : Two arrays and callback
 Output : Object with KEY matches with VALUE
 
-		create an object assign to emptye object
+    create an object assign to emptye object
     iterate thru array2
-    	if invoke callback and passed element equle currenelement of array 2
+      if invoke callback and passed element equle currenelement of array 2
         reaasign object with KEY form Array1  and VALUE From Array 2
-		return object
+    return object
 */
-function objOfMatches(array1, array2, callback) {
-  return array2.reduce((acc, curr, i) => {
-    if (callback(array1[i]) === curr) {
-      acc[array1[i]] = curr;
+function objOfMatches3(arr1, arr2, callback) {
+  return arr1.reduce((obj, curr, i) => {
+    if (callback(curr) === arr2[i]) {
+      obj[curr] = callback(curr)
     }
-
-    return acc;
-  }, {});
+    return obj;
+  }, {})
 }
 
-console.log(
-  objOfMatches(
-    ["hi", "howdy", "bye", "later", "hello"],
-    ["HI", "Howdy", "BYE", "LATER", "hello"],
-    function (str) {
-      return str.toUpperCase();
-    }
-  )
-);
-// should log: { hi: 'HI', bye: 'BYE', later: 'LATER'
+
+const array13 = ["hi", "howdy", "bye", "later", "hello"];
+const array23 = ["HI", "Howdy", "BYE", "later", "HELLO"];
+function uppercaser1(str) {
+  return str.toUpperCase();
+}
+console.log(objOfMatches3(array13, array23, uppercaser1)); // should log: { hi: 'HI', bye: 'BYE', hello: 'HELLO' }
