@@ -1,6 +1,5 @@
-.pdf
-.txt
-*UI-React
-*documents
+
+UI-React/*
+documents/*
 all-exercise.txt
 .DS_Store
