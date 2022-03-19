@@ -463,6 +463,8 @@ Create a function 'screen' that takes in two arguments an array and a callback f
 The callback function will return a boolean value. When 'screen' is called it will apply the callback function on every element in the array.
 If the result of the callback function is true then that element in the array will be added to a new array. The 'screen' function will return that new array.
 For example, if we were to call 'screen' and pass to it an array containing the elements 1, 2, 3, 4, 5, and 6 as the first argument and a callback function that tested if its argument was even for the second argument, then we should get the result [2, 4, 6] from our call to 'screen'
+
+Check that your 'screen' function is working correctly by passing it your 'programmingLanguages' array and your 'containsJ' function
 */
 // Check that your 'screen' function is working correctly by passing it your 'programmingLanguages' array and your 'containsJ' function
 //apply the callback function to the array and filter out the values that are true

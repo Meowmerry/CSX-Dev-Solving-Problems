@@ -206,7 +206,7 @@ const transpose = (array) => {
 }
 
 const twoDimArray = [['fred', 'barney'], [30, 40], [true, false]]
-// console.log(transpose(twoDimArray)); // -> [['fred', 30, true], ['barney', 40, false]]
+console.log(transpose(twoDimArray)); // -> [['fred', 30, true], ['barney', 40, false]]
 
 
 /*
