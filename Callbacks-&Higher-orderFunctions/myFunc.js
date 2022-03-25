@@ -8,7 +8,7 @@ If the callback never returns true, myFunc should return -1;*/
 
 /* ========================== SOLUTION 1  ======================================
 ================================================================================ */
-const myFunc = (arr,cb) => arr.reduce((acc, curr ,i) => cb(curr) ? acc = i : acc, -1);
+const myFunc = (arr, cb) => arr.reduce((acc, curr, i) => cb(curr) ? acc = i : acc, -1);
 
 const numbers = [2, 3, 6, 64, 10, 8, 12];
 const evens = [2, 4, 6, 8, 10, 12, 64];
@@ -60,3 +60,15 @@ function isOdd(num) {
 
 console.log(myFunc3(numbers3, isOdd)); // Output should be 1
 console.log(myFunc3(evens3, isOdd)); // Output should be -1
+
+
+let numLet = 1
+var input = 0;
+const input3 = 0
+const num = 120;
+function isOdd(num) {
+  var input = num;
+  return input % 2 !== 0;
+}
+
+console.log('isOdd', isOdd(100)) // false

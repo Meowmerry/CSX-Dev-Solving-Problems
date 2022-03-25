@@ -79,7 +79,7 @@ const fizzbuzz4 = num => {
     return result;
 }
 console.log(fizzbuzz4(16))
-    /*
+/*
 [
 'fizzbuzz', 1,      2,
 'fizz',     4,      'buzz',
@@ -89,3 +89,4 @@ console.log(fizzbuzz4(16))
 'fizzbuzz', 16
 ]
 */
+

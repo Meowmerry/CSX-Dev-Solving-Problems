@@ -126,3 +126,5 @@ console.log(groupBy3(decimals3, floored3)); // should log: { 1: [1.3], 2: [2.1, 
 const decimals5 = [1.3, 2.1, 2.4];
 const floored5 = function (num) { return Math.floor(num); };
 console.log(groupBy5(decimals5, floored5)); // should log: { 1: [1.3], 2: [2.1, 2.4] }
+
+

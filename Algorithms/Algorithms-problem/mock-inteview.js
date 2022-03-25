@@ -494,7 +494,24 @@ cubeStored('a') --> "Please enter a valid number"
 cubeStored('a') --> "Please enter a valid number"
 cubeStored(2) --> '2: 8'
 */
+const stored = (callback) => {
+  const cache = Object.create(null) // Object prototype may only be an Object {} or null: 
+  return (n) => {
+    if (typeof n !== 'number') return "Please enter a valid number";
+    if (cache[n]) return `${n} : ${cache[n]}`
+    return cache[n] = callback(n)
+  }
+}
 
+const cube = (n) => n ** 3;
+const cubeStored = stored(cube);
+console.log(cubeStored(2)) //--> 8
+console.log(cubeStored(2)) //--> '2: 8'
+console.log(cubeStored(3)) //--> 27
+console.log(cubeStored(3)) //--> '3: 27'
+console.log(cubeStored('a')) //--> "Please enter a valid number"
+console.log(cubeStored('a')) //--> "Please enter a valid number"
+console.log(cubeStored(2)) //--> '2: 8'
 
 /*
 Create a function "sumAllElements" that takes in two arguments (an array of numbers and a initial value). "sumAllElements" will return the sum of the elements in the array starting at the initial value.
