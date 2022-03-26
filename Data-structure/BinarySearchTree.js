@@ -13,8 +13,8 @@ BinarySearchTree.prototype.add = function add(value) {
             return this.right.add(value)
         }
     }
-    if(value < this.value){
-        if(this.left === null){
+    if (value < this.value) {
+        if (this.left === null) {
             this.left = newNode;
         } else {
             return this.left.add(value)
