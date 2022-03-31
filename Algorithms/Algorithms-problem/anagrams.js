@@ -20,15 +20,13 @@ const anagrams = function (string) {
                     results.push(start + anagram[j]);
                 }
             }
-
             return results;
         }
     }
-
     return findAnagrams('', string);
 };
 
-console.log(anagrams('aabc'));
+console.log(anagrams('abc'));
 
 /* =================== SOLUTION 2 ==================== */
 function anagrams(str) {
@@ -47,4 +45,6 @@ function anagrams(str) {
     }
     return newArr;
 }
-console.log(anagrams('aabc'));
+console.log(anagrams('abc'));
+
+

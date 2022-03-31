@@ -25,10 +25,8 @@ function headsOrTails(n, buffer = [], ans = []) {
     ans.push(buffer);
     return ans;
   }
-
   headsOrTails(n, [...buffer, "heads"], ans);
   headsOrTails(n, [...buffer, "tails"], ans);
-
   return ans;
 }
 console.log(headsOrTails(2)); // -> [['heads', 'heads'], ['heads', 'tails'], ['tails', 'heads'], ['tails', 'tails']]
