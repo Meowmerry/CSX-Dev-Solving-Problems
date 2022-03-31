@@ -20,6 +20,7 @@ console.log(headsOrTails(3));
   ['tails', 'tails', 'tails'],
 ]
 */
+
 function headsOrTails(n, buffer = [], ans = []) {
   if (buffer.length === n) {
     ans.push(buffer);
