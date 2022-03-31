@@ -493,16 +493,16 @@ const fastCache = (callback) => {
 }
 
 //SINGLE ARGUMENT CASE
-// const multiplyBy2 = num => num * 2;
-// const cachedMultiplyBy2 = fastCache(multiplyBy2);
-// console.log(cachedMultiplyBy2(100)); // -> 200
-// console.log(cachedMultiplyBy2(150)); // -> 300
-// console.log(cachedMultiplyBy2(100)); // -> 200 // from the cache object
-// //MULTIPLE ARGUMENTS CASE
-// const sumMultiplyBy2 = (num1, num2) => 2 * (num1 + num2);
-// const cachedSumMultiplyBy2 = fastCache(sumMultiplyBy2);
-// console.log(cachedSumMultiplyBy2(5, 10)); // -> 30
-// console.log(cachedSumMultiplyBy2(1, 2)); // -> 6
-// console.log(cachedSumMultiplyBy2(5, 10)); // -> 30 // from the cache object
+const multiplyBy2 = num => num * 2;
+const cachedMultiplyBy2 = fastCache(multiplyBy2);
+console.log(cachedMultiplyBy2(100)); // -> 200
+console.log(cachedMultiplyBy2(150)); // -> 300
+console.log(cachedMultiplyBy2(100)); // -> 200 // from the cache object
+//MULTIPLE ARGUMENTS CASE
+const sumMultiplyBy2 = (num1, num2) => 2 * (num1 + num2);
+const cachedSumMultiplyBy2 = fastCache(sumMultiplyBy2);
+console.log(cachedSumMultiplyBy2(5, 10)); // -> 30
+console.log(cachedSumMultiplyBy2(1, 2)); // -> 6
+console.log(cachedSumMultiplyBy2(5, 10)); // -> 30 // from the cache object
 
 

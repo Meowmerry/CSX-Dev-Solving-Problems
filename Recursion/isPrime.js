@@ -33,7 +33,7 @@ function isPrime1(num, div = 2) {
     return isPrime1(num, div + 1); // 3 % 2 
 }
 
-console.log(isPrime1(1)); //-> false
+console.log(isPrime1(10007)); //-> false
 console.log(isPrime1(2)); //-> true
 console.log(isPrime1(3)); //-> true
 console.log(isPrime1(4)); //-> false

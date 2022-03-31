@@ -210,6 +210,7 @@ Create a function "checkerLogger" that takes one argument (a function that retur
 If the function is invoked with an argument, the checker callback function is invoked and its boolean result is returned.
 If the function is invoked without any arguments, instead return a count of the number of times the callback function has been invoked and evaluated true or false.
 
+
 Input : callback
 Output  : return inner fucntion 
 Inner input : number or without arguments
