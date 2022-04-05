@@ -210,7 +210,7 @@ Create a function "checkerLogger" that takes one argument (a function that retur
 If the function is invoked with an argument, the checker callback function is invoked and its boolean result is returned.
 If the function is invoked without any arguments, instead return a count of the number of times the callback function has been invoked and evaluated true or false.
 
-
+ฝ๕
 Input : callback
 Output  : return inner fucntion 
 Inner input : number or without arguments
@@ -228,7 +228,10 @@ crete a func take callback as arguments
 */
 
 const checkerLogger = (callback) => {
-    const cache = { true: 0, false: 0 };
+    const cache = {
+        true: 0,
+        false: 0
+    };
 
     return (args) => {
         if (!args) return cache;
@@ -249,10 +252,10 @@ const oddCounter = checkerLogger(isOdd);
 /*
 Create a function "countChar" that takes two arguments (an input string and a target string).
 "countChar" will return the number of times the target string is found in the input string.
-// console.log(countChar('', 'o')); //-> 0
-// console.log(countChar('hello world', 'o')); //-> 2
-// console.log(countChar('javascript', 'j')); //-> 1
-// console.log(countChar('javascript js js', 'j')); //-> 3
+console.log(countChar('', 'o')); //-> 0
+console.log(countChar('hello world', 'o')); //-> 2
+console.log(countChar('javascript', 'j')); //-> 1
+console.log(countChar('javascript js js', 'j')); //-> 3
 
 
 Example:
@@ -305,9 +308,18 @@ const deepCopy = (collection) => {
     }
     return output;
 };
-const tools = [
-    { editor: { favorite: { mine: { name: "vscode" } } } },
-    { shell: "zsh" },
+const tools = [{
+        editor: {
+            favorite: {
+                mine: {
+                    name: "vscode"
+                }
+            }
+        }
+    },
+    {
+        shell: "zsh"
+    },
 ];
 const copyOfTools = deepCopy(tools);
 //console.log(copyOfTools);
@@ -315,5 +327,5 @@ console.log(copyOfTools === tools); // -> false
 console.log(copyOfTools[0] === tools[0]); // -> false
 console.log(copyOfTools[0].editor === tools[0].editor); // -> false
 console.log(copyOfTools[0].editor.favorite === tools[0].editor.favorite); // -> false
-console.log(copyOfTools[0].editor.favorite.mine === tools[0].editor.favorite.mine);           // -> false
+console.log(copyOfTools[0].editor.favorite.mine === tools[0].editor.favorite.mine); // -> false
 console.log(copyOfTools[0].editor.favorite.mine.name === tools[0].editor.favorite.mine.name); // -> true

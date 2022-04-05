@@ -27,9 +27,17 @@ const multiMap = (array, arrOfCallback) => {
     return Object.fromEntries(outterArr)
 }
 // Uncomment these to check your work!
-function uppercaser(str) { return str.toUpperCase(); }
-function capitalize(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }
-function repeater(str) { return str + str; }
+function uppercaser(str) {
+    return str.toUpperCase();
+}
+
+function capitalize(str) {
+    return str[0].toUpperCase() + str.slice(1).toLowerCase();
+}
+
+function repeater(str) {
+    return str + str;
+}
 const items = ['catfood', 'glue', 'beer'];
 const functions = [uppercaser, capitalize, repeater];
 console.log(multiMap(items, functions)); // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
@@ -55,9 +63,17 @@ const multiMap1 = (array, arrOfCallback) => {
     return object;
 }
 // Uncomment these to check your work!
-function uppercaser1(str) { return str.toUpperCase(); }
-function capitalize1(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }
-function repeater1(str) { return str + str; }
+function uppercaser1(str) {
+    return str.toUpperCase();
+}
+
+function capitalize1(str) {
+    return str[0].toUpperCase() + str.slice(1).toLowerCase();
+}
+
+function repeater1(str) {
+    return str + str;
+}
 const items1 = ['catfood', 'glue', 'beer'];
 const functions1 = [uppercaser1, capitalize, repeater1];
 console.log(multiMap1(items1, functions1)); // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
@@ -66,13 +82,21 @@ console.log(multiMap1(items1, functions1)); // should log: { catfood: ['CATFOOD'
 ================================================================================ */
 // create a function multiMap accepts array and arrayOfCallback
 const multiMap2 = (array, arrOfCallback) => array.reduce((accumulator, currentvalue) => ({
-    ...accumulator, [currentvalue]: arrOfCallback.map((callback) => callback(currentvalue))
-}), {}
-);
+    ...accumulator,
+    [currentvalue]: arrOfCallback.map((callback) => callback(currentvalue))
+}), {});
 // Uncomment these to check your work!
-function uppercaser2(str) { return str.toUpperCase(); }
-function capitalize2(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }
-function repeater2(str) { return str + str; }
+function uppercaser2(str) {
+    return str.toUpperCase();
+}
+
+function capitalize2(str) {
+    return str[0].toUpperCase() + str.slice(1).toLowerCase();
+}
+
+function repeater2(str) {
+    return str + str;
+}
 const items2 = ['catfood', 'glue', 'beer'];
 const functions2 = [uppercaser2, capitalize2, repeater2];
 console.log(multiMap2(items2, functions2)); // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
@@ -92,9 +116,17 @@ const multiMap3 = (array, arrOfCallback) => {
 }
 
 // Uncomment these to check your work!
-function uppercaser3(str) { return str.toUpperCase(); }
-function capitalize3(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }
-function repeater3(str) { return str + str; }
+function uppercaser3(str) {
+    return str.toUpperCase();
+}
+
+function capitalize3(str) {
+    return str[0].toUpperCase() + str.slice(1).toLowerCase();
+}
+
+function repeater3(str) {
+    return str + str;
+}
 const items3 = ['catfood', 'glue', 'beer'];
 const functions3 = [uppercaser3, capitalize3, repeater3];
 console.log(multiMap3(items3, functions3)); // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
@@ -111,9 +143,17 @@ const multiMap4 = (array, arrOfCallback) => {
 }
 
 // Uncomment these to check your work!
-function uppercaser4(str) { return str.toUpperCase(); }
-function capitalize4(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }
-function repeater4(str) { return str + str; }
+function uppercaser4(str) {
+    return str.toUpperCase();
+}
+
+function capitalize4(str) {
+    return str[0].toUpperCase() + str.slice(1).toLowerCase();
+}
+
+function repeater4(str) {
+    return str + str;
+}
 const items4 = ['catfood', 'glue', 'beer'];
 const functions4 = [uppercaser4, capitalize4, repeater4];
 console.log(multiMap4(items4, functions4)); // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
@@ -138,3 +178,29 @@ const cities = {
 
 console.log(objectFilter(cities, city => city.toUpperCase())) // Should log { London: 'LONDON', Paris: 'PARIS'}
 
+
+const multiMap5 = (arrayValues, arrOfCallback) => {
+    return arrayValues.reduce((accumulator, currentItem) => {
+        let values = []
+        arrOfCallback.forEach((callback, index) => {
+            values.push(callback(currentItem))
+        })
+        accumulator[currentItem] = values;
+        return accumulator;
+    }, {})
+}
+
+function uppercaser5(str) {
+    return str.toUpperCase();
+}
+
+function capitalize5(str) {
+    return str[0].toUpperCase() + str.slice(1).toLowerCase();
+}
+
+function repeater5(str) {
+    return str + str;
+}
+const items5 = ['catfood', 'glue', 'beer'];
+const functions5 = [uppercaser5, capitalize5, repeater5];
+console.log(multiMap5(items5, functions5)); // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
