@@ -160,6 +160,7 @@ countAbc("abc") → 1
 countAbc("abcxxabc") → 2
 countAbc("abaxxaba") → 2
 */
+// Declare a variable 'randomNums' and set it equal to string Programming
 
 /*
 Create a function "concatWithSpace" that takes in two arguments (both will be strings). "concatWithSpace" should return the two strings concatenated with a space in between them.
@@ -182,7 +183,15 @@ This is how it works:
 - The array is iterated over, passing the accumulator value and the next array element to the callback function.
 - The callback function's returned value becomes the new accumulator value
 - The next loop executes with the new accumulator value.
+*/
 
+/*
+Check that your 'shorten' function is working correctly by passing an array to it with the string values 'is', 'so', 'much' and 'fun!' as the first argument.
+Pass your concatWithSpace function as our callback and the string 'Programming' as the initialValue argument. The result of this call to shorten should be the string 'Programming is so much fun!'
+*/
+
+
+/*
 Input : Array, callback , initValue
 Output : String
 create a func take three aguments
@@ -210,7 +219,14 @@ Create a function "checkerLogger" that takes one argument (a function that retur
 If the function is invoked with an argument, the checker callback function is invoked and its boolean result is returned.
 If the function is invoked without any arguments, instead return a count of the number of times the callback function has been invoked and evaluated true or false.
 
-ฝ๕
+Example:
+const isOdd = num => num % 2 === 1;
+const oddCounter = checkerLogger(isOdd);
+oddCounter(); -> { true: 0, false: 0 }
+oddCounter(3); -> true
+oddCounter(2); -> false
+oddCounter(); -> { true: 1, false: 1 }
+
 Input : callback
 Output  : return inner fucntion 
 Inner input : number or without arguments
