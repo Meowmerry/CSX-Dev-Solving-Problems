@@ -11,7 +11,7 @@ const removeDups = (array) => {
     const newArr = [...new Set(array)]
     return newArr;
 }
-console.log(removeDups([1, 2, 1, 0, 0])) // [1,0]
+console.log(removeDups([1, 2, 1, 0, 0])) // [ 1, 2, 0 ]
 console.log(removeDups(['The', 'big', 'cat'])) //['The', 'big', 'cat']
 console.log(removeDups(['John', 'Taylor', 'John'])) // ['John', 'Taylor']
 

@@ -16,7 +16,7 @@ function pow(base, exponent) {
     if (exponent === 1) return base;
     return base * pow(base, exponent - 1);
 }
-console.log(pow(2, 4)); // -> 16
+console.log(pow(5, 2)); // -> 16
 console.log(pow(3, 0)); // -> 
 console.log(pow(3, 5)); // -> 243   							3 * 3 * 3 * 3 * 3
 console.log(pow(2, 0)); // -> 1
@@ -30,7 +30,7 @@ function pow(base, exponent, product = 1) {
     if (exponent === 0) return product;
     return pow(base, exponent - 1, product * base);
 }
-console.log(pow(2, 4)); // -> 16
+console.log(pow(5, 2));// -> 16
 console.log(pow(3, 0)); // -> 
 console.log(pow(3, 5)); // -> 243   							3 * 3 * 3 * 3 * 3
 console.log(pow(2, 0)); // -> 1
