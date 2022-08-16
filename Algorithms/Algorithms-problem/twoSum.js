@@ -16,3 +16,17 @@ it does increase the space complexity to O(n) from O(1),
 but we consider a reduction in time complexity to be more important than a reduction in space complexity. 
 The reasoning is that we can always buy more memory, but we cannot buy more time.
 */
+
+var twoSum = function(nums, target) {
+    const previouseValues = {}
+     for(let i = 0 ; i < nums.length ; i += 1){
+         const current = nums[i];
+         const needValues = target - current;
+         const idx2 = previouseValues[needValues]
+         if(idx2 != null) {
+             return [idx2, i]
+         }else{
+             previouseValues[current] = i
+         }
+     }
+ };
