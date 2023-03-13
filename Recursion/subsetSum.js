@@ -35,6 +35,12 @@ function subsetSum(arr, target) {
   // return false
   return false;
 }
+
+const subsetSum = (arr, target) =>{
+  if(target === 0 )return true;
+  if(!arr.length) return false;
+  return subsetSum(arr.slice(1), target - arr[0]) || subsetSum(arr.slice(1), target);
+}
 console.log(subsetSum([3, 2], 5)); //-> true (3 + 2 = 5)
 console.log(subsetSum([3, 7, 4, 2], 5)); //-> true (3 + 2 = 5)
 console.log(subsetSum([3, 34, 4, 12, 5, 12], 32)); //-> true (3 + 12 + 5 + 12 = 32)

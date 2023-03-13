@@ -95,6 +95,14 @@ Each function in your array will return a boolean value. "passAllTests" should p
 If all functions in your array return true then "passAllTests" will return true. Otherwise "passAllTests" should return false
 */
 
+
+/*
+Use your "passAllTests" function to test if the number 300 is greater than the number 50 and less than the number 500,
+divisible by the 100, and a negative number OR even. Then test the number 250.
+*/
+
+
+
 // declare a function passAllTests that accepts as arg: 1. array of cb, 2. value
 function passAllTests (arr, val) {
 // initialize a result = true;

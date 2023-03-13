@@ -28,6 +28,11 @@ const deleteDups3 = (arr) => {
         return arr.indexOf(el) === idx;
     })
 }
-console.log(deleteDups3(['a', 'a', 'a'])) // -> ['a']
-console.log(deleteDups3(['b', 'b', 'a'])) // -> ['b', 'a']
-console.log(deleteDups3(['c', 'c', 'a'])) // -> ['c', 'a']
+
+const deleteDups4 = (arr) => {
+    return Array.from(new Set(arr))
+}
+//Array.from(new Set(array))
+console.log(deleteDups4(['a', 'a', 'a'])) // -> ['a']
+console.log(deleteDups4(['b', 'b', 'a'])) // -> ['b', 'a']
+console.log(deleteDups4(['c', 'c', 'a'])) // -> ['c', 'a']

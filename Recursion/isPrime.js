@@ -17,7 +17,7 @@ const isPrimeRecursive = (num, divisor, max) => {
     if (divisor > max) return true;
     if (!(num % divisor)) return false;
     return isPrimeRecursive(num, divisor + 2, max);
-}
+} 
 
 console.log(isPrime(1)); //-> false
 console.log(isPrime(2)); //-> true
@@ -68,3 +68,14 @@ console.log(isPrime4(3)); //-> true
 console.log(isPrime4(4)); //-> false
 console.log(isPrime4(17)); //-> true
 console.log(isPrime4(173)); //-> true
+
+// console.log(isPrime(10007))
+function isPrime(num) {
+    if (num < 2) return false;
+    let count = 2;
+    while (count < num) {
+      if (num % count === 0) return false;
+      count++
+    }
+    return true;
+}

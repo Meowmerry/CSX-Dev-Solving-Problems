@@ -7,6 +7,7 @@ dog -> DoG
 chair -> ChAiR
 elephant -> ElEpHaNt 
 */
+
 // In : String
 // Out : String with Uppercase alternating
 // create a func alternating that accept string
@@ -31,6 +32,7 @@ const alteratingStr = (str) => {
 create a function that takes in that name string and outputs a string with all the vowels removed
 for example: "David" -> "Dvd"
 */
+
 const removeVowel = (str) => {
   return str.replace(/[aeiou]/g, "");
 };
@@ -44,9 +46,12 @@ sumOfCubes([2]) //➞ 8
 sumOfCubes([]) //➞ 0 */
 
 /*
-Create a function 'addNumbers' that takes a number as an argument. 'addNumbers' should add up all the numbers from 1 to the number you passed to the function.
+
+Create a function 'addNumbers' that takes a number as an argument. 'addNumbers' 
+should add up all the numbers from 1 to the number you passed to the function.
 For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
 */
+
 /* ============= SOLUTION 1 Loop  ============================= */
 const addNumbers = (nums) => {
   let sum = 0;
@@ -75,6 +80,7 @@ const between40And400 = (nums) => {
 // console.log(between40And400(35)) // false
 // console.log(between40And400(372)) // true
 // console.log(between40And400(200)) // true
+
 
 /*
 Create a function "divBy100" that takes a number as an argument.
@@ -166,6 +172,7 @@ const amplify = (nums) => {
 // console.log(amplify(5)) // [1, 2, 3, 40, 5]
 // console.log(amplify(10)) // [1, 2, 3, 40, 5 , 6 , 7 , 80 , 9 , 10]
 // console.log(amplify(12)) // [1, 2, 3, 40, 5 , 6 , 7 , 80 , 9 , 10, 11 , 120]
+
 /* 
 Check all values in an array÷
 Write a function called all which accepts an array and a callback and returns true if every value in the array returns true when passed as parameter to the callback function
@@ -174,6 +181,7 @@ var allAreLessThanSeven = all([1,2,9], function(num){
  });
 console.log(allAreLessThanSeven); // false
 */
+
 const all = (arr, callback) =>
   arr.reduce(
     (acc, curr) => (callback(curr) ? (acc = true) : (acc = false), acc),
